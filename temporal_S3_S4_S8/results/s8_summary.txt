@@ -1,0 +1,17 @@
+Temporal factorization, ascertainment-aware (spectrum n=1648, ASD=145)
+floors: boot_cos>=0.8, conc>=0.6; artifact |r(dens)|>0.7; separation AUC>=0.6
+
+          pool   approach  windows  R  expl_var  restart_stab  boot_cos  boot_worst  boot_conc  max_r_density  sep_auc  stable  artifact_free  separates        verdict
+spectrum(1648)   BASELINE        6  2     0.133         1.000     0.998       0.998      0.927          0.896    0.522    True          False      False       unusable
+spectrum(1648)   BASELINE        6  3     0.157         0.974     0.953       0.926      0.844          0.880    0.533    True          False      False       unusable
+spectrum(1648) REL-TIMING        4  2     0.166         0.999     0.994       0.993      0.921          0.974    0.555    True          False      False       unusable
+spectrum(1648) REL-TIMING        4  3     0.197         0.973     0.988       0.979      0.876          0.974    0.574    True          False      False       unusable
+spectrum(1648) DENS-EQUAL        6  2     0.111         1.000     0.998       0.998      0.930         -0.957    0.519    True          False      False       unusable
+spectrum(1648) DENS-EQUAL        6  3     0.136         0.918     0.902       0.837      0.724         -0.970    0.531    True          False      False       unusable
+spectrum(1648)  UTIL-NORM        6  2     0.102         1.000     0.998       0.996      0.988          0.684    0.540    True           True      False clean-negative
+spectrum(1648)  UTIL-NORM        6  3     0.132         1.000     0.946       0.896      0.893          0.781    0.573    True          False      False       unusable
+
+Baseline shows density artifact: True
+All normalized approaches artifact-free: False
+Any normalized approach yields a REAL (stable+clean+separating) temporal factor: False
+=> CLEAN NEGATIVE: after removing ascertainment, developmental timing adds no ASD signal beyond the marginal comorbidity rates (S5-S7).

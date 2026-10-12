@@ -1,0 +1,52 @@
+condition,p_NT,p_otherNDD,p_ADHD,p_ASD,e_ASD_vs_NT,delta_vs_rest,surv_rest90,delta_vs_ADHD,surv_ADHD90,surv_ADHD95,delta_ADHD_vs_other,surv_calib90,peak_group,label
+Headache & migraine,0.0821,0.1183,0.1745,0.0621,-0.02,-0.0495,True,-0.0733,True,True,0.0465,True,ADHD,ADHD-PEAK
+"Mood disorders (depression, bipolar)",0.0697,0.114,0.2373,0.1103,0.0407,-0.0242,False,-0.0701,True,True,0.0914,True,ADHD,ADHD-PEAK
+Acute upper respiratory infection,0.6591,0.8172,0.8185,0.7103,0.0512,-0.0368,False,-0.0456,True,False,0.0078,False,ADHD,ADHD-PEAK
+Pain syndromes,0.061,0.086,0.0873,0.0414,-0.0197,-0.0316,True,-0.0343,True,False,0.0053,False,ADHD,ADHD-PEAK
+Epilepsy & seizures,0.0059,0.0355,0.0611,0.1241,0.1182,0.0506,True,0.0373,True,False,0.0251,True,ASD,AUTISM-SPECIFIC
+Glaucoma,0.0194,0.0301,0.0192,0.0621,0.0426,0.0293,True,0.0317,True,False,-0.0088,False,ASD,AUTISM-SPECIFIC
+Malnutrition,0.0497,0.0892,0.0698,0.0483,-0.0014,-0.0218,False,-0.0159,False,False,-0.012,False,Other NDD,FLAT
+Hereditary & degenerative CNS disorders,0.0151,0.0462,0.0279,0.0414,0.0263,0.0043,False,0.0107,False,False,-0.0146,False,Other NDD,FLAT
+Asthma,0.2334,0.3183,0.4555,0.3586,0.1252,0.0031,False,-0.0365,False,False,0.0889,True,ADHD,SHARED-NDD
+Conjunctivitis & conjunctival disorders,0.2982,0.4097,0.4817,0.3931,0.0949,-0.0085,False,-0.0328,False,False,0.0505,True,ADHD,SHARED-NDD
+"Eyelid, lacrimal & orbit disorders",0.1005,0.143,0.1361,0.1931,0.0926,0.0315,False,0.0279,False,False,0.0008,False,ASD,SHARED-NDD
+Congenital skin & integument anomalies,0.1491,0.1602,0.1501,0.1034,-0.0457,-0.0263,False,-0.0273,False,False,-0.001,False,Other NDD,SHARED-NDD
+Inflammatory bowel disease & colitis,0.2096,0.2968,0.3246,0.2621,0.0525,-0.0118,False,-0.026,False,False,0.0255,False,ADHD,SHARED-NDD
+Respiratory failure & other,0.06,0.1452,0.1623,0.1172,0.0573,-0.0143,False,-0.0253,False,False,0.0185,False,ADHD,SHARED-NDD
+"Functional & other intestinal (constipation, IBS)",0.2836,0.4247,0.3805,0.4483,0.1646,0.0224,False,0.0249,False,False,-0.0163,False,ASD,SHARED-NDD
+Underweight,0.1075,0.1688,0.1483,0.2,0.0925,0.0248,False,0.0249,False,False,-0.0083,False,ASD,SHARED-NDD
+Chromosomal & other congenital syndromes,0.0162,0.0677,0.0698,0.1103,0.0941,0.0298,False,0.0247,False,False,0.0053,False,ASD,SHARED-NDD
+Influenza & pneumonia,0.2021,0.3086,0.349,0.2897,0.0876,-0.0066,False,-0.0239,False,False,0.033,True,ADHD,SHARED-NDD
+Other endocrine gland disorders (pituitary/adrenal/gonadal),0.0675,0.0914,0.0995,0.1379,0.0704,0.0293,False,0.0215,False,False,0.011,False,ASD,SHARED-NDD
+Strabismus & ocular motility disorders,0.0616,0.1226,0.1187,0.1586,0.097,0.0253,False,0.0211,False,False,0.0024,False,ASD,SHARED-NDD
+Congenital nervous system anomalies,0.0178,0.0753,0.0646,0.0966,0.0787,0.0204,False,0.0203,False,False,-0.0053,False,ASD,SHARED-NDD
+Refractive errors,0.3225,0.471,0.4974,0.5517,0.2292,0.0333,False,0.0199,False,False,0.0245,False,ASD,SHARED-NDD
+Visual disturbances & blindness,0.1572,0.2387,0.2932,0.2483,0.0911,0.0022,False,-0.0191,False,False,0.0422,True,ADHD,SHARED-NDD
+"Esophageal, gastric & duodenal disorders",0.1286,0.2215,0.2391,0.2,0.0714,-0.0065,False,-0.018,False,False,0.0191,False,ADHD,SHARED-NDD
+Congenital cardiovascular anomalies,0.0821,0.1548,0.1658,0.2,0.1179,0.0257,False,0.0164,False,False,0.0142,False,ASD,SHARED-NDD
+Other eye disorders,0.1518,0.2548,0.2426,0.2069,0.0551,-0.0131,False,-0.0163,False,False,0.0002,False,Other NDD,SHARED-NDD
+Acute bronchitis & bronchiolitis,0.1248,0.2022,0.2199,0.1862,0.0614,-0.0045,False,-0.016,False,False,0.0192,False,ADHD,SHARED-NDD
+Thyroid disorders,0.0113,0.0204,0.0279,0.0483,0.0369,0.0219,False,0.0157,False,False,0.0085,False,ASD,SHARED-NDD
+Hearing loss & other ear disorders,0.2501,0.4151,0.4677,0.4276,0.1775,0.005,False,-0.0146,False,False,0.0395,True,ADHD,SHARED-NDD
+"Anxiety, stress & somatoform disorders",0.1372,0.3086,0.5166,0.4828,0.3455,0.0419,False,-0.0122,False,False,0.13,True,ADHD,SHARED-NDD
+Vitamin & nutritional deficiencies,0.0908,0.1409,0.1379,0.1586,0.0679,0.0156,False,0.0109,False,False,0.0037,False,ASD,SHARED-NDD
+Chronic upper respiratory (rhinitis/sinusitis/tonsil),0.3447,0.4785,0.5742,0.5448,0.2001,0.0186,False,-0.0106,False,False,0.064,True,ADHD,SHARED-NDD
+Oral & dental disorders,0.2696,0.3989,0.4101,0.3862,0.1166,0.0014,False,-0.0089,False,False,0.0158,False,ADHD,SHARED-NDD
+Congenital genital anomalies,0.04,0.057,0.0698,0.0828,0.0428,0.0179,False,0.0086,False,False,0.0143,False,ASD,SHARED-NDD
+Congenital respiratory anomalies,0.0135,0.0409,0.0454,0.0552,0.0417,0.0125,False,0.0073,False,False,0.0065,False,ASD,SHARED-NDD
+Cerebral palsy & paralytic syndromes,0.0032,0.0473,0.0262,0.0345,0.0312,-0.0015,False,0.0068,False,False,-0.0172,True,Other NDD,SHARED-NDD
+Hernia,0.0573,0.1032,0.0995,0.1103,0.0531,0.0101,False,0.0065,False,False,0.0018,False,ASD,SHARED-NDD
+"Metabolic disorders (lipid, fluid/electrolyte)",0.1702,0.2892,0.3089,0.3241,0.154,0.0181,False,0.0061,False,False,0.0206,False,ASD,SHARED-NDD
+Otitis externa & external ear disorders,0.1469,0.2398,0.2548,0.2414,0.0944,0.0051,False,-0.0058,False,False,0.0176,False,ADHD,SHARED-NDD
+Retinal & choroidal disorders,0.0362,0.1011,0.1012,0.1103,0.0741,0.0104,False,0.0055,False,False,0.0049,False,ASD,SHARED-NDD
+Obesity & overnutrition,0.483,0.6204,0.6824,0.6759,0.1929,0.0198,False,-0.0025,False,False,0.0457,True,ADHD,SHARED-NDD
+Otitis media & middle ear disorders,0.4084,0.5269,0.5777,0.5793,0.1709,0.0198,False,0.0007,False,False,0.0384,True,ASD,SHARED-NDD
+Congenital eye/ear/face/neck anomalies,0.0346,0.0656,0.082,0.0828,0.0482,0.0114,False,0.0005,False,False,0.0174,False,ASD,SHARED-NDD
+Other digestive disorders,0.0303,0.043,0.0628,0.0621,0.0318,0.0117,False,-0.0005,False,False,0.0201,True,ADHD,SHARED-NDD
+Congenital digestive anomalies,0.0481,0.0645,0.0716,0.1379,0.0898,0.0444,True,0.0377,False,False,0.0095,False,ASD,SHARED-WITH-ADHD
+Movement & other episodic disorders,0.0097,0.072,0.089,0.1517,0.142,0.0445,True,0.0341,False,False,0.0179,False,ASD,SHARED-WITH-ADHD
+"Behavioral syndromes (eating, sleep)",0.0194,0.0452,0.0838,0.1448,0.1254,0.0516,True,0.0339,False,False,0.0359,True,ASD,SHARED-WITH-ADHD
+Congenital musculoskeletal & limb anomalies,0.0854,0.1366,0.1571,0.2207,0.1353,0.0413,True,0.0296,False,False,0.0209,False,ASD,SHARED-WITH-ADHD
+Sleep disorders (organic),0.1124,0.2075,0.3089,0.3724,0.26,0.0553,True,0.0243,False,False,0.0717,True,ASD,SHARED-WITH-ADHD
+Diabetes & glucose regulation,0.0167,0.028,0.0349,0.069,0.0522,0.0304,True,0.0242,False,False,0.0083,False,ASD,SHARED-WITH-ADHD
+Personality disorders,0.0065,0.0172,0.0838,0.0966,0.0901,0.0384,True,0.008,False,False,0.0602,True,ASD,SHARED-WITH-ADHD

@@ -1,0 +1,25 @@
+Cross-group contrast (n_ASD=145, ADHD=573, other=930, rest=1503, NT=1851)
+tau: vs-rest=0.0325, vs-ADHD=0.0350, ADHD-vs-other=0.0304
+label counts: AUTISM-SPECIFIC=2, SHARED-WITH-ADHD=7, ADHD-PEAK=4, ASD-DEFICIT=0, SHARED-NDD=36, FLAT=2
+Of 11 ASD-specific-vs-rest conditions, 2 remain ASD>ADHD.
+
+AUTISM-SPECIFIC:
+  Epilepsy & seizures: d_rest=+0.051*, d_ADHD=+0.037*, peak=ASD
+  Glaucoma: d_rest=+0.029*, d_ADHD=+0.032*, peak=ASD
+
+SHARED-WITH-ADHD:
+  Congenital digestive anomalies: d_rest=+0.044*, d_ADHD=+0.038, peak=ASD
+  Movement & other episodic disorders: d_rest=+0.045*, d_ADHD=+0.034, peak=ASD
+  Behavioral syndromes (eating, sleep): d_rest=+0.052*, d_ADHD=+0.034, peak=ASD
+  Congenital musculoskeletal & limb anomalies: d_rest=+0.041*, d_ADHD=+0.030, peak=ASD
+  Sleep disorders (organic): d_rest=+0.055*, d_ADHD=+0.024, peak=ASD
+  Diabetes & glucose regulation: d_rest=+0.030*, d_ADHD=+0.024, peak=ASD
+  Personality disorders: d_rest=+0.038*, d_ADHD=+0.008, peak=ASD
+
+ADHD-PEAK:
+  Headache & migraine: d_rest=-0.049*, d_ADHD=-0.073*, peak=ADHD
+  Mood disorders (depression, bipolar): d_rest=-0.024, d_ADHD=-0.070*, peak=ADHD
+  Acute upper respiratory infection: d_rest=-0.037, d_ADHD=-0.046*, peak=ADHD
+  Pain syndromes: d_rest=-0.032*, d_ADHD=-0.034*, peak=ADHD
+
+ASD-DEFICIT:

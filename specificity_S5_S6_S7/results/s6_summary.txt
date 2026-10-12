@@ -1,0 +1,55 @@
+Gradient vs step, per condition (n_ASD=145, rest=1503, NT=1851). tau=0.0325
+category counts: STEP=8, STEP-DOWN=2, GRADIENT+=1, SHARED=34, ASD-LEAN=4, FLAT=2
+
+STEP:
+  Movement & other episodic disorders: e_ASD=+0.142, delta_shrunk=+0.045*, shared_frac=0.48
+  Congenital musculoskeletal & limb anomalies: e_ASD=+0.135, delta_shrunk=+0.041*, shared_frac=0.44
+  Behavioral syndromes (eating, sleep): e_ASD=+0.125, delta_shrunk=+0.052*, shared_frac=0.32
+  Epilepsy & seizures: e_ASD=+0.118, delta_shrunk=+0.051*, shared_frac=0.33
+  Personality disorders: e_ASD=+0.090, delta_shrunk=+0.038*, shared_frac=0.40
+  Congenital digestive anomalies: e_ASD=+0.090, delta_shrunk=+0.044*, shared_frac=0.21
+  Diabetes & glucose regulation: e_ASD=+0.052, delta_shrunk=+0.030*, shared_frac=0.27
+  Glaucoma: e_ASD=+0.043, delta_shrunk=+0.029*, shared_frac=0.15
+
+STEP-DOWN:
+  Headache & migraine: e_ASD=-0.020, delta_shrunk=-0.049*, shared_frac=-2.87
+  Pain syndromes: e_ASD=-0.020, delta_shrunk=-0.032*, shared_frac=-1.29
+
+GRADIENT+:
+  Sleep disorders (organic): e_ASD=+0.260, delta_shrunk=+0.055*, shared_frac=0.51
+
+SHARED:
+  Anxiety, stress & somatoform disorders: e_ASD=+0.346, delta_shrunk=+0.042, shared_frac=0.73
+  Refractive errors: e_ASD=+0.229, delta_shrunk=+0.033, shared_frac=0.69
+  Chronic upper respiratory (rhinitis/sinusitis/tonsil): e_ASD=+0.200, delta_shrunk=+0.019, shared_frac=0.85
+  Obesity & overnutrition: e_ASD=+0.193, delta_shrunk=+0.020, shared_frac=0.84
+  Hearing loss & other ear disorders: e_ASD=+0.177, delta_shrunk=+0.005, shared_frac=1.04
+  Otitis media & middle ear disorders: e_ASD=+0.171, delta_shrunk=+0.020, shared_frac=0.81
+  Functional & other intestinal (constipation, IBS): e_ASD=+0.165, delta_shrunk=+0.022, shared_frac=0.75
+  Metabolic disorders (lipid, fluid/electrolyte): e_ASD=+0.154, delta_shrunk=+0.018, shared_frac=0.82
+  Asthma: e_ASD=+0.125, delta_shrunk=+0.003, shared_frac=1.10
+  Congenital cardiovascular anomalies: e_ASD=+0.118, delta_shrunk=+0.026, shared_frac=0.65
+  Oral & dental disorders: e_ASD=+0.117, delta_shrunk=+0.001, shared_frac=1.15
+  Strabismus & ocular motility disorders: e_ASD=+0.097, delta_shrunk=+0.025, shared_frac=0.61
+  Conjunctivitis & conjunctival disorders: e_ASD=+0.095, delta_shrunk=-0.009, shared_frac=1.46
+  Otitis externa & external ear disorders: e_ASD=+0.094, delta_shrunk=+0.005, shared_frac=1.04
+  Chromosomal & other congenital syndromes: e_ASD=+0.094, delta_shrunk=+0.030, shared_frac=0.56
+  Underweight: e_ASD=+0.092, delta_shrunk=+0.025, shared_frac=0.58
+  Visual disturbances & blindness: e_ASD=+0.091, delta_shrunk=+0.002, shared_frac=1.12
+  Influenza & pneumonia: e_ASD=+0.088, delta_shrunk=-0.007, shared_frac=1.39
+  Congenital nervous system anomalies: e_ASD=+0.079, delta_shrunk=+0.020, shared_frac=0.68
+  Retinal & choroidal disorders: e_ASD=+0.074, delta_shrunk=+0.010, shared_frac=0.88
+  Esophageal, gastric & duodenal disorders: e_ASD=+0.071, delta_shrunk=-0.007, shared_frac=1.39
+  Vitamin & nutritional deficiencies: e_ASD=+0.068, delta_shrunk=+0.016, shared_frac=0.72
+  Acute bronchitis & bronchiolitis: e_ASD=+0.061, delta_shrunk=-0.004, shared_frac=1.37
+  Respiratory failure & other: e_ASD=+0.057, delta_shrunk=-0.014, shared_frac=1.60
+  Other eye disorders: e_ASD=+0.055, delta_shrunk=-0.013, shared_frac=1.79
+  Hernia: e_ASD=+0.053, delta_shrunk=+0.010, shared_frac=0.84
+  Inflammatory bowel disease & colitis: e_ASD=+0.052, delta_shrunk=-0.012, shared_frac=1.86
+  Acute upper respiratory infection: e_ASD=+0.051, delta_shrunk=-0.037, shared_frac=3.10
+  Congenital eye/ear/face/neck anomalies: e_ASD=+0.048, delta_shrunk=+0.011, shared_frac=0.77
+  Congenital genital anomalies: e_ASD=+0.043, delta_shrunk=+0.018, shared_frac=0.51
+  Congenital respiratory anomalies: e_ASD=+0.042, delta_shrunk=+0.012, shared_frac=0.70
+  Mood disorders (depression, bipolar): e_ASD=+0.041, delta_shrunk=-0.024, shared_frac=2.25
+  Other digestive disorders: e_ASD=+0.032, delta_shrunk=+0.012, shared_frac=0.64
+  Cerebral palsy & paralytic syndromes: e_ASD=+0.031, delta_shrunk=-0.001, shared_frac=1.15

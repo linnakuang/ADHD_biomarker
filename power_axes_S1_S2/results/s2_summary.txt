@@ -1,0 +1,4 @@
+ASD vs other-NDD (latent W, K=3): AUC=0.587, perm p=0.0060
+  burden-only baseline: AUC=0.566
+  raw-51 residual:      AUC=0.624
+  ADHD-vs-other calibration (latent W): AUC=0.638

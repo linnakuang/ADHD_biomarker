@@ -1,0 +1,13 @@
+pool,scheme,windows,R,thin_pct,expl_var,restart_stab,boot_cos,boot_worst,boot_conc,max_r_density,stable,artifact
+ASD(145),Dx-anchored 3w,3,2,39,0.14,0.999,0.926,0.907,0.818,-1.0,True,True
+ASD(145),Dx-anchored 3w,3,3,39,0.178,0.946,0.835,0.803,0.664,0.992,True,True
+ASD(145),Dx-anchored 3w,3,4,39,0.21,0.907,0.819,0.698,0.644,-0.977,True,True
+spectrum(1648),Dx-anchored 3w,3,2,5,0.152,1.0,0.998,0.997,0.935,0.992,True,True
+spectrum(1648),Dx-anchored 3w,3,3,5,0.183,0.946,0.975,0.96,0.86,0.99,True,True
+spectrum(1648),Dx-anchored 3w,3,4,5,0.208,0.842,0.889,0.752,0.713,0.985,True,True
+ASD(145),Full 0-18 6w,6,2,53,0.132,1.0,0.974,0.97,0.909,0.901,True,True
+ASD(145),Full 0-18 6w,6,3,53,0.159,0.88,0.82,0.648,0.688,0.887,True,True
+ASD(145),Full 0-18 6w,6,4,53,0.184,0.877,0.813,0.71,0.666,0.908,True,True
+spectrum(1648),Full 0-18 6w,6,2,12,0.133,1.0,0.998,0.998,0.954,0.897,True,True
+spectrum(1648),Full 0-18 6w,6,3,12,0.157,0.969,0.957,0.933,0.853,0.88,True,True
+spectrum(1648),Full 0-18 6w,6,4,12,0.178,0.956,0.968,0.943,0.828,0.819,True,True

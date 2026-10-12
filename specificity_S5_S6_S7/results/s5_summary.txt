@@ -1,0 +1,5 @@
+Hierarchical shared+ASD-specific decomposition (n_ASD=145, n_rest=1503, 51 conditions)
+Global ASD-vs-rest shift mu = +0.0122; tau = 0.0325
+Mean shrinkage |delta_raw| 0.0401 -> |delta_shrunk| 0.0223
+ASD-specific conditions surviving: 11/51 (90%), 7/51 (95%)
+Surviving (90%): Sleep disorders (organic)(+0.055), Behavioral syndromes (eating, sleep)(+0.052), Epilepsy & seizures(+0.051), Headache & migraine(-0.049), Movement & other episodic disorders(+0.045), Congenital digestive anomalies(+0.044), Congenital musculoskeletal & limb anomalies(+0.041), Personality disorders(+0.038), Pain syndromes(-0.032), Diabetes & glucose regulation(+0.030), Glaucoma(+0.029)

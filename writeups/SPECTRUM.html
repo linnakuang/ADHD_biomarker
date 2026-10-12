@@ -1,0 +1,1099 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spectrum cohort report — the case for inclusion, methods, and findings (S1–S8)</title>
+<style>
+:root { --fg:#1a1a1a; --muted:#555; --line:#e2e2e2; --accent:#2b6cb0; --bg:#fff;
+        --code-bg:#f5f6f8; --th-bg:#f0f4f8; }
+* { box-sizing: border-box; }
+body { max-width: 900px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem;
+       font: 16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+       color: var(--fg); background: var(--bg); }
+h1 { font-size: 1.9rem; border-bottom: 3px solid var(--accent); padding-bottom: .4rem;
+     margin-top: 0; }
+h2 { font-size: 1.4rem; margin-top: 2.4rem; border-bottom: 1px solid var(--line);
+     padding-bottom: .3rem; }
+h3 { font-size: 1.15rem; margin-top: 1.8rem; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: var(--code-bg); padding: .12em .35em; border-radius: 4px;
+       font: 13.5px/1.5 "SF Mono",Menlo,Consolas,monospace; }
+pre { background: var(--code-bg); padding: 1rem 1.1rem; border-radius: 8px; overflow-x: auto;
+      border: 1px solid var(--line); }
+pre code { background: none; padding: 0; }
+table { border-collapse: collapse; width: 100%; margin: 1.1rem 0; font-size: 14.5px;
+        display: block; overflow-x: auto; }
+th, td { border: 1px solid var(--line); padding: .5rem .7rem; text-align: left;
+         vertical-align: top; }
+th { background: var(--th-bg); font-weight: 600; }
+tr:nth-child(even) td { background: #fafbfc; }
+blockquote { border-left: 4px solid var(--accent); margin: 1rem 0; padding: .3rem 1rem;
+             color: var(--muted); background: #f8fafc; }
+hr { border: none; border-top: 1px solid var(--line); margin: 2.2rem 0; }
+strong { font-weight: 650; }
+.footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--line);
+          color: var(--muted); font-size: 13px; }
+</style></head>
+<body>
+<h1 id="spectrum-cohort-report-the-case-for-inclusion-methods-and-findings-s1s8">Spectrum cohort report — the case for inclusion, methods, and findings (S1–S8)</h1>
+<p><strong>What this is.</strong> A single self-contained report on the "spectrum" analyses that test whether
+including the 1,503 currently-excluded neurodevelopmental children (573 ADHD-without-ASD +
+930 other-NDD) lets us learn more <em>about ASD</em>. It folds three previously-separate documents:</p>
+<ul>
+<li><strong>Part I</strong> — the collaborator-facing <em>case</em> for inclusion (formerly <code>RESULTS_Spectrum.md</code>).</li>
+<li><strong>Parts II–VI</strong> — the methods-and-evidence report for <strong>S1–S5</strong> (formerly <code>SPECTRUM_REPORT.md</code>).</li>
+<li><strong>Part VII</strong> — <strong>S6–S8</strong>: per-condition specificity, cross-group contrast, and developmental
+  timing (formerly <code>GRADIENT_VS_STEP.md</code>).</li>
+</ul>
+<p>All analyses run at <code><PROJECT_ROOT>/gus_analysis/</code>; outputs in <code>results/</code>. Last
+updated 2026-09-18. Companion: <code>RESEARCH_AGENDA.md</code> (the B-I…B-V / M-I…M-IV follow-on list and
+status); Track-A/B writeups <code>TRACK_A.md</code>, <code>TRACK_B.md</code>.</p>
+<blockquote>
+<p><strong>Governing framing — "both framings, let the data decide."</strong> Throughout, we do not pre-commit
+to "ASD is special" or "ASD is just the far end of a shared continuum." For every question and
+every condition we compute the honest evidence for <em>both</em> and let each finding fall where the
+data puts it. The excluded NDD/ADHD children are what make the intermediate comparisons
+observable at all.</p>
+</blockquote>
+<hr>
+<h1 id="part-i-the-case-for-including-the-nddadhd-groups">Part I — The case for including the NDD/ADHD groups</h1>
+<p><strong>Question.</strong> The study currently analyses 145 ASD children against 1,851 NT and <em>excludes</em> 1,503
+children with other neurodevelopmental diagnoses (573 ADHD-without-ASD, 930 other-NDD) by design.
+Does bringing those children in let us learn more <em>about ASD</em>? Five analyses (S1–S5), all on the
+paper's baseline / 51 conditions / §2 rules; only the pool learned from changes.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>question</th>
+<th>verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S1</strong></td>
+<td>Do residualized axes get more reproducible with n?</td>
+<td><strong>Yes, decisively.</strong> K=3 bootstrap cosine 0.82 (a component <em>below</em> the §2 floor at n=145) → <strong>0.97</strong> at n=1,648. n, not biology, was the binding constraint.</td>
+</tr>
+<tr>
+<td><strong>S2</strong></td>
+<td>Does ASD stand out from ADHD/other-NDD in the shared latent space?</td>
+<td><strong>Real but modest.</strong> ASD-vs-other AUC 0.587 (perm p=0.006), barely above burden, <em>less</em> distinct than ADHD-vs-other (0.638). A graded tilt (toward the psychiatric axis), not an island.</td>
+</tr>
+<tr>
+<td><strong>S3</strong></td>
+<td>Does inclusion lift the temporal density ceiling?</td>
+<td><strong>Yes, for estimability.</strong> Thin slices (the A1/A2 artifact driver) 53%→12%; full 6-window 0–18 goes 1/6 → 6/6 windows passing §2.</td>
+</tr>
+<tr>
+<td><strong>S4</strong></td>
+<td>…does that make a temporal factorization <em>valid</em>?</td>
+<td><strong>No.</strong> CP is stable on the spectrum (worst component 0.65→0.93) but the temporal factor <em>still</em> tracks the density envelope (|r|≈0.88, unmoved by 10× data). Estimable ≠ valid. Strengthens A1: the temporal artifact is structural, not small-sample.</td>
+</tr>
+<tr>
+<td><strong>S5</strong></td>
+<td>Can we borrow power for <em>ASD-specific</em> inference?</td>
+<td><strong>Yes — the payoff.</strong> Decomposing each condition into shared-NDD + ASD-specific, with shrinkage: <strong>7–11/51 conditions are genuinely ASD-specific</strong> (epilepsy, sleep, congenital anomalies, movement/behavioral disorders ↑; headache/pain ↓), while the <em>largest</em> ASD-vs-NT signals (anxiety, refractive, otitis, obesity) are <strong>70–104% generic NDD</strong> — unknowable without the excluded groups.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>One-line case for collaborators:</strong> inclusion removes the power constraint that leaves the headline
+model under its own stability floor (S1); the temporal-trajectory ambition is a dead end at any n
+and should be dropped (S3/S4); and the excluded children convert "ASD differs from typical kids"
+into the sharper, honest, <em>ASD-specific</em> finding of <em>which</em> conditions truly distinguish ASD from
+the rest of the neurodevelopmental spectrum (S2/S5/S6/S7). Keeps the ASD focus.</p>
+<p><strong>What this means for the collaborator case — the inclusion argument is <em>stronger</em> for being honest:</strong></p>
+<ol>
+<li><strong>Power is the binding constraint, and inclusion removes it (S1).</strong> The paper's headline K=3
+   model is under-powered at n=145 — one axis fails the team's own §2 floor. The excluded children
+   fix that directly (0.82 → 0.97 cosine; failing component 0.76 → 0.96). Every downstream
+   axis-based claim rests on a firmer footing.</li>
+<li><strong>Inclusion lets us ask a question the current design cannot (S2).</strong> "Does ASD comorbidity differ
+   from <em>other neurodevelopmental conditions</em>?" is unanswerable against an NT-only comparator —
+   residualizing vs NT makes NT trivial by construction. The excluded groups are the
+   matched-utilization, non-ASD controls that turn "ASD differs from typical children" (partly a
+   burden/ascertainment artifact — see Track-A A3b/A5b and Track-B B2) into "ASD differs from <em>ADHD
+   and other NDD in these specific ways</em>."</li>
+<li><strong>The specificity answer is itself a defensible, publishable result.</strong> ASD sits at AUC ≈ 0.59
+   (p = 0.006) from other-NDD, mostly a psychiatric-axis tilt, less distinct than ADHD. "ASD is a
+   graded position within a shared NDD comorbidity landscape, not a categorical comorbidity
+   signature" is a real finding — obtainable only <em>with</em> these groups. S5–S7 then sharpen it to a
+   short, mechanistically-interpretable core.</li>
+</ol>
+<p>The framing the collaborators worried about is preserved: this keeps the <strong>ASD focus</strong> (ASD is the
+group we characterise <em>within</em> the spectrum); it is not a pivot to an NDD-wide paper.</p>
+<hr>
+<h1 id="part-ii-cohort-features-and-the-shared-residualization-scheme">Part II — Cohort, features, and the shared residualization scheme</h1>
+<p><strong>Cohort (Boston Birth Cohort, postnatal EHR).</strong> 3,499 children with a clean 4-way label from the
+priority rule ASD &gt; ADHD &gt; other-NDD &gt; NT:</p>
+<table>
+<thead>
+<tr>
+<th>label</th>
+<th>n</th>
+<th>role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NT</td>
+<td>1,851</td>
+<td>baseline / expected-rate reference (rung 0)</td>
+</tr>
+<tr>
+<td>Other NDD</td>
+<td>930</td>
+<td>currently excluded — part of "the rest" (rung 1)</td>
+</tr>
+<tr>
+<td>ADHD (no ASD)</td>
+<td>573</td>
+<td>currently excluded — part of "the rest", ASD's nearest neighbour (rung 2)</td>
+</tr>
+<tr>
+<td>ASD</td>
+<td>145</td>
+<td>the group of interest (rung 3)</td>
+</tr>
+</tbody>
+</table>
+<p>Derived pools used throughout: <strong>analytic cohort</strong> = 1,996 (145 ASD + 1,851 NT, the paper's design);
+<strong>spectrum pool</strong> = 1,648 (ASD + ADHD + other-NDD); <strong>non-ASD-NDD "rest"</strong> = 1,503 (the excluded
+children). Label overlap is real and reported: 61/145 ASD also carry an ADHD flag, 140/145 carry ≥1
+other-NDD flag (the priority rule assigns the primary label).</p>
+<p><strong>Feature space.</strong> The paper's fixed 51 retained conditions (<code>nmf_kept_conditions.txt</code>).</p>
+<p><strong>Residualization vs NT (shared across all analyses).</strong> For each condition we subtract a <strong>single,
+fixed NT-expected-rate vector</strong> from every child of every group. That vector is NT prevalence per
+condition, <strong>directly standardized</strong> over sex × is_black × education (target = full-cohort
+distribution; strata with &lt;5 NT pooled). Because the <em>same</em> NT vector is subtracted from all groups,
+the resulting latent space is comparable across ASD / ADHD / other-NDD. For matrix analyses the
+residual is clipped at 0 and rows are unit-L2-normalized (identical to the paper's
+<code>build_residual_matrix</code> / <code>normalize_for_nmf</code>, except the NT rate is computed once and shared).</p>
+<blockquote>
+<p><strong>You asked (about S2): how was the data residualized, and against what baseline?</strong> The procedure
+above is used everywhere. We build <strong>one</strong> NT-expected-rate vector by direct standardization —
+within each stratum of (sex × is_black × education) we take the NT prevalence of each condition,
+then average those stratum rates using the <em>whole cohort's</em> stratum weights (strata with &lt; 5 NT
+pooled). A child's residual is their raw condition vector minus this same vector, clipped at 0.
+Because the identical vector is subtracted from every child regardless of group, all groups land
+in one comparable space, and NT becomes ~0 by construction (it is excluded from the latent fit and
+appears only for context).</p>
+</blockquote>
+<p><strong>Fidelity check (why the comparison is valid).</strong> With this pipeline the <strong>ASD-only K=3</strong> bootstrap
+reproduces the paper's published numbers to the third decimal (cosine 0.819 / concordance 0.675 vs
+0.80 / 0.66). So differences downstream are attributable to <em>who is in the pool</em>, not to a
+re-parameterization.</p>
+<p><strong>Pre-registered §2 stability rules</strong> (unchanged from the paper): bootstrap matched cosine ≥ 0.80;
+dominant-assignment concordance ≥ 0.60; density floor 5 children per cell; window-keep if ≥60% of
+conditions clear the floor; density-artifact guard |r(temporal factor, per-window density)| &gt; 0.7;
+"null is publishable."</p>
+<hr>
+<h1 id="part-iii-figure-table-index">Part III — Figure &amp; table index</h1>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>figure / table</th>
+<th>file</th>
+<th>shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1</td>
+<td>learning curve</td>
+<td><code>results/s1_learning_curve.pdf</code></td>
+<td>bootstrap cosine &amp; concordance vs n, K=2/3</td>
+</tr>
+<tr>
+<td>S1</td>
+<td>anchors</td>
+<td><code>results/s1_anchors.csv</code>, <code>results/s1_learning_curve.csv</code></td>
+<td>ASD-only vs full-spectrum §2 bootstrap; curve points</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>embedding</td>
+<td><code>results/s2_embedding.pdf</code></td>
+<td>K=3 latent space, groups overlaid</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>separation</td>
+<td><code>results/s2_separation_auc.csv</code>, <code>results/s2_summary.txt</code></td>
+<td>AUCs (latent/raw/burden) per contrast</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>K-sweep</td>
+<td><code>results/s2_k_sweep.csv</code></td>
+<td>ASD-vs-other AUC across K=2..8</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>axis tilt</td>
+<td><code>results/s2_axis_group_means.csv</code></td>
+<td>per-axis compositional means by group</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>feasibility table</td>
+<td><code>results/s3_temporal_feasibility.csv</code></td>
+<td>density / thin% / cell-n / windows-pass, ASD vs spectrum, 7 schemes</td>
+</tr>
+<tr>
+<td>S4</td>
+<td>tensor scan</td>
+<td><code>results/s4_spectrum_tensor.csv</code></td>
+<td>CP stability + density-artifact guard, pool × scheme × rank</td>
+</tr>
+<tr>
+<td>S5</td>
+<td>forest + decomposition</td>
+<td><code>results/s5_forest.pdf</code></td>
+<td>raw vs shrunk δ (CI); shared-vs-ASD-specific bars</td>
+</tr>
+<tr>
+<td>S5</td>
+<td>per-condition table</td>
+<td><code>results/s5_asd_specific.csv</code>, <code>results/s5_summary.txt</code></td>
+<td>decomposition + survival flags for all 51 conditions</td>
+</tr>
+<tr>
+<td>S6</td>
+<td>staircase</td>
+<td><code>results/s6_staircase.pdf</code>, <code>results/s6_gradient_vs_step.csv</code></td>
+<td>four-group prevalence "staircase" by shape category</td>
+</tr>
+<tr>
+<td>S7</td>
+<td>cross-group scatter</td>
+<td><code>results/s7_contrast.pdf</code>, <code>results/s7_cross_group_contrast.csv</code></td>
+<td>δ-vs-rest × δ-vs-ADHD; quadrants = the specificity story</td>
+</tr>
+<tr>
+<td>S8</td>
+<td>temporal verdict table</td>
+<td><code>results/s8_temporal_normalized.csv</code>, <code>results/s8_summary.txt</code></td>
+<td>four approaches × ranks: stability / density guard / separation</td>
+</tr>
+</tbody>
+</table>
+<p>Prior Track-A/B figures referenced for convergence: <code>results/a1_profiles.pdf</code>,
+<code>results/a3b_ascertainment.pdf</code>, <code>results/b1_diff_heatmap.pdf</code>, <code>results/b2_rnorm_hist.pdf</code>.</p>
+<hr>
+<h1 id="part-iv-spectrum-analyses-s1s5-methods-evidence">Part IV — Spectrum analyses S1–S5 (methods &amp; evidence)</h1>
+<h2 id="s1-do-residualized-axes-get-more-reproducible-with-n">S1 — do residualized axes get more reproducible with n?</h2>
+<p><strong>Method.</strong> <code>s1_axis_robustness.py</code>. Fit K=3 NMF (sklearn <code>mu</code>/Frobenius, best of restarts) on the
+shared NT-residual. Run the full §2 bootstrap (B=200 resamples × 3 restarts): resample children,
+refit, Hungarian-match components to the reference (scipy <code>linear_sum_assignment</code>), report mean
+matched cosine, weakest matched component, and dominant-assignment concordance. Compare two fits —
+ASD-only (n=145, the paper's model) vs full spectrum (n=1,648) — and trace a <strong>learning curve</strong> by
+refitting on random spectrum subsamples of increasing size.</p>
+<table>
+<thead>
+<tr>
+<th>K=3 object</th>
+<th>boot cosine</th>
+<th>worst component</th>
+<th>concordance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ASD-only (n=145)</td>
+<td>0.819</td>
+<td><strong>0.764</strong> ✗ below floor</td>
+<td>0.675</td>
+</tr>
+<tr>
+<td>Full spectrum (n=1,648)</td>
+<td><strong>0.970</strong></td>
+<td><strong>0.960</strong></td>
+<td><strong>0.867</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The paper's own K=3 model sits <em>on</em> the §2 floor and its weakest axis (0.764) is <strong>below</strong> it — one
+of the three axes is not reproducible at n=145. Learning curve (K=3 cosine): 0.803 → 0.849 → 0.880 →
+0.906 → 0.939 → <strong>0.969</strong>, monotone. K=2 is already stable at 145 (cos ~0.89), so the gain is
+specific to the K the paper reports.</p>
+<p><strong>Verdict.</strong> Strong yes. Reproducibility is limited by <strong>n, not biology</strong>; inclusion turns
+floor-scraping axes into rock-solid ones. Figure: <code>results/s1_learning_curve.pdf</code>.</p>
+<h2 id="s2-does-asd-stand-out-in-the-shared-latent-space">S2 — does ASD stand out in the shared latent space?</h2>
+<p><strong>Method.</strong> <code>s2_asd_separation.py</code>. Learn K=3 on the full spectrum residual, then test whether ASD
+children are distinguishable from other groups with a 5-fold CV ROC-AUC (logistic + random forest,
+<code>clf_auc</code>). Every contrast is disciplined against a <strong>burden-only baseline</strong> (total code count) and
+an <strong>ADHD-vs-other-NDD calibration</strong> (are two non-ASD NDD groups even separable?). Significance by
+label permutation (<code>perm_null</code>, N=500). Sweep K=2..8.</p>
+<table>
+<thead>
+<tr>
+<th>contrast</th>
+<th>latent W (K=3)</th>
+<th>raw 51-residual</th>
+<th>burden only</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ASD vs other-NDD</strong> <em>(the specificity test)</em></td>
+<td><strong>0.587</strong> (perm p=0.006)</td>
+<td>0.624</td>
+<td>0.566</td>
+</tr>
+<tr>
+<td>ASD vs ADHD</td>
+<td>0.522</td>
+<td>0.588</td>
+<td>0.474</td>
+</tr>
+<tr>
+<td>ASD vs ADHD + other</td>
+<td>0.541</td>
+<td>0.620</td>
+<td>0.539</td>
+</tr>
+<tr>
+<td><em>ADHD vs other-NDD</em> <em>(calibration)</em></td>
+<td><em>0.638</em></td>
+<td><em>0.636</em></td>
+<td><em>0.569</em></td>
+</tr>
+</tbody>
+</table>
+<p>Real but weak: ASD-vs-other is statistically significant yet barely beats burden (0.587 vs 0.566),
+the raw residual beats the compressed latent (0.624 &gt; 0.587, so K=3 <em>loses</em> ASD info), and <strong>ADHD is
+more distinct from other-NDD (0.638) than ASD is</strong> — ASD is not the stand-out group. K-sweep flat
+(0.57–0.60). Where ASD does tilt (per-axis ASD − other-NDD): <strong>away from</strong> axis0 (generic
+somatic/sensory, −0.084) and <strong>toward</strong> axis2 (psychiatric: anxiety/mood, +0.084).</p>
+<p><strong>Verdict.</strong> ASD is a modest, statistically-real <em>tilt</em> within a shared NDD comorbidity space — not
+a distinct island, and less distinct than ADHD. Figures: <code>results/s2_embedding.pdf</code>, tables
+<code>s2_separation_auc.csv</code>, <code>s2_axis_group_means.csv</code>.</p>
+<h2 id="s3-does-inclusion-lift-the-temporal-density-ceiling">S3 — does inclusion lift the temporal density ceiling?</h2>
+<p><strong>Method.</strong> <code>s3_temporal_feasibility.py</code>. Re-run the a0 feasibility audit on the spectrum pool: for
+each age-binning scheme, build within-window NT-residual slices and count (condition × window) cells
+with &lt;5 children ("thin slices" — the unestimable cells that drove the A1/A2 temporal artifacts).
+Pool-agnostic by construction. <strong>Validation: the ASD-only column reproduces <code>a0_feasibility_table.csv</code>
+exactly.</strong></p>
+<table>
+<thead>
+<tr>
+<th>scheme (windows)</th>
+<th>ASD (145) density / thin% / cell-n / pass</th>
+<th><strong>spectrum (1,648)</strong> density / thin% / cell-n / pass</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full 0–18, 3y (6)</td>
+<td>6.2% / 53% / 4 / <strong>1/6</strong></td>
+<td>5.8% / <strong>12%</strong> / <strong>39</strong> / <strong>6/6</strong></td>
+</tr>
+<tr>
+<td>Truncate @12, 3y (4)</td>
+<td>7.7% / 45% / 6 / 1/4</td>
+<td>7.1% / 7% / 58 / <strong>4/4</strong></td>
+</tr>
+<tr>
+<td>Truncate @10, 2y (5)</td>
+<td>6.2% / 52% / 4 / 0/5</td>
+<td>5.7% / 11% / 39 / <strong>5/5</strong></td>
+</tr>
+<tr>
+<td>Dx-anchored 3w (3)</td>
+<td>8.5% / 39% / 8 / 1/3</td>
+<td>7.9% / 5% / 69 / <strong>3/3</strong></td>
+</tr>
+<tr>
+<td>Two-window pre/post (2)</td>
+<td>13.1% / 23% / 13 / 2/2</td>
+<td>12.5% / 2% / 125 / 2/2</td>
+</tr>
+</tbody>
+</table>
+<p>The key nuance: <strong>density-the-rate barely moves</strong> (~6%, even a touch lower — a broader pool adds
+low-utilization children) because that was never the constraint. <strong>Thin-slice fraction</strong> is, and it
+<strong>collapses</strong> (53% → 12%); median cell occupancy goes 4 → 39. The full six-window 0–18 factorization
+goes from <strong>1/6 → 6/6</strong> windows passing.</p>
+<p><strong>Verdict.</strong> Yes — a ≥3-window developmental factorization is now <em>estimable</em>. Critical caveat:
+feasibility ≠ validity (tested in S4). Table: <code>results/s3_temporal_feasibility.csv</code>.</p>
+<h2 id="s4-is-the-temporal-factorization-actually-valid-on-the-spectrum">S4 — is the temporal factorization actually valid on the spectrum?</h2>
+<p><strong>Method.</strong> <code>s4_spectrum_tensor.py</code>. Run the paper's exact nonnegative CP/PARAFAC (multiplicative
+updates, kernel copied verbatim from a1) on both pools, two binnings, rank scan R∈{2,3,4}, with the
+same bootstrap stability and the same <strong>density-artifact guard</strong> |r(temporal factor C, per-window
+density)| &gt; 0.7. Reproduces A1's failure on ASD-only as a check.</p>
+<table>
+<thead>
+<tr>
+<th>R=3, 6w</th>
+<th>ASD (145)</th>
+<th>spectrum (1,648)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>thin slices</td>
+<td>53%</td>
+<td><strong>12%</strong></td>
+</tr>
+<tr>
+<td>bootstrap cosine</td>
+<td>0.820</td>
+<td><strong>0.957</strong></td>
+</tr>
+<tr>
+<td>worst component</td>
+<td><strong>0.648</strong> ✗</td>
+<td><strong>0.933</strong></td>
+</tr>
+<tr>
+<td>concordance</td>
+<td>0.688</td>
+<td>0.853</td>
+</tr>
+<tr>
+<td><strong>|r(temporal, density)|</strong></td>
+<td><strong>0.887</strong> ✗</td>
+<td><strong>0.880</strong> ✗</td>
+</tr>
+<tr>
+<td>explained variance</td>
+<td>0.159</td>
+<td>0.157</td>
+</tr>
+</tbody>
+</table>
+<p>Two results, reported together: <strong>(1) estimability/stability are fixed</strong> by inclusion (worst
+component 0.648 → 0.933; same at dx-anchored 3w, 0.803 → 0.960). <strong>(2) Validity is not</strong> — the
+density-artifact guard <strong>fails at every pool × scheme × rank</strong> (|r| = 0.82–0.99), essentially
+unmoved by 10× the data (0.887 → 0.880). Explained variance stays ~0.15. Reason: the per-window
+density <em>envelope shape</em> (pediatric codes cluster in early childhood) is <strong>n-invariant</strong> — more
+children crush thin slices but don't change <em>when</em> codes occur.</p>
+<p><strong>Verdict.</strong> Inclusion converts an <em>unestimable</em> temporal model into a <em>stably estimable but still
+artifactual</em> one. This <strong>strengthens</strong> A1: the temporal-factor-as-artifact is structural, not
+small-sample. Constructive corollary: the failure is confined to the <strong>temporal (C) mode</strong> — the
+<strong>condition (B) mode is highly reproducible</strong>, so stable <em>co-occurrence</em> is learnable, developmental
+<em>timing</em> is not (without a per-child utilization denominator). Table: <code>results/s4_spectrum_tensor.csv</code>.
+S8 (Part VII) is the direct follow-up that tries three ways to remove this artifact.</p>
+<h2 id="s5-hierarchical-shrinkage-for-asd-specific-inference-the-payoff">S5 — hierarchical shrinkage for ASD-specific inference (the payoff)</h2>
+<p><strong>Method.</strong> <code>s5_hierarchical_shrinkage.py</code>. Decompose the elevation the study reports, per condition:</p>
+<pre><code>e_ASD(j) = s(j) + δ(j)
+(p_ASD − NT) = (p_rest − NT, shared NDD) + (p_ASD − p_rest, ASD-specific)
+</code></pre>
+<p>s(j) is pinned by the 1,503 excluded + 1,851 NT (tight); δ(j) is noisy (145 vs 1,503) and is
+stabilized by empirical-Bayes shrinkage across the 51 conditions (DerSimonian–Laird τ², normal-normal
+posterior).</p>
+<blockquote>
+<p><strong>You asked (about S5): explain the shrinkage top-level, and — since every formula was a point
+estimate — how are the confidence intervals actually generated?</strong> Four steps:</p>
+<ol>
+<li><strong>Decompose the elevation:</strong> <code>e_ASD = (p_rest − p_NT) + δ</code>. Shrinkage acts only on the
+   ASD-specific piece δ.</li>
+<li><strong>Estimate genuine between-condition spread.</strong> Treat the 51 δ's as noisy draws around a global
+   mean μ with true spread τ. The <strong>DerSimonian–Laird</strong> estimator (standard random-effects
+   meta-analysis) recovers τ² by method of moments: it takes the observed spread of the δ's
+   (Cochran's Q) and subtracts the part explained by each δ's own sampling noise <code>SE²</code>, leaving τ²
+   as the "real" variance. (Here μ = +0.012, τ = 0.033; SE_j = √[p_asd(1−p_asd)/145 +
+   p_rest(1−p_rest)/1503].)</li>
+<li><strong>Shrink each δ.</strong> The <strong>shrinkage factor</strong> <code>B = τ² / (τ² + SE²)</code> is the fraction of a
+   condition's variance that is signal: B ≈ 1 (tight, barely moved), B ≈ 0 (noisy, pulled to μ).
+   The shrunk estimate is <code>δ_shrunk = μ + B·(δ − μ)</code>.</li>
+<li><strong>The interval — the step you flagged.</strong> Shrinkage also <em>sharpens</em> uncertainty. The
+   <strong>posterior standard deviation</strong> is <code>post_sd = √(B · SE²)</code> (smaller than the raw SE, because
+   borrowing adds information). The interval is <code>δ_shrunk ± z · post_sd</code>, <code>z = 1.645</code> (90%) or
+   <code>1.96</code> (95%). So the CIs come from the posterior SD, not the raw SE. A condition <strong>"survives"</strong>
+   when its whole interval excludes 0.</li>
+</ol>
+</blockquote>
+<p><strong>Findings.</strong> Global ASD-vs-rest shift μ = <strong>+0.012</strong> (tiny on average), but real between-condition
+structure τ = <strong>0.033</strong> (Q = 117.7, df 50, p ≪ 0.001). Shrinkage: mean |δ| 0.040 → 0.022. <strong>7/51
+survive at 95%, 11/51 at 90%</strong> — the aggregate S2 signal was weak because it is <em>concentrated</em>, not
+diffuse.</p>
+<blockquote>
+<p><strong>You asked: I saw 5 conditions in the table but you said 7 — which are they?</strong> A threshold
+difference. <strong>7 survive at 95%; 11 at 90%</strong>; the earlier table showed the top 5 by magnitude. S5's
+survivor set (below) is the 90% set; S6/S7 build on it.</p>
+</blockquote>
+<p>Genuinely ASD-specific (90% CI excludes 0): <strong>excess</strong> — sleep +0.055, behavioral +0.052, epilepsy
++0.051, movement +0.045, congenital digestive +0.044, congenital musculoskeletal +0.041, personality
++0.038, diabetes +0.030, glaucoma +0.029; <strong>deficit</strong> — headache/migraine −0.049, pain −0.032. The
+epilepsy + congenital-anomaly excesses converge with Track B (B1).</p>
+<p>The reveal — the <em>largest</em> ASD-vs-NT signals are mostly generic NDD:</p>
+<table>
+<thead>
+<tr>
+<th>condition</th>
+<th>e (ASD vs NT)</th>
+<th>shared NDD</th>
+<th>ASD-specific δ (shrunk)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anxiety, stress &amp; somatoform</td>
+<td>+0.353</td>
+<td>+0.258 (<strong>73%</strong>)</td>
+<td>+0.042 (n.s.)</td>
+</tr>
+<tr>
+<td>Refractive errors</td>
+<td>+0.233</td>
+<td>+0.162 (70%)</td>
+<td>+0.033 (n.s.)</td>
+</tr>
+<tr>
+<td>Chronic upper respiratory</td>
+<td>+0.197</td>
+<td>+0.167 (85%)</td>
+<td>+0.019 (n.s.)</td>
+</tr>
+<tr>
+<td>Obesity &amp; overnutrition</td>
+<td>+0.192</td>
+<td>+0.160 (83%)</td>
+<td>+0.020 (n.s.)</td>
+</tr>
+<tr>
+<td>Hearing loss &amp; ear disorders</td>
+<td>+0.175</td>
+<td>+0.183 (<strong>104%</strong>)</td>
+<td>+0.005 (n.s.)</td>
+</tr>
+<tr>
+<td>Functional intestinal (constipation/IBS)</td>
+<td>+0.171</td>
+<td>+0.130 (76%)</td>
+<td>+0.022 (n.s.)</td>
+</tr>
+<tr>
+<td>Otitis media</td>
+<td>+0.168</td>
+<td>+0.135 (80%)</td>
+<td>+0.020 (n.s.)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Anxiety — the single largest ASD-vs-NT elevation and the top of S2's psychiatric axis — is 73% a
+generic-NDD signal.</strong> The whole somatic/sensory cluster is 70–104% shared. A study comparing only
+ASD to typical children would report all of these as headline "ASD-associated" comorbidities; only
+the excluded groups reveal they are not ASD-specific.</p>
+<p><strong>Verdict.</strong> The excluded groups turn "ASD has more of everything than typical kids" into a specific,
+defensible claim about <em>which</em> conditions distinguish ASD from the rest of the neurodevelopmental
+spectrum. Figure: <code>results/s5_forest.pdf</code>; table <code>results/s5_asd_specific.csv</code>.</p>
+<hr>
+<h1 id="part-v-what-changes-with-the-expanded-cohort-feasibility-opportunity">Part V — What changes with the expanded cohort (feasibility &amp; opportunity)</h1>
+<table>
+<thead>
+<tr>
+<th>dimension</th>
+<th>at n=145 (analytic)</th>
+<th>with the spectrum (1,648 / rest 1,503)</th>
+<th>net</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Axis estimation</strong></td>
+<td>K=3 worst component 0.764, below the team's own §2 floor</td>
+<td>0.960; every §2 number clears comfortably</td>
+<td><strong>feasibility unlocked</strong></td>
+</tr>
+<tr>
+<td><strong>Cross-group contrast</strong></td>
+<td>impossible by construction (NT residual makes NT trivial)</td>
+<td>ASD vs ADHD vs other-NDD directly testable</td>
+<td><strong>new question class</strong></td>
+</tr>
+<tr>
+<td><strong>Temporal factorization (estimability)</strong></td>
+<td>thin slices 53%, 1/6 windows pass</td>
+<td>12%, 6/6 pass</td>
+<td><strong>feasibility unlocked</strong></td>
+</tr>
+<tr>
+<td><strong>Temporal factorization (validity)</strong></td>
+<td>artifact (small-sample suspected)</td>
+<td>still artifact (|r(density)|≈0.88, n-invariant)</td>
+<td><strong>no gain — and now proven structural</strong></td>
+</tr>
+<tr>
+<td><strong>Co-occurrence (condition mode)</strong></td>
+<td>under-powered</td>
+<td>highly reproducible on spectrum</td>
+<td><strong>feasibility unlocked</strong></td>
+</tr>
+<tr>
+<td><strong>ASD-specific per-condition inference</strong></td>
+<td>not separable from generic NDD</td>
+<td>7–11/51 conditions isolated via shrinkage</td>
+<td><strong>new question class</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The two-part takeaway.</strong> (1) <strong>Feasibility</strong> — almost everything limited by sample size at n=145 is
+unlocked: axis robustness (S1), temporal <em>estimability</em> (S3), co-occurrence structure (S4 condition
+mode), stable per-condition prevalence (S5). The one thing inclusion does <strong>not</strong> rescue is temporal
+<em>validity</em> (S4/S8): that ceiling is structural, and more data proves it rather than fixing it.
+(2) <strong>Opportunity</strong> — inclusion makes two genuinely new question-classes askable, both keeping the
+ASD focus: <em>how does ASD differ from other NDD</em> (S2), and <em>which specific comorbidities are truly
+ASD-specific vs shared NDD</em> (S5–S7). Neither is possible against an NT-only comparator.</p>
+<hr>
+<h1 id="part-vi-honest-caveats-s1s5">Part VI — Honest caveats (S1–S5)</h1>
+<ul>
+<li><strong>Label overlap</strong> from the priority rule: ASD-vs-other contrasts are between <em>primary-label</em> groups
+  with shared underlying flags; if anything this understates a "pure" ASD contrast.</li>
+<li><strong>Residualizing vs NT makes NT trivial by construction</strong> — NT is excluded from the latent fit (its
+  residual ≈ 0) and appears only for context in the embedding.</li>
+<li><strong>Burden confound</strong> persists (ASD carries more codes); we report the burden baseline beside every
+  contrast rather than adjusting it away (burden is part of the phenotype).</li>
+<li><strong>Ascertainment</strong> still differs across groups — no per-child utilization denominator (the Track-A
+  A3b ceiling). Coding <em>rate</em> cannot be divided out; a modest AUC could be attenuated real signal or
+  residual ascertainment.</li>
+<li><strong>Robustness ≠ validity</strong> (S1): the respiratory/atopic axis is the same likely artifact Track B
+  flagged — more data makes it more <em>stably estimated</em>, not more real.</li>
+<li><strong>S5 δ</strong> is not further demographically adjusted (NT standardization cancels; both groups are NDD so
+  are more comparable than vs NT); single τ² across conditions; shrinkage <em>is</em> the multiplicity
+  control (the 7 at 95% are the conservative set), not FDR.</li>
+</ul>
+<hr>
+<h1 id="part-vii-per-condition-specificity-cross-group-contrast-and-developmental-timing-s6s8">Part VII — Per-condition specificity, cross-group contrast, and developmental timing (S6–S8)</h1>
+<p>S1–S5 established that ASD's comorbidity signal is concentrated in a specific set (S5). The three
+follow-ups here sharpen that set from three angles. Each reuses the Part II residualization and, for
+S6/S7, the Part IV/S5 shrinkage machinery verbatim; the definitions below are only the pieces new to
+S6–S8.</p>
+<p><strong>Definitions used in S6–S8.</strong>
+- <strong>Elevation vs NT</strong> <code>e_g = p_g − p_NT</code>; <strong>ASD-specific deviation</strong> <code>δ = p_ASD − p_rest</code> (as in S5).
+- <strong>Shared fraction</strong> <code>shared_frac = (p_rest − p_NT) / (p_ASD − p_NT)</code> — the fraction of ASD's total
+  elevation over NT the rest of the spectrum already accounts for. <code>≈0</code> → abrupt <strong>step</strong>; <code>≈0.5</code> →
+  <strong>gradient</strong>; <code>≳0.85</code> → generic NDD.
+- <strong>Cochran–Armitage trend z</strong> — linear-trend test across the <em>ordered</em> groups (scores NT=0,
+  other-NDD=1, ADHD=2, ASD=3). The four raw prevalences are always shown alongside so the true shape
+  is visible.
+- <strong>Three cross-group contrasts (S7)</strong>, each with its own DerSimonian–Laird τ² (identical to S5):
+  <code>delta_vs_rest = p_ASD − p_rest</code> (= S5); <code>delta_vs_ADHD = p_ASD − p_ADHD</code> (the hard test — ASD vs
+  its nearest neighbour, isolating <em>autism</em> from <em>attention</em>); <code>delta_ADHD_vs_other = p_ADHD − p_other</code>
+  (calibration).
+- <strong>CP / PARAFAC + guards (S8)</strong> — nonnegative CP factorizes the child × window × condition tensor
+  into R rank-1 triples (child-loading, condition vector, <strong>temporal factor</strong>). A component is real
+  only if it is <strong>stable</strong> (bootstrap cosine ≥0.80, concordance ≥0.60), <strong>artifact-free</strong>
+  (|r(temporal factor, per-window density envelope)| ≤ 0.7), <em>and</em> <strong>group-separating</strong> (best
+  per-component ASD-vs-rest child-loading ROC-AUC ≥ 0.60).</p>
+<h2 id="s6-per-condition-specificity-gradient-vs-step">S6 — per-condition specificity: gradient vs. step</h2>
+<p><code>s6_gradient_vs_step.py</code>. Survival (from S5's shrunk δ) is checked <strong>first</strong>, so an ASD-specific
+signal is never hidden by a coincidentally small <code>e_ASD</code>. Six shape categories: <strong>STEP</strong> (δ survives,
+δ&gt;0, shared_frac&lt;0.5 — ASD-specific excess jump), <strong>STEP-DOWN</strong> (δ survives, δ&lt;0 — ASD-specific
+deficit), <strong>GRADIENT+</strong> (δ survives, δ&gt;0, shared_frac≥0.5 — graded continuum ASD is boosted atop),
+<strong>SHARED</strong> (δ n.s., |e_ASD|≥0.03, shared_frac≥0.5 — generic-NDD gradient), <strong>ASD-LEAN</strong> (δ n.s.,
+|e_ASD|≥0.03, shared_frac&lt;0.5), <strong>FLAT</strong> (δ n.s. and |e_ASD|&lt;0.03).</p>
+<p><strong>Category counts (all 51):</strong> STEP 8 · STEP-DOWN 2 · GRADIENT+ 1 · SHARED 34 · ASD-LEAN 4 · FLAT 2.
+The <strong>11 ASD-specific conditions</strong> (δ surviving at 90%) split cleanly: <strong>8 steps up, 2 steps down,
+only 1 true gradient</strong> — ASD-specificity, where it exists, is overwhelmingly step-shaped.</p>
+<p><strong>STEP — ASD-specific excess (rest of the spectrum near NT):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>e_ASD</th>
+<th>NT → oth → ADHD → ASD</th>
+<th>δ_shrunk</th>
+<th>shared_frac</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Movement &amp; other episodic disorders</td>
+<td>+0.142</td>
+<td>0.010 · 0.072 · 0.089 · 0.152</td>
+<td>+0.045</td>
+<td>0.48</td>
+</tr>
+<tr>
+<td>Congenital musculoskeletal &amp; limb anomalies</td>
+<td>+0.135</td>
+<td>0.085 · 0.137 · 0.157 · 0.221</td>
+<td>+0.041</td>
+<td>0.44</td>
+</tr>
+<tr>
+<td>Behavioral syndromes (eating, sleep)</td>
+<td>+0.125</td>
+<td>0.019 · 0.045 · 0.084 · 0.145</td>
+<td>+0.052</td>
+<td>0.32</td>
+</tr>
+<tr>
+<td>Epilepsy &amp; seizures</td>
+<td>+0.118</td>
+<td>0.006 · 0.035 · 0.061 · 0.124</td>
+<td>+0.051</td>
+<td>0.33</td>
+</tr>
+<tr>
+<td>Personality disorders</td>
+<td>+0.090</td>
+<td>0.006 · 0.017 · 0.084 · 0.097</td>
+<td>+0.038</td>
+<td>0.40</td>
+</tr>
+<tr>
+<td>Congenital digestive anomalies</td>
+<td>+0.090</td>
+<td>0.048 · 0.065 · 0.072 · 0.138</td>
+<td>+0.044</td>
+<td>0.21</td>
+</tr>
+<tr>
+<td>Diabetes &amp; glucose regulation</td>
+<td>+0.052</td>
+<td>0.017 · 0.028 · 0.035 · 0.069</td>
+<td>+0.030</td>
+<td>0.27</td>
+</tr>
+<tr>
+<td>Glaucoma</td>
+<td>+0.043</td>
+<td>0.019 · 0.030 · 0.019 · 0.062</td>
+<td>+0.029</td>
+<td>0.15</td>
+</tr>
+</tbody>
+</table>
+<p>A coherent <strong>congenital + neurological + behavioral</strong> cluster — the most mechanistically "ASD" set,
+converging with S5 and Track B.</p>
+<p><strong>STEP-DOWN — ASD-specific deficit (ASD <em>below</em> the elevated spectrum):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>e_ASD</th>
+<th>NT → oth → ADHD → ASD</th>
+<th>δ_shrunk</th>
+<th>shared_frac</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Headache &amp; migraine</td>
+<td>−0.020</td>
+<td>0.082 · 0.118 · 0.175 · <strong>0.062</strong></td>
+<td>−0.049</td>
+<td>−2.87</td>
+</tr>
+<tr>
+<td>Pain syndromes</td>
+<td>−0.020</td>
+<td>0.061 · 0.086 · 0.087 · <strong>0.041</strong></td>
+<td>−0.032</td>
+<td>−1.29</td>
+</tr>
+</tbody>
+</table>
+<p>Headache <em>rises</em> across the rest of the spectrum then <strong>drops at ASD to below NT</strong>. ASD looks
+unremarkable vs NT (<code>e_ASD ≈ 0</code>) <em>precisely because</em> it fails to show the spectrum-wide elevation;
+the specificity is only visible against the rest (δ = −0.049 survives). These are the B-III targets
+(interoception / pain reporting), and being <em>deficits</em> they run against the "ASD is coded more"
+confound.</p>
+<p><strong>GRADIENT+ — the one true graded-plus-boost condition:</strong> organic sleep disorders, a clean monotone
+climb <code>0.112 → 0.208 → 0.309 → 0.372</code> (CA_trend_z = +12.7) with the rest exactly halfway
+(shared_frac 0.51) <em>and</em> a surviving ASD-specific boost.</p>
+<p><strong>SHARED (34 conditions):</strong> most of ASD's raw elevations are not specific — the whole
+somatic/sensory cluster (refractive, otitis, hearing, asthma, obesity, dental, functional GI) is
+strongly elevated in ASD (e_ASD up to +0.35) with δ not surviving and shared_frac ≥ 0.5. Two worth
+flagging: <strong>Anxiety</strong> <code>0.137 · 0.309 · 0.517 · 0.483</code> (ASD's largest elevation — but <strong>peaks in
+ADHD</strong>) and <strong>Mood</strong> <code>0.070 · 0.114 · 0.237 · 0.110</code> (also peaks in ADHD; ASD barely above other-NDD).</p>
+<p>Figure: <code>results/s6_staircase.pdf</code>; full table <code>results/s6_gradient_vs_step.csv</code>.</p>
+<h2 id="s7-cross-group-contrast-is-asd-specific-even-against-adhd">S7 — cross-group contrast: is ASD specific even against ADHD?</h2>
+<p><code>s7_cross_group_contrast.py</code>. S6 asks whether ASD differs from the <em>pooled</em> rest; pooling can
+<em>manufacture</em> apparent specificity (a condition common in both ASD and ADHD but rare in other-NDD
+looks "ASD-specific vs rest" only because other-NDD dilutes the pool). S7 asks the harder question:
+does that specificity survive when the comparator is <strong>ADHD alone</strong>?</p>
+<p><strong>Label counts (all 51):</strong> AUTISM-SPECIFIC 2 · SHARED-WITH-ADHD 7 · ADHD-PEAK 4 · ASD-DEFICIT 0 ·
+SHARED-NDD 36 · FLAT 2. (τ: vs-rest 0.033, vs-ADHD 0.035, ADHD-vs-other 0.030 — the calibration τ is
+non-zero, so ADHD and other-NDD are themselves per-condition distinguishable.)</p>
+<blockquote>
+<p><strong>The headline result: of the 11 conditions ASD-specific vs the pooled rest (S5/S6), only 2 survive
+the ADHD-alone test.</strong> Pooling other-NDD into "the rest" inflated the apparent specificity of the
+other 9.</p>
+</blockquote>
+<p><strong>AUTISM-SPECIFIC — ASD exceeds even ADHD (survives):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>NT → oth → ADHD → ASD</th>
+<th>δ vs rest</th>
+<th>δ vs ADHD</th>
+<th>peak</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Epilepsy &amp; seizures</td>
+<td>0.006 · 0.035 · 0.061 · 0.124</td>
+<td>+0.051*</td>
+<td>+0.037*</td>
+<td>ASD</td>
+</tr>
+<tr>
+<td>Glaucoma</td>
+<td>0.019 · 0.030 · 0.019 · 0.062</td>
+<td>+0.029*</td>
+<td>+0.032*</td>
+<td>ASD</td>
+</tr>
+</tbody>
+</table>
+<p>Only <strong>epilepsy</strong> and <strong>glaucoma</strong> remain specific to autism beyond attention. Epilepsy is the
+strongest and most mechanistically expected (shared genetic/neurological substrate with autism);
+glaucoma is smaller and rarer and warrants a cautious read.</p>
+<p><strong>SHARED-WITH-ADHD (7):</strong> congenital digestive anomalies, movement disorders, behavioral
+(eating/sleep) syndromes, congenital musculoskeletal anomalies, organic sleep, diabetes, personality
+disorders. Each survives vs the pooled rest but its ASD-vs-ADHD deviation does <em>not</em> survive
+(δ_vs_ADHD +0.008 to +0.038, n.s.) — ASD and ADHD are elevated <em>together</em> above other-NDD. These are
+<strong>neurodevelopmental</strong> (shared by the two higher rungs), not autism-specific — the group most
+vulnerable to the pooling artifact, honestly reclassified.</p>
+<p><strong>ADHD-PEAK — ADHD exceeds ASD (survives) (4):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>NT → oth → ADHD → ASD</th>
+<th>δ vs ADHD</th>
+<th>peak</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Headache &amp; migraine</td>
+<td>0.082 · 0.118 · 0.175 · 0.062</td>
+<td>−0.073*</td>
+<td>ADHD</td>
+</tr>
+<tr>
+<td>Mood disorders</td>
+<td>0.070 · 0.114 · 0.237 · 0.110</td>
+<td>−0.070*</td>
+<td>ADHD</td>
+</tr>
+<tr>
+<td>Acute upper respiratory infection</td>
+<td>0.659 · 0.817 · 0.818 · 0.710</td>
+<td>−0.046*</td>
+<td>ADHD</td>
+</tr>
+<tr>
+<td>Pain syndromes</td>
+<td>0.061 · 0.086 · 0.087 · 0.041</td>
+<td>−0.034*</td>
+<td>ADHD</td>
+</tr>
+</tbody>
+</table>
+<p>ADHD, not ASD, is the most affected group. Headache and pain are the same two conditions S6 flagged
+as ASD-specific <em>deficits</em> — here the deficit is sharpest against ADHD (the peak group), so S7 labels
+them ADHD-PEAK; both facts are true and consistent (this is why the ASD-DEFICIT count is 0 — the
+label logic checks the ADHD contrast first). Anxiety and mood, the largest raw ASD elevations, also
+crest at ADHD.</p>
+<p>Figure: <code>results/s7_contrast.pdf</code> (δ-vs-rest × δ-vs-ADHD; upper-right = autism-specific beyond
+attention; below the x-axis = ADHD-peaked). Full table <code>results/s7_cross_group_contrast.csv</code>.</p>
+<h2 id="s8-m-ii-developmental-timing-can-a-temporal-signal-survive-ascertainment">S8 (M-II) — developmental timing: can a temporal signal survive ascertainment?</h2>
+<p><code>s8_temporal_normalized.py</code>. S4 showed a plain CP on the spectrum tensor is <em>estimable</em> but <em>invalid</em>
+(temporal factor tracks the density envelope). S8 attacks that artifact three ways, all built around
+it, and scores each vs the S4 baseline on all four criteria (estimable / stable / artifact-free /
+group-separating).</p>
+<blockquote>
+<p><strong>You flagged the ascertainment artifact yourself.</strong> S8 is built entirely around it: all three
+methods are attempts to remove it, and the density guard is the arbiter. A method that is stable
+and artifact-free but does <em>not</em> separate groups is a <strong>clean negative</strong>, itself a publishable
+methods result.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>What it changes</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BASELINE</strong></td>
+<td>S4's absolute-age 6-window residual tensor</td>
+<td>reproduces the artifact</td>
+</tr>
+<tr>
+<td><strong>(a) REL-TIMING</strong></td>
+<td>each event placed in a quartile of <em>that child's own</em> first→last-code span — removes the population envelope by construction</td>
+<td>artifact persists</td>
+</tr>
+<tr>
+<td><strong>(b) DENS-EQUAL</strong></td>
+<td>each age-slice rescaled to equal total mass, so no factor can be driven by high-volume windows</td>
+<td>artifact persists</td>
+</tr>
+<tr>
+<td><strong>(c) UTIL-NORM</strong></td>
+<td>each cell = the condition's <em>share</em> of that child's coding in the window (count ÷ child's total events), NT-residualized — divides out coding volume cell-by-cell</td>
+<td>de-confounds, but no ASD signal</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Verdict table (spectrum, n = 1,648; ASD = 145):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>R</th>
+<th>expl. var</th>
+<th>boot cos</th>
+<th>concord.</th>
+<th>|r(density)|</th>
+<th>separation AUC</th>
+<th>verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BASELINE</td>
+<td>2</td>
+<td>0.133</td>
+<td>0.998</td>
+<td>0.927</td>
+<td><strong>0.896</strong></td>
+<td>0.522</td>
+<td>unusable (artifact)</td>
+</tr>
+<tr>
+<td>BASELINE</td>
+<td>3</td>
+<td>0.157</td>
+<td>0.953</td>
+<td>0.844</td>
+<td><strong>0.880</strong></td>
+<td>0.533</td>
+<td>unusable (artifact)</td>
+</tr>
+<tr>
+<td>REL-TIMING</td>
+<td>2</td>
+<td>0.166</td>
+<td>0.994</td>
+<td>0.921</td>
+<td><strong>0.974</strong></td>
+<td>0.555</td>
+<td>unusable (artifact)</td>
+</tr>
+<tr>
+<td>REL-TIMING</td>
+<td>3</td>
+<td>0.197</td>
+<td>0.988</td>
+<td>0.876</td>
+<td><strong>0.974</strong></td>
+<td>0.574</td>
+<td>unusable (artifact)</td>
+</tr>
+<tr>
+<td>DENS-EQUAL</td>
+<td>2</td>
+<td>0.111</td>
+<td>0.998</td>
+<td>0.930</td>
+<td><strong>0.957</strong></td>
+<td>0.519</td>
+<td>unusable (artifact)</td>
+</tr>
+<tr>
+<td>DENS-EQUAL</td>
+<td>3</td>
+<td>0.136</td>
+<td>0.902</td>
+<td>0.724</td>
+<td><strong>0.970</strong></td>
+<td>0.531</td>
+<td>unusable (artifact)</td>
+</tr>
+<tr>
+<td><strong>UTIL-NORM</strong></td>
+<td><strong>2</strong></td>
+<td>0.102</td>
+<td>0.998</td>
+<td>0.988</td>
+<td><strong>0.684</strong> ✓</td>
+<td><strong>0.540</strong></td>
+<td><strong>clean-negative</strong></td>
+</tr>
+<tr>
+<td>UTIL-NORM</td>
+<td>3</td>
+<td>0.132</td>
+<td>0.946</td>
+<td>0.893</td>
+<td>0.781</td>
+<td>0.573</td>
+<td>unusable (artifact)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>The result: no approach yields a real (stable + artifact-free + group-separating) temporal
+factor.</strong> Only cell-by-cell utilization normalization (UTIL-NORM, rank 2) clears the density guard
+while staying stable — and <em>there</em>, the temporal factor's ASD-vs-rest separation is 0.540, a
+coin-flip. Once ascertainment is divided out, developmental <strong>timing</strong> carries no ASD signal beyond
+the marginal comorbidity rates S5–S7 already capture.</p>
+</blockquote>
+<p>Two honest limits: (i) UTIL-NORM clears the 0.70 guard only at rank 2 and only narrowly (|r|=0.684);
+at rank 3 it drifts back to 0.781 — the de-confounding is real but fragile. (ii) The conclusion is
+nonetheless robust: separation AUC never exceeds ~0.57 anywhere, artifact removed or not. Notably,
+within-child relative timing (the a priori most promising fix) leaves the density correlation
+essentially untouched (|r|=0.974): even relative to a child's own span, the first quartile carries
+disproportionate coding, and the factor locks onto it. Full table: <code>results/s8_temporal_normalized.csv</code>.</p>
+<hr>
+<h1 id="part-viii-unified-interpretation-and-s6s8-caveats">Part VIII — Unified interpretation and S6–S8 caveats</h1>
+<p>Read together, the eight analyses give a consistent, honest picture of where ASD's comorbidity signal
+lives:</p>
+<ul>
+<li><strong>It is marginal, not temporal.</strong> All the signal is in <em>which</em> conditions are elevated (rates), none
+  in <em>when</em> they appear (timing). S8 is a clean negative — useful, because it closes off the
+  temporal-modeling direction rather than leaving it an open promissory note. This is S4 confirmed and
+  extended.</li>
+<li><strong>The specific signal is small and shrinks under scrutiny.</strong> ASD-specific vs the pooled rest = 11
+  conditions (S5/S6), overwhelmingly step-shaped. ASD-specific vs <strong>ADHD alone</strong> = <strong>2</strong> (epilepsy,
+  glaucoma; S7). Each tightening of the comparator removes conditions, exactly as expected if much of
+  ASD's profile is shared neurodevelopmental liability.</li>
+<li><strong>The largest elevations are shared — and often peak in ADHD.</strong> Anxiety, mood, and the whole
+  somatic/sensory cluster are ASD's biggest raw elevations but are spectrum-wide; anxiety and mood
+  actually crest at ADHD.</li>
+</ul>
+<p>For the inclusion case this is the payoff argued in Part I: the excluded children let a single
+undifferentiated "elevated in ASD" list be split into (a) a short, mechanistically-interpretable
+autism-specific core (epilepsy above all), (b) a broad shared neurodevelopmental gradient, and (c) a
+definitive statement that timing adds nothing — none of which the ASD-vs-NT design can produce. Both
+framings held open throughout are true, for different conditions.</p>
+<p><strong>A classification nuance worth knowing (S6).</strong> The two deficits (headache, pain) were initially
+mis-classified as FLAT because their ASD-vs-NT elevation is ~0. That was wrong — their <code>e_ASD ≈ 0</code>
+<em>is</em> the finding (ASD fails to join the spectrum-wide rise). The classifier now checks δ-survival
+<strong>first</strong>, so a surviving deficit lands in STEP-DOWN regardless of its NT elevation. Point estimates
+and S5 are unchanged — only the labeling.</p>
+<p><strong>S6–S8-specific caveats</strong> (in addition to Part VI):
+- <strong>Ordering is an assumption.</strong> NT &lt; other-NDD &lt; ADHD &lt; ASD is clinically reasonable but imposed;
+  every table carries the four raw prevalences so the actual shape is inspectable.
+- <strong>Empirical-Bayes shrinkage is plug-in.</strong> DerSimonian–Laird treats τ² as known, making intervals
+  mildly anticonservative — well-calibrated screening, not final inference (a full Bayesian model,
+  agenda item M-III, would propagate τ² uncertainty).
+- <strong>The ascertainment ceiling still applies to the positive findings.</strong> Utilization is not divided out
+  of S5–S7. S8's UTIL-NORM shows a cell-by-cell divide-out is possible but fragile; agenda item M-I
+  would build it as a full marginal de-confounder. Until then the two <strong>deficits</strong> (which run against
+  the more-coding direction) and the <strong>AUTISM-SPECIFIC</strong> epilepsy signal (large, mechanistically
+  expected) are the most confound-robust results.</p>
+<hr>
+<h1 id="follow-on">Follow-on</h1>
+<p>The proposed next questions (biological B-I…B-V, methodological M-I…M-IV) and their current status
+live in <code>RESEARCH_AGENDA.md</code>. As of 2026-09-18: B-I (S6), the cross-group contrast (S7), and M-II
+(S8, clean negative) are done; <strong>M-I</strong> (a per-child utilization denominator as a full marginal
+ascertainment de-confounder) is the top remaining priority — S8 showed the cell-by-cell divide-out
+works but is fragile, so M-I is needed to de-confound S2/S5/S6/S7 rather than just the tensor.</p>
+<div class="footer">Generated from <code>SPECTRUM.md</code> ·
+BBC ASD revision · spectrum analyses.</div>
+</body></html>

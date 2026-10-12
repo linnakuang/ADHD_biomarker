@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASD Comorbidity Study — Analysis & Data Memo</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.6; color: #1a1a1a; background: #fafafa;
+  max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem 6rem;
+  -webkit-font-smoothing: antialiased;
+}
+h1 { font-size: 1.9rem; line-height: 1.25; border-bottom: 3px solid #2c3e50; padding-bottom: .5rem; margin-top: 0; }
+h2 { font-size: 1.4rem; margin-top: 2.5rem; border-bottom: 1px solid #ddd; padding-bottom: .3rem; color: #2c3e50; }
+h3 { font-size: 1.12rem; margin-top: 1.8rem; color: #34495e; }
+p, li { font-size: 0.96rem; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #eef1f4; padding: .12em .38em; border-radius: 4px; font-size: 0.86em;
+  font-family: "SF Mono", "Cascadia Code", Menlo, Consolas, monospace; }
+pre { background: #1e1e2e; color: #e5e7eb; padding: 1rem 1.2rem; border-radius: 8px;
+  overflow-x: auto; font-size: 0.82rem; line-height: 1.45; }
+pre code { background: none; color: inherit; padding: 0; }
+table { border-collapse: collapse; width: 100%; margin: 1.2rem 0; font-size: 0.86rem;
+  background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+th, td { border: 1px solid #e2e5e9; padding: .5rem .7rem; text-align: left; vertical-align: top; }
+th { background: #2c3e50; color: #fff; font-weight: 600; }
+tr:nth-child(even) td { background: #f6f8fa; }
+td[align="right"], th[align="right"] { text-align: right; }
+blockquote { border-left: 4px solid #c8ced4; margin: 1rem 0; padding: .3rem 1rem; color: #555; background:#f2f4f6; }
+hr { border: none; border-top: 1px solid #ddd; margin: 2.5rem 0; }
+.toc { background: #fff; border: 1px solid #e2e5e9; border-radius: 8px; padding: 1rem 1.4rem;
+  margin: 1.5rem 0; font-size: 0.9rem; }
+.toc > ul { margin: 0; padding-left: 1.1rem; }
+.toc ul { list-style: none; padding-left: 1rem; }
+.toc a { color: #34495e; }
+strong { color: #111; }
+</style>
+</head><body>
+<h1 id="asd-comorbidity-study-analysis-data-memo">ASD Comorbidity Study — Analysis &amp; Data Memo</h1>
+<p><strong>Scope.</strong> A methods-style inventory of the <em>current</em> code and data state in
+<code><PROJECT_ROOT></code> (the revision working copy), independent of the
+June manuscript draft. It catalogs (1) the composition of the data, (2) how the
+modeling matrix is built and how sparse it is, (3) every analysis that has been
+run, and (4) every method that has been tried. All counts below were recomputed
+directly from the data files (the study's own scripts hardcode Windows paths and
+do not run as-is here); figures were derived with pandas/numpy against the
+<code>preprocessing/results/</code> and <code>NDD datasets</code> files.</p>
+<p><em>Prepared 2026-08-28.</em></p>
+<div class="toc">
+<ul>
+<li><a href="#asd-comorbidity-study-analysis-data-memo">ASD Comorbidity Study — Analysis &amp; Data Memo</a><ul>
+<li><a href="#1-data-composition">1. Data composition</a><ul>
+<li><a href="#11-cohort-structure-and-asd-ascertainment">1.1 Cohort structure and ASD ascertainment</a></li>
+<li><a href="#12-sample-attrition-full-3499-analytic-1996">1.2 Sample attrition: full (3,499) → analytic (1,996)</a></li>
+<li><a href="#13-ndd-labels-encoding-and-gradation">1.3 NDD labels: encoding and gradation</a></li>
+<li><a href="#14-what-ehr-data-is-actually-measured">1.4 What EHR data is actually measured</a></li>
+<li><a href="#15-condition-mapping-and-codebook">1.5 Condition mapping and codebook</a></li>
+<li><a href="#16-maternal-and-demographic-covariates">1.6 Maternal and demographic covariates</a></li>
+</ul>
+</li>
+<li><a href="#2-the-modeling-matrix-construction-and-sparsity">2. The modeling matrix: construction and sparsity</a><ul>
+<li><a href="#21-feature-selection-residualization-normalization">2.1 Feature selection, residualization, normalization</a></li>
+<li><a href="#22-sparsity-measured">2.2 Sparsity — measured</a></li>
+</ul>
+</li>
+<li><a href="#3-what-has-been-run-pipeline-inventory">3. What has been run (pipeline inventory)</a></li>
+<li><a href="#4-what-has-been-tried-method-catalogue">4. What has been tried (method catalogue)</a><ul>
+<li><a href="#41-primary-nmf-latent-comorbidity-profiles-within-asd">4.1 Primary NMF — latent comorbidity profiles within ASD</a></li>
+<li><a href="#42-tensor-nmf-the-time-axis-tried-appropriately-relegated">4.2 Tensor NMF — the time axis (tried, appropriately relegated)</a></li>
+<li><a href="#43-nmf-sensitivity-perinatal-confounding">4.3 NMF sensitivity — perinatal confounding</a></li>
+<li><a href="#44-nmf-pre-diagnosis-check-early-recognition-support">4.4 NMF pre-diagnosis check — early-recognition support</a></li>
+<li><a href="#45-association-developmental-window-analysis">4.5 Association / developmental-window analysis</a></li>
+<li><a href="#46-descriptive-connectivity-exploration-this-gus-folder">4.6 Descriptive / connectivity exploration (this gus/ folder)</a></li>
+</ul>
+</li>
+<li><a href="#5-observations-and-opportunities">5. Observations and opportunities</a></li>
+<li><a href="#appendix-file-map">Appendix — file map</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<h2 id="1-data-composition">1. Data composition</h2>
+<h3 id="11-cohort-structure-and-asd-ascertainment">1.1 Cohort structure and ASD ascertainment</h3>
+<p>The Boston Birth Cohort postnatal follow-up has EHR pulls for <strong>3,500 children</strong>.
+One child (ID 3490, a questionable ASD case with a missing NDD value) is dropped,
+leaving <strong>3,499</strong> with a definite label.</p>
+<p><strong>Two variables must be kept separate here.</strong> (i) The <strong>category</strong> (<code>ndd_status</code> /
+<code>label</code>) is a single-label partition — every child sits in <strong>exactly one</strong> category,
+so the table below is mutually exclusive and no child is double-counted. (ii) The
+<strong>underlying diagnosis flags</strong> (the binary <code>ASD</code>, <code>ADHD</code>, <code>ID</code>, … columns) are
+<strong>not</strong> mutually exclusive — one child can carry several. The category is derived
+from the flags by an <strong>ASD &gt; ADHD &gt; other-NDD &gt; neurotypical priority rule</strong>: a child
+positive for <em>both</em> ASD and ADHD is assigned to ASD and counted only there.</p>
+<table>
+<thead>
+<tr>
+<th>Category (single-label)</th>
+<th style="text-align: right;">n</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Neurotypical (NT)</td>
+<td style="text-align: right;">1,851</td>
+<td>No ASD and no other recorded NDD</td>
+</tr>
+<tr>
+<td>ASD</td>
+<td style="text-align: right;">145</td>
+<td>Chart-confirmed ASD — <strong>wins over any co-occurring NDD flag</strong></td>
+</tr>
+<tr>
+<td>ADHD (no ASD)</td>
+<td style="text-align: right;">573</td>
+<td>ADHD flag present, ASD absent</td>
+</tr>
+<tr>
+<td>Other DSM-5 NDD (no ASD/ADHD)</td>
+<td style="text-align: right;">930</td>
+<td>Conduct, ID, communication, learning, motor, tic, or misc. DD</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong>3,499</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Worked example of the two-variable distinction:</em> <strong>634</strong> children carry the ADHD
+diagnosis flag, but <strong>61</strong> of them are also ASD-positive. Those 61 are counted in
+the ASD row (145), so the ADHD <strong>category</strong> row is the remaining <strong>634 − 61 = 573</strong>.
+The flag "ADHD" (634) is therefore not the same as the category "ADHD, no ASD"
+(573). This is also why 140 of the 145 ASD children carry ≥ 1 additional NDD flag
+(§1.3) despite ASD being a single, exclusive <em>category</em>.</p>
+<p><strong>ASD ascertainment.</strong> 198 children were flagged with any ASD ICD code; chart
+review by a developmental pediatrician confirmed 139, and 6 more were added (5
+from the BMC ASD registry, 1 from a prior EHR pull), for <strong>145 confirmed ASD
+cases</strong>. This is the number that flows through every ASD-side analysis.</p>
+<h3 id="12-sample-attrition-full-3499-analytic-1996">1.2 Sample attrition: full (3,499) → analytic (1,996)</h3>
+<p>The analytic cohort (<code>BBC_patients_analytic.csv</code>) is <strong>1,996 children = 145 ASD +
+1,851 NT</strong>. The move from 3,499 to 1,996 drops <strong>exactly 1,503 children — the
+entire NDD-but-not-ASD population</strong> (573 ADHD-without-ASD + 930 other-NDD):</p>
+<ul>
+<li>The exclusion is <strong>by design</strong>, not data quality. <strong>Every ASD (145/145) and
+  every NT (1,851/1,851) is retained</strong> — none lost to missing covariates, missing
+  events, or short records.</li>
+<li>It happens at label assignment in <code>preprocessing.py</code>: only ASD cases and pure-NT
+  cases receive a label; ADHD-without-ASD and other-NDD-without-ASD keep
+  <code>label = NA</code> and are removed by <code>dropna</code>. The study is deliberately an
+  <strong>ASD-vs-neurotypical contrast</strong>, with the NDD spectrum held out as a
+  comparison-defining exclusion rather than analyzed.</li>
+</ul>
+<p>A parallel <code>_full</code> cohort (<code>BBC_patients_analytic_full.csv</code>, 3,499 rows, keeps the
+4-way label) is produced by re-running the same pipeline with an environment flag,
+so the NDD groups remain available for future analysis without rebuilding.</p>
+<h3 id="13-ndd-labels-encoding-and-gradation">1.3 NDD labels: encoding and gradation</h3>
+<p>The NDD/mental-health file (<code>chs_ndd_mental_03232026.csv</code>, one row per child) is
+the labeling source. <strong>Every diagnosis is a binary presence flag (0/1)</strong> — there
+is <strong>no severity or gradation</strong> on any individual condition. For each flag there is
+a matched first-diagnosis year, first-diagnosis date, and diagnosis visit-count
+(a burden proxy, not a severity grade). First-diagnosis year is present for 100% of
+flag-positive individuals.</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Meaning</th>
+<th style="text-align: right;">n (flag = 1)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ASD</td>
+<td>Autism spectrum disorder</td>
+<td style="text-align: right;">145</td>
+</tr>
+<tr>
+<td>ADHD</td>
+<td>Attention-deficit/hyperactivity</td>
+<td style="text-align: right;">634</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>Intellectual disability</td>
+<td style="text-align: right;">83</td>
+</tr>
+<tr>
+<td>CD</td>
+<td>Communication disorder</td>
+<td style="text-align: right;">979</td>
+</tr>
+<tr>
+<td>LD</td>
+<td>Learning disorder</td>
+<td style="text-align: right;">574</td>
+</tr>
+<tr>
+<td>MD</td>
+<td>Motor disorder</td>
+<td style="text-align: right;">55</td>
+</tr>
+<tr>
+<td>TD</td>
+<td>Tic disorder</td>
+<td style="text-align: right;">55</td>
+</tr>
+<tr>
+<td>conduct</td>
+<td>Conduct disorder</td>
+<td style="text-align: right;">577</td>
+</tr>
+<tr>
+<td>misc_DD</td>
+<td>Other misc. developmental disorder</td>
+<td style="text-align: right;">640</td>
+</tr>
+<tr>
+<td>other_NDD_DSM5</td>
+<td>OR of the seven non-ASD/ADHD NDDs</td>
+<td style="text-align: right;">1,544</td>
+</tr>
+<tr>
+<td>MDD</td>
+<td>Major depressive disorder (mental-health tier)</td>
+<td style="text-align: right;">266</td>
+</tr>
+<tr>
+<td>PTSD</td>
+<td>Post-traumatic stress (mental-health tier)</td>
+<td style="text-align: right;">166</td>
+</tr>
+<tr>
+<td>AD</td>
+<td>Anxiety disorder (mental-health tier)</td>
+<td style="text-align: right;">496</td>
+</tr>
+</tbody>
+</table>
+<p>The only tiered variable, <strong><code>NDD ∈ {0,1,2,3}</code>, is not a severity scale</strong> — it is
+the mutually-exclusive priority ranking above (0 = NT, 1 = ASD, 2 = ADHD-no-ASD,
+3 = other-NDD).</p>
+<p><strong>NDD multimorbidity is the norm, not the exception.</strong> Of the 1,648 NDD-positive
+children, 1,468 carry ≥2 NDD labels and only 180 carry exactly one. Among the 145
+ASD children, <strong>only 5 are "ASD-only"; 140 carry ≥1 additional NDD label.</strong> Any
+future attempt to model NDD subtypes would be working with heavily overlapping
+labels, not clean strata.</p>
+<h3 id="14-what-ehr-data-is-actually-measured">1.4 What EHR data is actually measured</h3>
+<p><strong>Only ICD diagnosis codes.</strong> There are no labs, medications, procedures, or
+vitals in the modeling pipeline. The single exception is child <strong>BMI z-score</strong>
+(<code>BBC_underage20_HTWT_BMI_clean031626.csv</code>), used only as a covariate, never in the
+factorization.</p>
+<ul>
+<li>Raw encounter-level ICD data (<code>chs_ndd_mental_longformat</code>): <strong>600,271 code rows
+  across 3,500 children</strong> (all four groups).</li>
+<li>Analytic mapped event table (<code>BBC_event_table.csv</code>, ASD+NT, age &lt; 18, mapped to
+  conditions): <strong>62,882 condition-events</strong>, over <strong>123 distinct condition labels</strong>
+  in <strong>15 organ-system categories</strong>.</li>
+<li>Each event row carries <code>ID</code>, <code>month</code>, <code>Disease_Category</code>, <code>condition</code>, <code>codes</code>,
+  <code>age_years</code>. Timing is therefore available at encounter granularity — the time
+  axis is present in the raw data and is only collapsed downstream (§2).</li>
+</ul>
+<p><strong>Code exclusions applied during mapping (<code>event.py</code>):</strong></p>
+<ul>
+<li>V codes (encounter types) and ICD-9 E000–E999 (external causes) are dropped, per
+  the diagnosis-only design.</li>
+<li>NDD-<em>defining</em> ICD codes are removed <strong>as events</strong> (stems <code>299, 312, 314, 315,
+  317, 318, 319, 307.2</code>; ICD-10 <code>F70–F79, F80, F81, F82, F84, F88, F89, F90, F91,
+  F95</code>) so an NDD code cannot itself become a comorbidity outcome. This is an
+  event-level filter, orthogonal to the person-level cohort exclusion in §1.2.</li>
+<li>Missing maternal education is imputed to the modal category ("College or
+  higher").</li>
+</ul>
+<h3 id="15-condition-mapping-and-codebook">1.5 Condition mapping and codebook</h3>
+<ul>
+<li><strong>Category level (15 systems):</strong> <code>ICD_Codes_Extension.xlsx</code> (= Supp. Table 1)
+  maps ICD-9/10 codes to organ-system categories.</li>
+<li><strong>Condition level:</strong> a condition codebook (<code>conditions/icd_condition_mapped.xlsx</code>;
+  Supp. Table 2 family) maps codes to the 123 detailed condition labels used for
+  window and NMF analyses.</li>
+<li>Congenital conditions are treated as <strong>ever/never</strong> (persistent anomalies), all
+  other categories as recurrent events — a modeling distinction worth keeping in
+  mind when reading burden counts.</li>
+</ul>
+<h3 id="16-maternal-and-demographic-covariates">1.6 Maternal and demographic covariates</h3>
+<p>Covariates come from the demographics source (<code>primary_teleform03202026.csv</code>) plus a
+separate child BMI file. There are <strong>two tiers</strong>: a reduced set carried into the
+analytic file, and a substantially richer set that stays in the raw teleform and is
+never pulled through. All coverage figures are within the 1,996 analytic children.</p>
+<p><strong>(a) Maternal covariates present in <code>BBC_patients_analytic.csv</code> (9):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>maternal_age</code></td>
+<td>continuous</td>
+<td>median 28.3 y; ~0% missing</td>
+</tr>
+<tr>
+<td><code>is_black</code></td>
+<td>binary race</td>
+<td>56.1% Black / 43.9% not; 0% missing</td>
+</tr>
+<tr>
+<td><code>education</code></td>
+<td>3 levels</td>
+<td>College 38.8% / HS 34.1% / &lt;HS 27.1%; <strong>0% missing — missing was imputed to "College or higher"</strong> (see §1.4)</td>
+</tr>
+<tr>
+<td><code>marital_status</code></td>
+<td>Married / Other</td>
+<td>34.0% married; 1.9% missing</td>
+</tr>
+<tr>
+<td><code>maternal_bmi</code> (+ <code>_category</code>)</td>
+<td>continuous + 4-cat</td>
+<td>median 25.0; 5.8% missing</td>
+</tr>
+<tr>
+<td><code>mat_htn</code></td>
+<td>binary</td>
+<td>13.1% positive; 0% missing (derived composite)</td>
+</tr>
+<tr>
+<td><code>maternal_diabetes</code></td>
+<td>No / GDM / DM</td>
+<td>GDM 4.9%, DM 2.7%; 1.5% missing</td>
+</tr>
+<tr>
+<td><code>inflam</code></td>
+<td>binary</td>
+<td>12.5% positive; 9.2% missing (maternal inflammation composite, likely)</td>
+</tr>
+</tbody>
+</table>
+<p>Birth/infant variables also in the file — <code>birth_weight</code>, <code>gest_age</code>, <code>preterm</code>,
+<code>lbw</code>, <code>birth_year</code>, <code>sex</code> — are child-level, not maternal.</p>
+<p><strong>(b) The adjustment uses only a subset.</strong> <code>standardize.py</code> /
+<code>build_residual_matrix</code> standardize on <strong>sex × <code>is_black</code> × <code>education</code></strong> strata and
+nothing else. <code>maternal_age</code>, BMI, diabetes, hypertension, marital status, and
+inflammation sit in the file but do <strong>not</strong> enter the residualization or direct
+standardization.</p>
+<p><strong>(c) Maternal covariates available in the raw teleform but NOT carried through</strong> —
+mostly well-populated, and several are classic prenatal exposures:</p>
+<table>
+<thead>
+<tr>
+<th>Variable(s)</th>
+<th>What it is</th>
+<th>Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>race_update</code></td>
+<td><strong>Full 9-category</strong> race/ethnicity</td>
+<td>0% missing — <code>is_black</code> is a binary collapse of this</td>
+</tr>
+<tr>
+<td><code>yrincom</code></td>
+<td>Household <strong>income</strong> (12 brackets)</td>
+<td>11.3% missing</td>
+</tr>
+<tr>
+<td><code>PARITY</code></td>
+<td><strong>Parity</strong>; 42.8% nulliparous</td>
+<td>0.1% missing</td>
+</tr>
+<tr>
+<td><code>DELTYPE</code></td>
+<td><strong>Delivery mode</strong> (cesarean vs vaginal); one category 31.9%</td>
+<td>0.6% missing</td>
+</tr>
+<tr>
+<td><code>smoke</code>, <code>ever_smk</code>, <code>cont_smk</code>, <code>smkreg</code>, <code>smk_pres</code>, <code>smk_s1/s2/s3</code></td>
+<td><strong>Maternal smoking</strong> — any (22.8%), ever, continued, <strong>and by trimester</strong></td>
+<td>~1–1.3% missing</td>
+</tr>
+<tr>
+<td><code>etoh</code></td>
+<td><strong>Alcohol</strong> in pregnancy</td>
+<td>7.3% positive; 3.9% missing</td>
+</tr>
+<tr>
+<td><code>PREECLAM</code>, <code>ECLAMP</code>, <code>HELLP</code>, <code>GHTN</code>, <code>CHTN</code></td>
+<td><strong>Hypertensive disorders of pregnancy</strong> — pre-eclampsia, eclampsia (0.2%), HELLP (0.9%), gestational HTN, chronic HTN (6.1%)</td>
+<td>mostly &lt;1% missing, <strong>except <code>GHTN</code> at 40.8%</strong></td>
+</tr>
+<tr>
+<td><code>GEAA</code>, <code>geaa_o</code>, <code>GEAL</code>, <code>GEAU</code></td>
+<td>Gestational-age estimates</td>
+<td>~0.2% missing</td>
+</tr>
+<tr>
+<td><code>familyid</code></td>
+<td>Family/sibling linkage ID</td>
+<td>0% missing</td>
+</tr>
+<tr>
+<td><code>month_dod</code>, <code>year_dod</code></td>
+<td>Date of <strong>delivery</strong> (1998–2019; = birth date, not death) — already reflected in <code>birth_year</code></td>
+<td>0% missing</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Implication.</strong> The adjustment rests on three variables (sex, binary race,
+education), while several well-covered prenatal confounders/exposures — smoking
+(with trimester resolution), income, parity, delivery mode, pre-eclampsia, and full
+race granularity — sit unused. An ASD−NT difference attributed to ASD could be
+riding on an unmodeled SES or smoking gradient. Two caveats before leaning on the
+unused set: <code>yrincom</code> (11%) and <code>GHTN</code> (41%) are meaningfully incomplete, and
+<code>education</code>'s "0% missing" is an impute-to-college artifact — the raw <code>edu</code> field
+should be checked for how many values were filled. Expanding the confounder set is
+carried as a recommendation in the contrastive section of <code>analysis_plan.md</code>.</p>
+<hr />
+<h2 id="2-the-modeling-matrix-construction-and-sparsity">2. The modeling matrix: construction and sparsity</h2>
+<h3 id="21-feature-selection-residualization-normalization">2.1 Feature selection, residualization, normalization</h3>
+<p><strong>Condition selection (<code>select_nmf_conditions</code>).</strong> Restricted to seven target
+categories (Congenital, Psychiatric, Neurologic, Sensory, Endocrine–Metabolic,
+Digestive, Respiratory). A condition is kept if it appears in <strong>≥ 5 ASD children</strong>
+AND (<strong>overall ASD prevalence ≥ 3%</strong> OR <strong>max standardized ASD−NT difference ≥ 5
+pp</strong> across developmental windows). The current thresholds retain <strong>~50
+conditions</strong>.</p>
+<p><strong>Residualization (<code>build_residual_matrix</code>).</strong> For each ASD child × condition, the
+value is <code>ASD_present(0/1) − NT_expected_rate</code>, where the NT rate is directly
+standardized over sex × race(is_black) × education strata (strata with &lt; 5 NT
+children pooled).</p>
+<p><strong>Nonnegativity + normalization (<code>nmf_analysis.py</code>).</strong> The residual is then
+<strong>clipped at 0</strong> (<code>np.clip(residual, 0, None)</code>) and each row is scaled to <strong>unit L2
+norm</strong>. Two consequences worth flagging explicitly:</p>
+<ul>
+<li>Clipping <strong>discards all negative residuals</strong>, so the matrix fed to NMF has the
+  <em>same nonzero pattern as the raw binary presence matrix</em>. The residualization
+  functions as an <strong>IDF-style down-weighting</strong> of conditions common in NT
+  (present cells carry weight <code>1 − NT_rate</code>), not as a two-sided residual.</li>
+<li>L2 row-normalization (not sum-to-1) is a deliberate choice so that total
+  documentation intensity drops out and every child weighs equally.</li>
+</ul>
+<h3 id="22-sparsity-measured">2.2 Sparsity — measured</h3>
+<table>
+<thead>
+<tr>
+<th>Matrix</th>
+<th>Shape</th>
+<th style="text-align: right;">Density</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Primary (2-D, ever-diagnosed &lt; 18)</strong></td>
+<td>145 × ~50</td>
+<td style="text-align: right;"><strong>22.1%</strong></td>
+<td>median 11 conditions/child (IQR 7–15, range 0–26); every retained condition ≥ 5 ASD children; <strong>1 child has 0 retained conditions</strong> (left unassigned)</td>
+</tr>
+<tr>
+<td><strong>Tensor (× 6 time windows)</strong></td>
+<td>145 × ~50 × 6</td>
+<td style="text-align: right;"><strong>6.1%</strong></td>
+<td>see per-window decay below</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Per-window density in the tensor</strong> (windows: Pre-dx, then 3-year blocks to 18;
+median ASD dx = 3.25 y):</p>
+<table>
+<thead>
+<tr>
+<th>Window</th>
+<th style="text-align: right;">ASD children with any event</th>
+<th style="text-align: right;">Density</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pre-dx (0–3.25 y)</td>
+<td style="text-align: right;">132</td>
+<td style="text-align: right;">10.9%</td>
+</tr>
+<tr>
+<td>3.3–6.3 y</td>
+<td style="text-align: right;">127</td>
+<td style="text-align: right;">8.0%</td>
+</tr>
+<tr>
+<td>6.3–9.3 y</td>
+<td style="text-align: right;">116</td>
+<td style="text-align: right;">6.7%</td>
+</tr>
+<tr>
+<td>9.3–12.3 y</td>
+<td style="text-align: right;">99</td>
+<td style="text-align: right;">5.1%</td>
+</tr>
+<tr>
+<td>12.3–15.3 y</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;">4.0%</td>
+</tr>
+<tr>
+<td>15.3–18.0 y</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">1.9%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>53% of condition-window slices rest on fewer than 5 children.</strong> This is the
+crux of the sparsity problem: the 2-D collapse is workable at 22% density, but any
+time-resolved representation falls to ~6% and thins further with age as coverage
+attrites (132 → 50 children). The code's own tensor routine prints a warning at
+exactly this threshold.</p>
+<hr />
+<h2 id="3-what-has-been-run-pipeline-inventory">3. What has been run (pipeline inventory)</h2>
+<p>Data flows raw → cleaned → analytic, then into five analysis families. Directories
+are under <code>BBC_Dataset/</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Script(s)</th>
+<th>Output(s)</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ICD cleaning &amp; merge</td>
+<td><code>preprocessing/preprocessing.py</code></td>
+<td><code>BBC_patients.csv</code>, <code>_full</code></td>
+<td>run</td>
+</tr>
+<tr>
+<td>Event mapping (codes→conditions)</td>
+<td><code>preprocessing/event.py</code></td>
+<td><code>BBC_event_table.csv</code>, <code>BBC_patients_analytic.csv</code>, <code>unmapped_codes.csv</code>, <code>events_per_category_per_label.xlsx</code></td>
+<td>run</td>
+</tr>
+<tr>
+<td>Direct standardization</td>
+<td><code>analysis/standardize.py</code></td>
+<td>(library used by others)</td>
+<td>run</td>
+</tr>
+<tr>
+<td>Association / window analysis</td>
+<td><code>analysis/association_analysis.py</code></td>
+<td><code>sT7_condition_diff_with_ci.csv</code>, <code>condition_diff_heatmap_*</code> (Fig 3)</td>
+<td>run</td>
+</tr>
+<tr>
+<td>Fig 3 sensitivity (preterm/LBW)</td>
+<td><code>analysis/sensitivity_f3.py</code></td>
+<td><code>sF_condition_diff_sensitivity_*</code></td>
+<td>run</td>
+</tr>
+<tr>
+<td><strong>Primary NMF</strong></td>
+<td><code>clustering/nmf_analysis.py</code></td>
+<td><code>nmf_model_selection.docx</code>, <code>nmf_condition_excess.docx</code>, <code>nmf_component_heatmap_k3*.pdf</code>, <code>nmf_subject_profile_distribution_k3.pdf</code>, <code>nmf_kept_conditions.txt</code></td>
+<td>run</td>
+</tr>
+<tr>
+<td><strong>Tensor NMF (time)</strong></td>
+<td><code>clustering/tensor_nmf.py</code></td>
+<td><code>tensor_nmf_rank_scan.csv</code>, <code>tensor_nmf_components.xlsx</code>, <code>tensor_nmf_profiles.pdf</code></td>
+<td>run</td>
+</tr>
+<tr>
+<td>NMF sensitivity (perinatal)</td>
+<td><code>clustering/sensitivity_nmf.py</code></td>
+<td><code>sF_nmf_sensitivity_preterm_lbw.pdf</code>, <code>_summary.csv</code></td>
+<td>run</td>
+</tr>
+<tr>
+<td>NMF pre-diagnosis check</td>
+<td><code>clustering/nmf_prediagnosis.py</code></td>
+<td><code>sF_nmf_prediagnosis.pdf</code>, <code>nmf_prediagnosis_summary.csv</code></td>
+<td>run</td>
+</tr>
+<tr>
+<td>Prediction models</td>
+<td><code>clustering/predict_train.py</code>, <code>predict_analysis.py</code></td>
+<td>(in-dir)</td>
+<td>present</td>
+</tr>
+<tr>
+<td>Descriptive figures</td>
+<td><code>visualization/*.py</code></td>
+<td>Table 1, cumulative proportion, forest onset, categorical heatmap</td>
+<td>run</td>
+</tr>
+<tr>
+<td>EHR connectedness exploration</td>
+<td><code>gus/</code> (this folder)</td>
+<td>timepoint coverage, occupancy, continuity/connectedness, burden-by-age</td>
+<td>run</td>
+</tr>
+</tbody>
+</table>
+<p>Note: <code>BBC_Dataset/conditions/</code> is an exploratory output directory; per the README
+nothing downstream reads from it.</p>
+<hr />
+<h2 id="4-what-has-been-tried-method-catalogue">4. What has been tried (method catalogue)</h2>
+<h3 id="41-primary-nmf-latent-comorbidity-profiles-within-asd">4.1 Primary NMF — latent comorbidity profiles within ASD</h3>
+<ul>
+<li><strong>Estimator:</strong> <code>sklearn.decomposition.NMF</code>, multiplicative updates
+  (<code>solver="mu"</code>), <strong>Frobenius loss</strong>, <code>max_iter=1000</code>, best-of-<strong>20 random
+  restarts</strong> (lowest reconstruction error kept).</li>
+<li><strong>Input:</strong> the 145 × ~50 residualized, clipped, L2-normalized matrix (§2). A
+  child with no retained condition contributes an all-zero row and is left
+  unassigned (dominant component = −1), rather than being dropped or forced into a
+  profile.</li>
+<li><strong>Model selection:</strong> K scanned 2–6. Selection is driven by <strong>stability</strong>, not
+  fit — the code explicitly notes reconstruction error and explained variance
+  improve with K by construction. Current model-selection table:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">K</th>
+<th style="text-align: right;">Recon err</th>
+<th style="text-align: right;">Expl. var</th>
+<th>Component sizes</th>
+<th style="text-align: right;">Restart stab.</th>
+<th style="text-align: right;">Bootstrap cosine</th>
+<th style="text-align: right;">Weakest comp.</th>
+<th style="text-align: right;">Assignment concordance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">9.7101</td>
+<td style="text-align: right;">0.184</td>
+<td>[72, 72]</td>
+<td style="text-align: right;">0.986</td>
+<td style="text-align: right;">0.894</td>
+<td style="text-align: right;">0.887</td>
+<td style="text-align: right;">0.781</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>3</strong></td>
+<td style="text-align: right;"><strong>9.4305</strong></td>
+<td style="text-align: right;"><strong>0.230</strong></td>
+<td><strong>[41, 55, 48]</strong></td>
+<td style="text-align: right;"><strong>0.914</strong></td>
+<td style="text-align: right;"><strong>0.803</strong></td>
+<td style="text-align: right;"><strong>0.751</strong></td>
+<td style="text-align: right;"><strong>0.657</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">9.1694</td>
+<td style="text-align: right;">0.273</td>
+<td>[33, 35, 31, 45]</td>
+<td style="text-align: right;">0.947</td>
+<td style="text-align: right;">0.788</td>
+<td style="text-align: right;">0.746</td>
+<td style="text-align: right;">0.612</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">8.9462</td>
+<td style="text-align: right;">0.308</td>
+<td>[34, 17, 35, 32, 26]</td>
+<td style="text-align: right;">0.807</td>
+<td style="text-align: right;">0.724</td>
+<td style="text-align: right;">0.570</td>
+<td style="text-align: right;">0.527</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">8.7238</td>
+<td style="text-align: right;">0.342</td>
+<td>[26, 27, 19, 21, 15, 36]</td>
+<td style="text-align: right;">0.843</td>
+<td style="text-align: right;">0.722</td>
+<td style="text-align: right;">0.637</td>
+<td style="text-align: right;">0.529</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Stability machinery (notably thorough):</strong><ul>
+<li><em>Restart stability</em> — mean Hungarian-matched cosine of component loadings
+  across the 20 restarts (per-component, so an intrinsically hard component is
+  distinguishable from a sample-sensitive one).</li>
+<li><em>Bootstrap stability</em> — 200 patient resamples × 3 restarts each, refit at
+  every K, components matched back to the full-sample solution. Reports mean
+  matched cosine, weakest-component cosine, and <strong>dominant-assignment
+  concordance</strong> (share of children whose top component is unchanged under
+  resampling).</li>
+<li><em>Burden diagnostic</em> — correlation of each component's loading with a child's
+  total burden, flagging any component that is really a severity axis rather
+  than a distinct pattern.</li>
+</ul>
+</li>
+<li><strong>Read on K=3:</strong> loadings are reasonably reproducible (bootstrap cosine 0.803),
+  but <strong>dominant-component membership is fragile — concordance 0.657</strong>, i.e. ~1 in
+  3 children would switch profile under resampling. Loadings support a stronger
+  claim than hard membership counts do.</li>
+</ul>
+<h3 id="42-tensor-nmf-the-time-axis-tried-appropriately-relegated">4.2 Tensor NMF — the time axis (tried, appropriately relegated)</h3>
+<ul>
+<li><strong>Estimator:</strong> a hand-rolled <strong>nonnegative CP / PARAFAC</strong> decomposition
+  (multiplicative updates, Khatri–Rao without materialization). Mode 3 is
+  developmental time (6 windows).</li>
+<li><strong>Rank scan</strong> (<code>tensor_nmf_rank_scan.csv</code>):</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">R</th>
+<th style="text-align: right;">Rel. error</th>
+<th style="text-align: right;">Expl. var</th>
+<th>Sizes</th>
+<th style="text-align: right;">Restart stab.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.9057</td>
+<td style="text-align: right;">0.133</td>
+<td>[74, 70]</td>
+<td style="text-align: right;">1.000</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.8916</td>
+<td style="text-align: right;">0.159</td>
+<td>[32, 56, 56]</td>
+<td style="text-align: right;">0.884</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.8783</td>
+<td style="text-align: right;">0.184</td>
+<td>[28, 57, 24, 35]</td>
+<td style="text-align: right;">0.859</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.8659</td>
+<td style="text-align: right;">0.207</td>
+<td>[33, 20, 34, 30, 27]</td>
+<td style="text-align: right;">0.969</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Built-in honesty checks:</strong> the routine reports (a) density and a warning when
+  most condition-window slices have &lt; 5 children — which fires here (53%); (b)
+  correlation of each temporal factor with per-window event <em>density</em>, flagging a
+  factor that merely tracks data availability; (c) pairwise temporal-factor
+  correlation, flagging when extra rank separates conditions rather than timing;
+  and (d) cosine agreement of the condition mode against the primary 2-D fit.</li>
+<li><strong>Verdict embedded in the code and confirmed by the numbers:</strong> explained
+  variance is low (0.13–0.21), density is ~6%, and slices are underpowered — so
+  the tensor is a sensitivity/robustness object, not a basis for time-resolved
+  phenotype claims at n = 145. The time axis <em>was</em> tried honestly; the data cannot
+  yet support it.</li>
+</ul>
+<h3 id="43-nmf-sensitivity-perinatal-confounding">4.3 NMF sensitivity — perinatal confounding</h3>
+<p><code>sensitivity_nmf.py</code> refits K=3 on three restricted samples (term-only, normal
+birth-weight-only, both), Hungarian-matches each refit to the primary components,
+and reports matched cosine and dominant-concordance per panel. Components below
+n = 25 are flagged as underpowered rather than interpreted. Purpose: confirm the
+profiles are not artifacts of prematurity / low birth weight.</p>
+<h3 id="44-nmf-pre-diagnosis-check-early-recognition-support">4.4 NMF pre-diagnosis check — early-recognition support</h3>
+<p><code>nmf_prediagnosis.py</code> refits on events recorded <strong>before the median ASD diagnosis
+age (3.25 y)</strong> and matches to the full-window solution. It adds an <strong>observability
+ceiling</strong> — the fraction of each component's weight that comes from conditions
+already observable pre-diagnosis — quantifying how much of each profile is in
+principle detectable before the ASD label. Purpose: support the claim that
+comorbidity structure is present early.</p>
+<h3 id="45-association-developmental-window-analysis">4.5 Association / developmental-window analysis</h3>
+<p><code>association_analysis.py</code> + <code>standardize.py</code> produce the adjusted ASD−NT
+prevalence differences by developmental window (Fig 3 / Supp. Fig 1), directly
+standardized over sex × race × education (small strata pooled), with a fast
+array-form estimator for bootstrap CIs that is asserted equal to the reference
+estimator. Also computes the Spearman ordering correlation showing ASD/NT
+condition rankings diverge with age.</p>
+<h3 id="46-descriptive-connectivity-exploration-this-gus-folder">4.6 Descriptive / connectivity exploration (this <code>gus/</code> folder)</h3>
+<p>Independent EHR-coverage diagnostics already generated here:</p>
+<ul>
+<li><strong>Timepoint coverage</strong> (<code>ehr_timepoint_distribution</code>, <code>asd_ehr_timepoint_coverage</code>):
+  ASD children have <em>more</em> distinct visit-years than NT — sparsity is not driven by
+  ASD under-documentation.</li>
+<li><strong>Occupancy</strong> (<code>asd_occupancy_matrix</code>, <code>asd_occupancy_heatmap</code>): child × year
+  (0–23) presence grid.</li>
+<li><strong>Continuity / connectedness</strong> (<code>ehr_continuity_per_individual</code>,
+  <code>ehr_connectedness_maxspan</code>, <code>ehr_continuity_sufficiency</code>): per-child span,
+  continuity (fraction of years between first and last visit that are observed),
+  and a connectedness score.</li>
+<li><strong>Burden by age</strong> (<code>comorbidity_burden_by_age</code>): ASD ~3–4.7 conditions/person vs
+  NT ~2.5–3.7, with <code>covered</code> counts attriting from 121 (age 0) to 20 (age 18) —
+  the same attrition that thins the tensor.</li>
+<li><strong>Category counts</strong> (<code>comorbidity_counts_by_category</code>, <code>asd_timepoints_vs_comorbidities</code>).</li>
+</ul>
+<hr />
+<h2 id="5-observations-and-opportunities">5. Observations and opportunities</h2>
+<p>Brief, and separate from the descriptive record above.</p>
+<ol>
+<li><strong>Loss function.</strong> Frobenius NMF treats near-binary incidence as Gaussian. For
+   presence/count EHR data, <strong>KL-divergence NMF</strong> (<code>beta_loss="kullback-leibler"</code>,
+   ≈ Poisson) or <strong>logistic/Bernoulli</strong> factorization are more principled — and
+   since counts are currently binarized away, feeding <strong>event counts with KL</strong> would
+   recover recurrence intensity at no sparsity cost.</li>
+<li><strong>Hard vs soft membership.</strong> With dominant-assignment concordance ~0.66, the
+   per-profile counts (n = 41/55/48) are the fragile part. The loading matrix and
+   partial memberships carry the stable signal; profile <em>counts</em> are best treated as
+   descriptive.</li>
+<li><strong>Time, realistically.</strong> The 6-window tensor is too sparse. <strong>2–3 coarse windows</strong>
+   (pre-dx / childhood / adolescence) is the only time-resolved cut n = 145 can bear
+   and would keep slices populated.</li>
+<li><strong>Sample size is the binding constraint</strong>, not connectivity per se: ~48
+   children/component at K=3, and coverage that halves by adolescence. This bounds
+   what any unsupervised method can recover and is worth stating as a first-order
+   limitation.</li>
+<li><strong>Reproducibility (minor).</strong> <code>config.py</code> and <code>event.py</code> hardcode Windows paths
+   (<code>/mnt/c/Users/lkuang/...</code>), so the pipeline does not run as-is off the author's
+   machine; a relative-path config would make it portable.</li>
+</ol>
+<hr />
+<h2 id="appendix-file-map">Appendix — file map</h2>
+<pre><code>ASD_revision/
+├─ kid_icdcode_data_Mar2026.RDS            raw EHR ICD (source)
+├─ BBC_underage20_HTWT_BMI_clean031626.csv child BMI z-score (covariate)
+├─ NDD datasets 3-24-2026/
+│  ├─ chs_ndd_mental_03232026.csv          wide NDD labels (1 row/child)
+│  ├─ chs_ndd_mental_longformat_*.csv      encounter-level ICD (600,271 rows)
+│  └─ ASD_NDD_Flowchart.pptx               consort flow
+├─ ICD Codebook/  s_table_1.xlsx, s_table_2.xlsx
+└─ BBC_Dataset/
+   ├─ preprocessing/  preprocessing.py, event.py, ICD_Codes_Extension.xlsx
+   │  └─ results/  BBC_event_table.csv, BBC_patients_analytic.csv (+_full)
+   ├─ analysis/      association_analysis.py, standardize.py, sensitivity_f3.py
+   ├─ clustering/    nmf_analysis.py, tensor_nmf.py, sensitivity_nmf.py,
+   │                 nmf_prediagnosis.py, predict_*.py, config.py, clustering_utils.py
+   │  └─ results/    nmf_*, tensor_nmf_*
+   ├─ visualization/ table1.py, cum_prop.py, forest_onset_plot.py, categorical_heatmap.py
+   └─ conditions/    exploratory outputs (not read downstream)
+</code></pre>
+<p><em>All counts recomputed from source on 2026-08-28; the study scripts were read, not
+executed (hardcoded external paths).</em></p>
+</body></html>

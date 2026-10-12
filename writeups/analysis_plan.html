@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10.2" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>ASD Comorbidity — Analysis Opportunities &amp; Strategy Plan</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.6; color: #1a1a1a; background: #fafafa;
+    max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 1.9rem; line-height: 1.25; border-bottom: 3px solid #2c3e50; padding-bottom: .5rem; margin-top: 0; }
+  h2 { font-size: 1.4rem; margin-top: 2.5rem; border-bottom: 1px solid #ddd; padding-bottom: .3rem; color: #2c3e50; }
+  h3 { font-size: 1.12rem; margin-top: 1.8rem; color: #34495e; }
+  p, li { font-size: 0.96rem; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code { background: #eef1f4; padding: .12em .38em; border-radius: 4px; font-size: 0.86em;
+    font-family: "SF Mono", "Cascadia Code", Menlo, Consolas, monospace; }
+  pre { background: #1e1e2e; color: #e5e7eb; padding: 1rem 1.2rem; border-radius: 8px;
+    overflow-x: auto; font-size: 0.82rem; line-height: 1.45; }
+  pre code { background: none; color: inherit; padding: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1.2rem 0; font-size: 0.86rem;
+    background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  th, td { border: 1px solid #e2e5e9; padding: .5rem .7rem; text-align: left; vertical-align: top; }
+  th { background: #2c3e50; color: #fff; font-weight: 600; }
+  tr:nth-child(even) td { background: #f6f8fa; }
+  td[align="right"], th[align="right"] { text-align: right; }
+  blockquote { border-left: 4px solid #c8ced4; margin: 1rem 0; padding: .3rem 1rem; color: #555; background:#f2f4f6; }
+  hr { border: none; border-top: 1px solid #ddd; margin: 2.5rem 0; }
+  .toc { background: #fff; border: 1px solid #e2e5e9; border-radius: 8px; padding: 1rem 1.4rem;
+    margin: 1.5rem 0; font-size: 0.9rem; }
+  .toc > ul { margin: 0; padding-left: 1.1rem; }
+  .toc ul { list-style: none; padding-left: 1rem; }
+  .toc a { color: #34495e; }
+  strong { color: #111; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">ASD Comorbidity — Analysis Opportunities &amp;
+Strategy Plan</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#asd-comorbidity--analysis-opportunities--strategy-plan"
+id="toc-asd-comorbidity--analysis-opportunities--strategy-plan">ASD
+Comorbidity — Analysis Opportunities &amp; Strategy Plan</a>
+<ul>
+<li><a href="#0-execution-status-updated-2026-09-01"
+id="toc-0-execution-status-updated-2026-09-01">0. Execution status
+(updated 2026-09-01)</a></li>
+<li><a href="#1-governing-constraints-what-bounds-every-design-below"
+id="toc-1-governing-constraints-what-bounds-every-design-below">1.
+Governing constraints (what bounds every design below)</a></li>
+<li><a href="#2-pre-registered-decision-rules-apply-to-all-analyses"
+id="toc-2-pre-registered-decision-rules-apply-to-all-analyses">2.
+Pre-registered decision rules (apply to all analyses)</a></li>
+<li><a href="#3-track-a--longitudinal--temporal-factorization"
+id="toc-3-track-a--longitudinal--temporal-factorization">3. Track A —
+Longitudinal / temporal factorization</a></li>
+<li><a href="#4-track-b--contrastive-factorization"
+id="toc-4-track-b--contrastive-factorization">4. Track B — Contrastive
+factorization</a></li>
+<li><a href="#5-track-c--combined-contrastive-within-the-early-window"
+id="toc-5-track-c--combined-contrastive-within-the-early-window">5.
+Track C — Combined (contrastive within the early window)</a></li>
+<li><a href="#6-prioritization-and-sequencing"
+id="toc-6-prioritization-and-sequencing">6. Prioritization and
+sequencing</a></li>
+<li><a
+href="#7-what-counts-as-it-didnt-work-so-the-negative-is-credible"
+id="toc-7-what-counts-as-it-didnt-work-so-the-negative-is-credible">7.
+What counts as "it didn't work" (so the negative is credible)</a></li>
+<li><a href="#8-implementation-notes" id="toc-8-implementation-notes">8.
+Implementation notes</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="asd-comorbidity--analysis-opportunities--strategy-plan">ASD
+Comorbidity — Analysis Opportunities &amp; Strategy Plan</h1>
+<p><strong>Purpose.</strong> A planning document for exploratory
+analyses beyond the primary residualized NMF. Two tracks: (A) a
+<strong>longitudinal/temporal factorization</strong> built under the
+most permissive scheme the sample can bear, and (B) <strong>contrastive
+factorization</strong> that corrects a specific weakness in the current
+residualization. The governing reality is n = 145 ASD children, so
+several of these are expected to return null or marginal results. That
+is acceptable and, stated correctly, useful: a <em>pre-registered</em>
+negative ("the time-resolved structure is not estimable at this n, and
+here is the density that shows why") is a defensible contribution. This
+plan therefore fixes decision rules <strong>before</strong> running
+anything, so a null is credible rather than a failed search.</p>
+<p><em>Prepared 2026-08-28. Companion to <code>analysis_memo.md</code>.
+Execution status added 2026-09-01.</em></p>
+<p>[TOC]</p>
+<hr />
+<h2 id="0-execution-status-updated-2026-09-01">0. Execution status
+(updated 2026-09-01)</h2>
+<p>Both tracks have now been run in
+<code><PROJECT_ROOT>/gus_analysis/</code>. Full
+write-ups: <strong>Track A</strong> → <code>RESULTS.md</code> +
+<code>WRITEUP_TrackA.md</code> (+ <code>.html</code>); <strong>Track
+B</strong> → <code>RESULTS_TrackB.md</code>. All verdicts applied the §2
+rules as fixed (§7: a null that clears §2 is reported).</p>
+<table>
+<thead>
+<tr>
+<th>Analysis</th>
+<th>Status</th>
+<th>§2 verdict</th>
+<th>One-line outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1 dx-anchored 3-window CP</td>
+<td>done</td>
+<td><strong>NOT reportable</strong></td>
+<td>temporal factor = data-availability artifact (r up to 0.996)</td>
+</tr>
+<tr>
+<td>A2 smoothness-regularized CP</td>
+<td>done</td>
+<td><strong>NOT reportable</strong></td>
+<td>density artifact survives every λ</td>
+</tr>
+<tr>
+<td>A3 pre/post-dx two-window NMF</td>
+<td>done</td>
+<td><strong>REPORTABLE</strong> (stability)</td>
+<td>structure reshapes across dx boundary; C1 metabolic→psychiatric
+post-dx</td>
+</tr>
+<tr>
+<td>A3b ascertainment guard</td>
+<td>done</td>
+<td><strong>guard</strong></td>
+<td>reshape <em>shape</em> NOT ASD-specific (NT ρ 0.80 vs ASD 0.91);
+only a detectability-locked magnitude excess (top-8 p=0.010)</td>
+</tr>
+<tr>
+<td>A4 timing-encoded matrix</td>
+<td>done</td>
+<td><strong>REPORTABLE</strong></td>
+<td>early-onset acute/GI vs late-onset psychiatric/sensory split</td>
+</tr>
+<tr>
+<td>A5 burden-trajectory clustering</td>
+<td>done</td>
+<td><strong>LEVEL reportable, SHAPE null</strong></td>
+<td>graded severity gradient; timing matches NT schedule (A5b)</td>
+</tr>
+<tr>
+<td>B1 differential co-occurrence</td>
+<td>done</td>
+<td><strong>directional</strong> (as designed)</td>
+<td>0 infectious / 59 congenital stable pairs → §4.1 confirmed</td>
+</tr>
+<tr>
+<td>B2 residual-of-projection</td>
+<td>done</td>
+<td><strong><code>‖r_i‖</code> REPORTABLE</strong>, components not</td>
+<td>per-child atypicality score is the deliverable; all 3 published
+components dissolve/partial</td>
+</tr>
+<tr>
+<td>B3 contrastive β-spectrum</td>
+<td>done</td>
+<td><strong>corroborates</strong> (parametric)</td>
+<td>C2 infectious decays fastest; max-β basis
+congenital/psychiatric</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Headline.</strong> <em>Track A</em> — temporal signal is
+recoverable only in forms that avoid the sparse third mode (A3/A4/A5); a
+genuine ≥3-window tensor is not estimable at n=145 (the quantified
+ceiling is itself the result, §3.2 / §7). The A3 pre/post reshape,
+tested against NT (A3b), is mostly age/ascertainment: NT reshapes toward
+A3's own top-loaded conditions nearly as strongly as ASD, leaving only a
+magnitude excess that is age-locked-late in NT and so unidentifiable
+from earlier ascertainment. <em>Track B</em> — three independent
+contrastive methods converge: the published components are largely
+generic pediatric co-occurrence residualization never removed; the
+ASD-differential <em>second-moment</em> structure is <strong>congenital,
+not infectious</strong>. The robust quantitative deliverable is B2's
+per-child <strong><code>‖r_i‖</code> structural-atypicality
+score</strong> (rank covariate; Spearman ≥0.95 over K_NT 12–20).</p>
+<h3
+id="01-open-contrastive-threads--the-shift-gears-target-for-the-next-chat">0.1
+Open contrastive threads — the shift-gears target for the next chat</h3>
+<p>Track B answered the §4.1 methodological question; what remains open
+on the contrastive side, in rough priority:</p>
+<ol type="1">
+<li><strong>Confounder-set expansion (§4.1, applies to B1–B3 + primary
+standardization).</strong> Every run so far used only <strong>sex ×
+is_black × education</strong>. The teleform carries maternal smoking
+(trimester resolution), household income, parity, delivery mode,
+pre-eclampsia, and full 9-category race — re-derive the NT-normative
+model (<code>H_NT</code>) and the standardization strata on these before
+any ASD-specific claim is finalized. <code>yrincom</code> (~11% missing)
+and <code>GHTN</code> (~41%) need missing indicators. <strong>This is
+the main not-yet-done contrastive item.</strong></li>
+<li><strong>B2 <code>‖r_i‖</code> as a downstream covariate.</strong>
+The score is the intended input to the molecular / outcome analysis;
+nothing downstream has consumed it yet.</li>
+<li><strong>Track C combined (§5).</strong> <code>‖r_i‖</code> within
+the diagnosis-anchored early window — exploratory, density-limited on
+the A-side; reasonable now B2 is positive, deferred otherwise.</li>
+<li><strong>B3 manuscript polish</strong> if it ships (the β=1–2
+transient collapse is noted in <code>RESULTS_TrackB.md</code>;
+ranking/endpoints carry the claim).</li>
+</ol>
+<hr />
+<h2 id="1-governing-constraints-what-bounds-every-design-below">1.
+Governing constraints (what bounds every design below)</h2>
+<p>From the data audit (<code>analysis_memo.md</code>), recomputed on
+source:</p>
+<ul>
+<li><strong>n = 145 ASD</strong> children; ~48 per component at K=3;
+dominant-component assignment concordance under resampling is only
+0.66.</li>
+<li>The <strong>primary 2-D matrix</strong> (145 × ~50, ever-diagnosed)
+sits at <strong>22% density</strong> — workable.</li>
+<li>The <strong>six-window tensor collapses to 5–6% density</strong>,
+and <strong>~55% of condition-window slices rest on fewer than five
+children</strong>. That is the wall.</li>
+<li>Coverage <strong>attrites with age</strong> (133 children with any
+event in [0,3) → 56 in [15,18)), and the tensor code's own diagnostic
+flags temporal factors that merely "track data availability."
+Right-censoring at older ages is not signal.</li>
+</ul>
+<p><strong>Design consequence.</strong> The binding constraint is sample
+size expressed as <em>slice occupancy</em>, not connectivity per se.
+Every design below either (i) shrinks the number of things being
+estimated (fewer windows, fewer parameters, a scalar outcome), (ii)
+borrows strength across cells (smoothness, shrinkage, a normative
+prior), or (iii) trades the tensor for a denser representation of the
+same timing information. Anything that does none of these will factorize
+sampling noise.</p>
+<hr />
+<h2 id="2-pre-registered-decision-rules-apply-to-all-analyses">2.
+Pre-registered decision rules (apply to all analyses)</h2>
+<p>Set once, here, so results are interpretable either way:</p>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Threshold</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Density floor</strong></td>
+<td>A (condition × window) slice enters a model only with <strong>≥ 5
+children</strong>; a window enters only if <strong>≥ 60% of retained
+conditions</strong> clear the floor</td>
+<td>prevents estimating structure from empty cells</td>
+</tr>
+<tr>
+<td><strong>Stability floor</strong></td>
+<td>Bootstrap (B = 200) matched cosine <strong>≥ 0.80</strong>
+<em>and</em> dominant-assignment concordance <strong>≥ 0.60</strong> for
+a solution to be "reportable"</td>
+<td>matches the machinery already in <code>nmf_analysis.py</code></td>
+</tr>
+<tr>
+<td><strong>Min component size</strong></td>
+<td>A component with <strong>&lt; 20 children</strong> is flagged
+provisional, not interpreted</td>
+<td>mirrors <code>sensitivity_nmf.py</code>'s existing rule</td>
+</tr>
+<tr>
+<td><strong>Data-availability guard</strong></td>
+<td>Any temporal factor with <strong>r &gt; 0.7</strong> vs per-window
+event density is discarded as an artifact</td>
+<td>already implemented in <code>tensor_nmf.py</code></td>
+</tr>
+<tr>
+<td><strong>Null is publishable</strong></td>
+<td>If a track fails the stability floor, the reported result is the
+<strong>feasibility table + the failure</strong>, not a lowered
+threshold</td>
+<td>keeps the negative honest</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-track-a--longitudinal--temporal-factorization">3. Track A —
+Longitudinal / temporal factorization</h2>
+<h3 id="31-why-the-full-six-window-tensor-cannot-work-measured">3.1 Why
+the full six-window tensor cannot work (measured)</h3>
+<p>The production tensor is 145 × ~50–80 × 6. Recomputed density by
+window (ASD, ≥5 child condition filter,
+<code>/tmp/temporal_feasibility.py</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Window</th>
+<th style="text-align: right;">Children w/ event</th>
+<th style="text-align: right;">Window density</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0,3)</td>
+<td style="text-align: right;">133</td>
+<td style="text-align: right;">9.5%</td>
+</tr>
+<tr>
+<td>[3,6)</td>
+<td style="text-align: right;">130</td>
+<td style="text-align: right;">6.8%</td>
+</tr>
+<tr>
+<td>[6,9)</td>
+<td style="text-align: right;">119</td>
+<td style="text-align: right;">5.8%</td>
+</tr>
+<tr>
+<td>[9,12)</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">4.4%</td>
+</tr>
+<tr>
+<td>[12,15)</td>
+<td style="text-align: right;">93</td>
+<td style="text-align: right;">3.8%</td>
+</tr>
+<tr>
+<td>[15,18)</td>
+<td style="text-align: right;">56</td>
+<td style="text-align: right;">1.9%</td>
+</tr>
+</tbody>
+</table>
+<p>Overall 5.4% density; <strong>55% of slices &lt; 5 children; median
+slice n = 4.</strong> Not estimable.</p>
+<h3 id="32-the-truncation-idea-quantified--stop-the-endpoints-early">3.2
+The truncation idea, quantified — "stop the endpoints early"</h3>
+<p>The user's instinct is correct and it measurably helps. Truncating
+the age axis to the densely-sampled early-childhood window (where
+comorbidities present <em>and</em> where children are actually seen)
+roughly halves the thin-slice fraction and lifts median slice occupancy.
+Candidate schemes:</p>
+<table>
+<thead>
+<tr>
+<th>Scheme</th>
+<th style="text-align: right;">Windows</th>
+<th style="text-align: right;">Conditions</th>
+<th style="text-align: right;">Density</th>
+<th style="text-align: right;">Slices &lt; 5</th>
+<th style="text-align: right;">Median slice n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full 0–18, 3y</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">5.4%</td>
+<td style="text-align: right;"><strong>55%</strong></td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>Truncate @12, 3y</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">77</td>
+<td style="text-align: right;">6.9%</td>
+<td style="text-align: right;">44%</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td>Truncate @10, 2y</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">5.7%</td>
+<td style="text-align: right;">51%</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>Truncate @8, 2y</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">72</td>
+<td style="text-align: right;">6.3%</td>
+<td style="text-align: right;">45%</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td><strong>Truncate @9, 3y</strong></td>
+<td style="text-align: right;"><strong>3</strong></td>
+<td style="text-align: right;"><strong>74</strong></td>
+<td style="text-align: right;"><strong>8.0%</strong></td>
+<td style="text-align: right;"><strong>37%</strong></td>
+<td style="text-align: right;"><strong>7</strong></td>
+</tr>
+<tr>
+<td><strong>Dx-anchored: [0,3.25),[3.25,6.25),[6.25,9.25)</strong></td>
+<td style="text-align: right;"><strong>3</strong></td>
+<td style="text-align: right;"><strong>75</strong></td>
+<td style="text-align: right;"><strong>7.9%</strong></td>
+<td style="text-align: right;"><strong>38%</strong></td>
+<td style="text-align: right;"><strong>7</strong></td>
+</tr>
+<tr>
+<td>Truncate @6, 2y</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">7.3%</td>
+<td style="text-align: right;">37%</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td><strong>Two-window pre/post-dx</strong></td>
+<td style="text-align: right;"><strong>2</strong></td>
+<td style="text-align: right;"><strong>81</strong></td>
+<td style="text-align: right;"><strong>11.8%</strong></td>
+<td style="text-align: right;"><strong>25%</strong></td>
+<td style="text-align: right;"><strong>12</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Reading of the table.</strong> Truncation genuinely moves the
+analysis from <em>hopeless</em> (55% thin) to
+<em>marginal-but-defensible</em> (37% thin). It does
+<strong>not</strong> reach comfortable territory — even the best
+3-window scheme leaves ~1/3 of slices thin — so the honest expectation
+is a provisional result that likely fails the 0.80 stability floor. That
+expectation is the point: the truncated tensor is the object that lets
+us <em>demonstrate</em> the ceiling rather than assert it.</p>
+<h3
+id="33-a1--diagnosis-anchored-3-window-cp-recommended-temporal-primary">3.3
+A1 — Diagnosis-anchored 3-window CP (recommended temporal primary)</h3>
+<ul>
+<li><strong>Object:</strong> 145 × ~75 × 3 tensor, windows
+<code>[0, 3.25) / [3.25, 6.25) / [6.25, 9.25)</code> — anchored on the
+median diagnosis age rather than arbitrary calendar cuts, so the
+pre-diagnosis window is developmentally meaningful.</li>
+<li><strong>Method:</strong> the existing <code>ncp()</code>
+non-negative CP (multiplicative updates) in <code>tensor_nmf.py</code> —
+no new machinery, just change <code>_build_time_bins</code> and
+truncate.</li>
+<li><strong>Rank:</strong> scan R = 2–4 only (R ≥ 5 is unsupportable at
+this density).</li>
+<li><strong>Read-outs already coded:</strong> restart + bootstrap
+stability, temporal-factor vs density correlation, condition-mode
+agreement with the 2-D fit.</li>
+<li><strong>Decide by §2.</strong> Expect it to clear density but sit
+near the stability floor.</li>
+<li><strong>Effort:</strong> low (hours). <strong>Power:</strong>
+low–marginal. <strong>Run first in Track A.</strong></li>
+</ul>
+<h3
+id="34-a2--smoothness-regularized-temporal-mode-the-permissive-extension">3.4
+A2 — Smoothness-regularized temporal mode (the permissive
+extension)</h3>
+<p>The single change that most extends what the tensor can bear:
+<strong>penalize roughness in the temporal factor.</strong> Add
+<code>λ · Σ_t (C[t+1] − C[t])²</code> to the CP objective so a thin
+slice borrows strength from its neighbors instead of being fit
+independently. This is the disciplined way to be permissive — it lets
+you keep more windows (even the full 0–18) because adjacent windows are
+no longer estimated in isolation.</p>
+<ul>
+<li><strong>Implementation:</strong> the temporal-mode multiplicative
+update in <code>ncp()</code> gains a tridiagonal smoothing term; ~20
+lines. Choose λ by the stability of the temporal factor, not
+reconstruction error.</li>
+<li><strong>Payoff:</strong> turns "each window is its own tiny sample"
+into "one smooth trajectory with ~6 knots," which is far fewer effective
+parameters.</li>
+<li><strong>Effort:</strong> medium. <strong>Power:</strong> the best
+shot at <em>keeping time resolution</em>.</li>
+</ul>
+<h3
+id="35-a3--two-window-prepost-diagnosis-contrast-the-robust-anchor">3.5
+A3 — Two-window pre/post-diagnosis contrast (the robust anchor)</h3>
+<p>At <strong>11.8% density and only 25% thin slices</strong>, the
+pre-dx vs post-dx object is the one temporal design comfortably above
+the floor. It answers a narrower question — <em>does comorbidity
+structure differ before vs after the ASD label?</em> — but answers it
+credibly. This generalizes the existing <code>nmf_prediagnosis.py</code>
+(which fits the pre-dx slice alone) into an explicit two-slab comparison
+with Hungarian-matched components. <strong>Run this as the temporal
+result you can actually stand behind</strong>, with A1/A2 as the "we
+also tried finer time resolution and here is why it doesn't hold."</p>
+<h3
+id="36-a4--timing-encoded-matrix-temporal-signal-without-a-tensor">3.6
+A4 — Timing-encoded matrix (temporal signal without a tensor)</h3>
+<p>Sidestep the third mode entirely. Keep a <strong>145 × ~50 matrix at
+22% density</strong>, but make each nonzero entry carry <em>timing</em>
+instead of 0/1:</p>
+<ul>
+<li><strong>age-at-first-event</strong> (earlier onset → larger value,
+e.g. <code>1/(age+1)</code> or a z-scored recency), or</li>
+<li><strong>a two-column split</strong> per condition (early/late
+indicator), doubling columns but staying dense.</li>
+</ul>
+<p>NMF then discovers components that mix <em>what</em> and
+<em>when</em> without ever facing a 6% tensor. Cost: it cannot recover
+free-form temporal trajectories the way CP can, but it uses onset timing
+at full power. <strong>Effort: low. Power: good</strong> — a strong
+complement to A3.</p>
+<h3 id="37-a5--burden-trajectory-clustering-well-powered-fallback">3.7
+A5 — Burden-trajectory clustering (well-powered fallback)</h3>
+<p>If the condition × time structure is unrecoverable (likely), collapse
+conditions to a <strong>cumulative comorbidity count per age</strong>
+and cluster the 145 <em>trajectories</em> (latent-class growth / k-means
+on splines). One value per child per age is dense and well-powered; 2–3
+trajectory classes (e.g. early-plateau vs escalating burden) are
+realistic at n = 145. This is the temporal analysis most likely to yield
+a stable, reportable result, at the cost of discarding condition
+identity. <strong>Effort: low. Power: highest in Track A.</strong></p>
+<h3 id="38-countkl-variant-applies-to-a1a3">3.8 Count/KL variant
+(applies to A1–A3)</h3>
+<p>The conditions are currently binarized. Feeding <strong>event
+counts</strong> with a <strong>KL-divergence (Poisson) loss</strong>
+(<code>beta_loss="kullback-leibler"</code>) recovers recurrence
+intensity — how many otitis episodes, not just ever/never — at
+<strong>no sparsity cost</strong>, and better matches count data than
+Frobenius. Cheap to add and worth running as a variant of whichever
+temporal object survives §2.</p>
+<hr />
+<h2 id="4-track-b--contrastive-factorization">4. Track B — Contrastive
+factorization</h2>
+<h3 id="41-the-core-critique-why-residualization-is-not-enough">4.1 The
+core critique (why residualization is not enough)</h3>
+<p><strong>Moments.</strong> The mean is the first moment;
+variance/covariance is the second. The current pipeline residualizes
+each condition against its demographically-expected NT rate — an
+adjustment to the <strong>first moment</strong>, one condition at a
+time, independently. But NMF builds components out of
+<strong>co-occurrence</strong>, which is <strong>second-moment</strong>
+information. The correction therefore operates on a quantity NMF does
+not consume and leaves untouched the quantity it does.</p>
+<p><strong>Sharpened by this pipeline's clip step.</strong> The residual
+is then <code>clip(·, 0)</code> (memo §2.1), discarding negative
+residuals. So the co-occurrence structure actually fed to NMF is
+essentially the <strong>raw, demographically-unadjusted ASD
+co-occurrence</strong> — the residualization down-weights common
+conditions cell-by-cell (IDF-style) but never removes the <em>joint</em>
+structure that ordinary children also share.</p>
+<p><strong>The concrete failure.</strong> URI and otitis media co-occur
+in nearly all young children (shared anatomy, season, daycare).
+Residualization removes the NT <em>baseline rates</em> but the
+<em>correlation</em> between them is identical in ASD and NT and passes
+through untouched. NMF then assembles a component from that surviving
+co-occurrence — real, but not ASD-specific. The reframed question
+contrastive methods ask is <strong>"which conditions co-occur
+<em>differently</em> in ASD than in ordinary children,"</strong> not
+"which are more prevalent."</p>
+<p><strong>Standing prediction (pre-registered).</strong> Under any
+contrastive treatment, <strong>Component 3 (infectious–inflammatory:
+otitis, URI, LRI, pharyngitis) should largely dissolve</strong> — it is
+the canonical generic pediatric cluster — while <strong>Component 2
+(congenital cardiac, GERD, retinal, asthma) should survive</strong>,
+because rare congenital anomalies have genuinely unusual joint
+structure. If that is the outcome, it is a methodological contribution
+independent of any downstream result.</p>
+<blockquote>
+<p><strong>CONFIRMED (2026-08-31, see
+<code>RESULTS_TrackB.md</code>).</strong> The infectious–respiratory
+component dissolved on all three methods — B2 projection cosine 0.467,
+<strong>0</strong> stable differential pairs in B1, fastest β-decay in
+B3 — while congenital/chromosomal structure survived (59 stable B1
+pairs, 37%; dominates the max-β basis). The ASD-differential joint
+structure is congenital, not infectious.</p>
+</blockquote>
+<p><strong>Expand the confounder set (applies to B1–B3 and to the
+primary standardization).</strong> The current adjustment uses only
+<strong>sex × is_black × education</strong> (memo §1.6), yet the raw
+teleform carries well-covered prenatal confounders that go unused —
+<strong>maternal smoking (with trimester resolution), household income,
+parity, delivery mode, pre-eclampsia, and full 9-category race</strong>.
+Any "ASD-specific" claim is stronger if the NT-normative model (B2's
+<code>H_NT</code>) and the standardization strata condition on these
+rather than on three variables — otherwise a residual attributed to ASD
+may be riding an unmodeled SES or smoking gradient. Add them as strata
+(or as NT-side model covariates), noting <code>yrincom</code> (~11%
+missing) and <code>GHTN</code> (~41%) need a missing indicator.</p>
+<h3
+id="42-b1--differential-co-occurrence--symmetric-nmf-sanity-check-run-first">4.2
+B1 — Differential co-occurrence + symmetric NMF (sanity check, run
+first)</h3>
+<ul>
+<li>Compute the condition × condition co-occurrence separately in ASD
+and NT (<strong>tetrachoric</strong> or partial correlations, since
+binary), form <code>D = C_ASD − C_NT</code>, and factorize/cluster the
+<strong>positive part</strong> with symmetric NMF.</li>
+<li><strong>Interpretation is trivial:</strong> these condition
+<em>pairs</em> co-occur more in ASD than in NT.</li>
+<li><strong>Essential caveat:</strong> <code>C_NT</code> is well
+estimated (n = 1,851), but <code>C_ASD</code> is ~2,500 pairs from 145
+children — pure noise without <strong>shrinkage</strong>. Use
+Ledoit–Wolf or <strong>graphical lasso</strong>, and <strong>bootstrap
+the edges</strong> so only stable differential pairs are reported.</li>
+<li><strong>Effort: low. Power: noisy but directional.</strong> Best
+used to confirm the §4.1 prediction before building anything
+heavier.</li>
+</ul>
+<h3
+id="43-b2--residual-of-projection-recommended-contrastive-primary">4.3
+B2 — Residual-of-projection (recommended contrastive primary)</h3>
+<p>The strongest option, because it reuses tooling already in the repo
+and yields a well-powered scalar.</p>
+<ol type="1">
+<li>Fit NMF on the <strong>1,851 NT children</strong> →
+<code>H_NT</code>, a basis of ordinary pediatric multimorbidity. Choose
+<code>K_NT</code> generously (<strong>8–12</strong>, by NT-side
+cross-validation) so the normative model is rich, not impoverished.</li>
+<li>Project each ASD child by NNLS:
+<code>w_i = argmin_{w≥0} ‖x_i − w·H_NT‖²</code>.</li>
+<li>Reconstruct <code>x̂_i = w_i·H_NT</code> — the part of this child's
+comorbidity that <em>ordinary</em> pediatric structure explains,
+<strong>conditioned on the rest of their profile</strong> (the key
+advance over demographic-only residualization).</li>
+<li>Residual <code>R = X_ASD − X̂</code>. Positive entries are conditions
+present <em>in excess of what the normative pattern predicts</em>. Shift
+non-negative and factorize <code>R</code> → ASD-specific
+components.</li>
+<li><strong>Bonus, and arguably the headline:</strong>
+<code>‖r_i‖</code> is a <strong>per-child scalar</strong> — how
+structurally atypical that child's comorbidity profile is. One
+<strong>continuous, well-powered outcome</strong> is a far better target
+at n = 145 than three compositional loadings, and it is a natural
+covariate for any downstream (molecular) analysis.</li>
+</ol>
+<ul>
+<li><strong>Power note:</strong> the NT-side fit is well-powered; the
+residual factorization inherits ASD-side sparsity, so treat the
+<strong>components</strong> as provisional but the
+<strong><code>‖r_i‖</code> score</strong> as the robust
+deliverable.</li>
+<li><strong>Effort: medium. Power: best available.</strong> <strong>Run
+as the primary contrastive analysis.</strong></li>
+</ul>
+<h3
+id="44-b3--contrastive-objective--β-spectrum-most-ambitious-run-last">4.4
+B3 — Contrastive objective / β-spectrum (most ambitious, run last)</h3>
+<p>Solve <code>min ‖X_A − W_A H‖² − β‖X_N − W_N H‖²</code> with
+<code>H</code> <strong>shared</strong>: β = 0 recovers the current
+paper; large β pushes <code>H</code> toward structure that explains ASD
+but <em>not</em> NT.</p>
+<ul>
+<li>The negative term is <strong>unbounded below</strong> — you must
+constrain <code>‖h_r‖ = 1</code> and use projected gradient, or it
+diverges.</li>
+<li>Do not pick a single β. <strong>Report the components as a function
+of β</strong> (a "contrastive spectrum"), the way the contrastive-PCA
+literature (Abid et al.) handles the identical problem.</li>
+<li><strong>Effort: high (custom optimizer + tuning). Power: hardest to
+validate at n = 145.</strong> Attempt only if B1/B2 are
+encouraging.</li>
+</ul>
+<h3 id="45-deliverable-for-track-b">4.5 Deliverable for Track B</h3>
+<p>Across B1–B3, the reportable question is: <strong>which of the
+published components survive a contrastive treatment?</strong> The
+pre-registered prediction (§4.1) is infectious–inflammatory dissolves,
+congenital survives. Either outcome is informative; a component that
+dissolves was never ASD-specific, and saying so crisply is a genuine
+methodological result for the ASD comorbidity literature.</p>
+<hr />
+<h2 id="5-track-c--combined-contrastive-within-the-early-window">5.
+Track C — Combined (contrastive within the early window)</h2>
+<p>The two tracks compose. The residual-of-projection (B2) can be run
+<strong>within the diagnosis-anchored early window (A1)</strong>: fit
+<code>H_NT</code> per early window, project the ASD early-window slices,
+and read <code>‖r_i‖</code> as an <strong>early-childhood
+structural-atypicality trajectory</strong>. This is speculative and
+density-limited, but it is the natural place a positive B2 result and a
+marginal A1 result would meet. Deprioritized until both parents show
+signal.</p>
+<hr />
+<h2 id="6-prioritization-and-sequencing">6. Prioritization and
+sequencing</h2>
+<p>Ordered by (power × interpretability) / effort — run top-down, stop
+where the stability floor stops being cleared. <em>(All of #1–#8 have
+now been run; see §0 for outcomes. The Run? column below is the original
+pre-execution plan, kept as the record of what was committed before
+results.)</em></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Analysis</th>
+<th>Track</th>
+<th>Effort</th>
+<th>Expected power</th>
+<th>Run?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>B2 residual-of-projection</strong> (+ <code>‖r_i‖</code>
+score)</td>
+<td>B</td>
+<td>Med</td>
+<td><strong>Best</strong></td>
+<td><strong>Yes — primary</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>A3 pre/post-dx two-window</strong></td>
+<td>A</td>
+<td>Low</td>
+<td>Good</td>
+<td><strong>Yes — robust temporal anchor</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>A5 burden-trajectory clustering</strong></td>
+<td>A</td>
+<td>Low</td>
+<td><strong>Best in A</strong></td>
+<td><strong>Yes — well-powered fallback</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td>B1 differential co-occurrence (shrunk)</td>
+<td>B</td>
+<td>Low</td>
+<td>Directional</td>
+<td>Yes — sanity check</td>
+</tr>
+<tr>
+<td>5</td>
+<td>A4 timing-encoded matrix</td>
+<td>A</td>
+<td>Low</td>
+<td>Good</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>6</td>
+<td>A1 dx-anchored 3-window CP</td>
+<td>A</td>
+<td>Low</td>
+<td>Marginal</td>
+<td>Yes — to demonstrate the ceiling</td>
+</tr>
+<tr>
+<td>7</td>
+<td>A2 smoothness-regularized CP</td>
+<td>A</td>
+<td>Med</td>
+<td>Marginal</td>
+<td>If A1 is borderline</td>
+</tr>
+<tr>
+<td>8</td>
+<td>KL/count variant</td>
+<td>A</td>
+<td>Low</td>
+<td>—</td>
+<td>On whichever A object survives</td>
+</tr>
+<tr>
+<td>9</td>
+<td>B3 contrastive β-spectrum</td>
+<td>B</td>
+<td>High</td>
+<td>Hardest</td>
+<td>Only if B1/B2 encourage</td>
+</tr>
+<tr>
+<td>10</td>
+<td>C combined</td>
+<td>A×B</td>
+<td>High</td>
+<td>Speculative</td>
+<td>Only if A1 + B2 both signal</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fastest path to a defensible result:</strong> #1 (B2's
+<code>‖r_i‖</code>) and #3 (burden trajectories) are both well-powered
+and low-effort — start there. #2 is the temporal result you can publish.
+#6/#7 exist primarily to <em>document the ceiling</em> the user already
+anticipates.</p>
+<hr />
+<h2 id="7-what-counts-as-it-didnt-work-so-the-negative-is-credible">7.
+What counts as "it didn't work" (so the negative is credible)</h2>
+<p>Pre-committed, per §2:</p>
+<ul>
+<li><strong>Temporal (A1/A2):</strong> a solution that fails bootstrap
+cosine ≥ 0.80 <strong>or</strong> has any temporal factor with r &gt;
+0.7 vs density is reported as <em>not estimable</em>, with the
+feasibility table (§3.2) as the evidence — <strong>not</strong> re-tuned
+to pass.</li>
+<li><strong>Contrastive (B1/B2):</strong> if the ASD-specific residual
+components fail the stability floor, <code>‖r_i‖</code> is still
+reported as a continuous outcome (it does not depend on component
+stability), and the component-level null is stated plainly.</li>
+<li><strong>The feasibility table itself is a result.</strong> "A
+time-resolved factorization is not supported below ~8% density / above
+~37% thin slices at n = 145" is a quantitative, reusable statement about
+this class of cohort.</li>
+</ul>
+<hr />
+<h2 id="8-implementation-notes">8. Implementation notes</h2>
+<ul>
+<li><strong>Environment gap:</strong>
+<code>~/miniforge/bin/python</code> has pandas/numpy/scipy but
+<strong>no scikit-learn</strong>; NMF and NNLS need it. Install into the
+miniforge env (<code>~/miniforge/bin/pip install scikit-learn</code>)
+before running B2/A1, or hand-roll NNLS via
+<code>scipy.optimize.nnls</code> (already available).</li>
+<li><strong>Reuse, don't rebuild:</strong> <code>ncp()</code> (tensor),
+<code>build_residual_matrix</code>, <code>select_nmf_conditions</code>,
+<code>_build_time_bins</code>, and the bootstrap/Hungarian stability
+code in <code>nmf_analysis.py</code> cover most of Track A. B2 needs
+only an NT-side NMF fit + a per-child <code>scipy.optimize.nnls</code>
+loop.</li>
+<li><strong>Paths:</strong> <code>config.py</code> hardcodes Windows
+paths; point it at
+<code><PROJECT_ROOT>/BBC_Dataset/preprocessing/results/</code>
+before any run.</li>
+<li><strong>Feasibility script:</strong>
+<code>/tmp/temporal_feasibility.py</code> reproduces §3.2 and is the
+place to add new truncation schemes.</li>
+</ul>
+<p><em>All density and slice figures recomputed from
+<code>BBC_event_table.csv</code> /
+<code>BBC_patients_analytic.csv</code> on 2026-08-28.</em></p>
+</body>
+</html>

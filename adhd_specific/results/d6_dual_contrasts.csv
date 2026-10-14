@@ -1,0 +1,79 @@
+condition,p_NT,p_Other NDD,p_ADHD,p_ASD+ADHD,p_ASD-only,aut_on_adhd,aut_on_adhd_surv90,aut_on_adhd_beyond_mu90,adhd_on_aut,adhd_on_aut_surv90,adhd_on_aut_beyond_mu90,adhd_effect_nonautistic,interaction_raw,interaction,interaction_surv90
+Malnutrition,0.0497,0.0892,0.0698,0.0,0.0833,-0.0507,True,True,-0.0209,False,True,-0.0194,-0.0639,0.0074,False
+Sleep disorders (organic),0.1124,0.2075,0.3089,0.541,0.25,0.0404,False,False,0.0702,True,False,0.1014,0.1896,0.0074,False
+Female pelvic inflammatory disease,0.0335,0.0548,0.0454,0.0,0.0119,-0.034,True,True,0.0027,False,False,-0.0095,-0.0024,0.0074,False
+Other bacterial infections (incl. sepsis),0.1205,0.171,0.1902,0.0984,0.0952,-0.0319,False,False,0.0242,False,False,0.0193,-0.0161,0.0074,False
+"Behavioral syndromes (eating, sleep)",0.0194,0.0452,0.0838,0.2131,0.0952,0.0308,False,False,0.0509,True,False,0.0386,0.0793,0.0074,False
+Pain syndromes,0.061,0.086,0.0873,0.0328,0.0476,-0.029,False,False,0.0119,False,False,0.0012,-0.0161,0.0074,False
+Substance-related disorders,0.0162,0.0237,0.0628,0.0164,0.0,-0.029,False,False,0.0224,False,False,0.0392,-0.0228,0.0074,False
+"Mood disorders (depression, bipolar)",0.0697,0.114,0.2373,0.1475,0.0833,-0.0259,False,False,0.0405,False,False,0.1234,-0.0592,0.0074,False
+Other chronic lower respiratory (COPD/bronchiectasis),0.0076,0.0194,0.0332,0.0,0.0357,-0.0253,True,False,-0.007,False,True,0.0138,-0.0495,0.0074,False
+Epilepsy & seizures,0.0059,0.0355,0.0611,0.1475,0.1071,0.0248,False,False,0.0344,False,False,0.0256,0.0148,0.0074,False
+"Eyelid, lacrimal & orbit disorders",0.1005,0.143,0.1361,0.2459,0.1548,0.0238,False,False,0.0434,False,False,-0.0069,0.098,0.0074,False
+Movement & other episodic disorders,0.0097,0.072,0.089,0.1803,0.131,0.0233,False,False,0.0361,False,False,0.017,0.0324,0.0074,False
+Papulosquamous disorders (psoriasis),0.0357,0.0581,0.075,0.0328,0.0357,-0.0229,False,False,0.0162,False,False,0.017,-0.0199,0.0074,False
+Soft tissue & muscle disorders,0.2491,0.3505,0.4171,0.3115,0.2381,-0.0217,False,False,0.039,False,False,0.0666,0.0068,0.0074,False
+Nutritional anemia (iron-deficiency),0.0767,0.129,0.1152,0.0656,0.1548,-0.0212,False,False,-0.0012,False,False,-0.0138,-0.0753,0.0074,False
+Congenital cardiovascular anomalies,0.0821,0.1548,0.1658,0.2623,0.1548,0.02,False,False,0.0462,False,False,0.011,0.0966,0.0074,False
+Headache & migraine,0.0821,0.1183,0.1745,0.1148,0.0238,-0.0199,False,False,0.0517,True,False,0.0562,0.0347,0.0074,False
+Chromosomal & other congenital syndromes,0.0162,0.0677,0.0698,0.1311,0.0952,0.0183,False,False,0.0334,False,False,0.0021,0.0338,0.0074,False
+Urticaria & erythema,0.0913,0.1258,0.1693,0.1148,0.1429,-0.0183,False,False,0.0177,False,False,0.0435,-0.0716,0.0074,False
+Diabetes & glucose regulation,0.0167,0.028,0.0349,0.082,0.0595,0.0179,False,False,0.0292,False,False,0.0069,0.0155,0.0074,False
+Congenital digestive anomalies,0.0481,0.0645,0.0716,0.1311,0.1429,0.0177,False,False,0.0222,False,False,0.007,-0.0187,0.0074,False
+Menstrual & other female genital disorders,0.1264,0.1344,0.1257,0.082,0.0714,-0.0172,False,False,0.0255,False,False,-0.0088,0.0193,0.0074,False
+Mycoses (fungal infections),0.3128,0.4527,0.4782,0.3934,0.3452,-0.0164,False,False,0.0347,False,False,0.0255,0.0227,0.0074,False
+Respiratory failure & other,0.06,0.1452,0.1623,0.1148,0.119,-0.0161,False,False,0.0231,False,False,0.0171,-0.0214,0.0074,False
+Arthropathies & joint disorders (arthritis),0.2339,0.2785,0.3874,0.3115,0.2024,-0.0159,False,False,0.0451,False,False,0.1089,0.0002,0.0074,False
+Congenital musculoskeletal & limb anomalies,0.0854,0.1366,0.1571,0.2295,0.2143,0.0158,False,False,0.0295,False,False,0.0205,-0.0053,0.0074,False
+Influenza & pneumonia,0.2021,0.3086,0.349,0.2787,0.2976,-0.0155,False,False,0.0245,False,False,0.0404,-0.0594,0.0074,False
+Asthma,0.2334,0.3183,0.4555,0.377,0.3452,-0.0154,False,False,0.0324,False,False,0.1372,-0.1054,0.0074,False
+Other blood & spleen disorders,0.2318,0.3032,0.3665,0.2951,0.2024,-0.0153,False,False,0.0425,False,False,0.0633,0.0294,0.0074,False
+Strabismus & ocular motility disorders,0.0616,0.1226,0.1187,0.1803,0.1429,0.0153,False,False,0.0336,False,False,-0.0039,0.0414,0.0074,False
+Dermatitis & eczema (atopic),0.4581,0.5903,0.6248,0.7049,0.4881,0.015,False,False,0.059,True,False,0.0345,0.1824,0.0074,False
+Hernia,0.0573,0.1032,0.0995,0.0656,0.1429,-0.0149,False,False,0.0014,False,False,-0.0037,-0.0735,0.0074,False
+Hypertensive disorders,0.0281,0.0473,0.0593,0.0328,0.0357,-0.0148,False,False,0.0162,False,False,0.012,-0.015,0.0074,False
+Vitamin & nutritional deficiencies,0.0908,0.1409,0.1379,0.0984,0.2024,-0.0145,False,False,0.0009,False,False,-0.003,-0.101,0.0074,False
+Organic mental disorders,0.0335,0.0409,0.0576,0.0328,0.0,-0.0139,False,False,0.0327,False,False,0.0167,0.0161,0.0074,False
+Personality disorders,0.0065,0.0172,0.0838,0.1311,0.0714,0.0138,False,False,0.0399,False,False,0.0666,-0.0068,0.0074,False
+Otitis media & middle ear disorders,0.4084,0.5269,0.5777,0.6557,0.5238,0.0137,False,False,0.0463,False,False,0.0508,0.0811,0.0074,False
+Disorders of skin appendages (acne/hair/nail),0.2118,0.2946,0.3298,0.4098,0.2738,0.0135,False,False,0.0475,False,False,0.0352,0.1008,0.0074,False
+Otitis externa & external ear disorders,0.1469,0.2398,0.2548,0.3279,0.1786,0.0133,False,False,0.0519,True,False,0.015,0.1343,0.0074,False
+Refractive errors,0.3225,0.471,0.4974,0.5738,0.5357,0.0126,False,False,0.0333,False,False,0.0264,0.0116,0.0074,False
+Other digestive disorders,0.0303,0.043,0.0628,0.0984,0.0357,0.0119,False,False,0.0426,False,False,0.0198,0.0428,0.0074,False
+Inflammatory bowel disease & colitis,0.2096,0.2968,0.3246,0.3934,0.1667,0.0116,False,False,0.0638,True,False,0.0278,0.1989,0.0074,False
+Osteopathies & chondropathies (osteomyelitis),0.0438,0.0699,0.0646,0.0984,0.0238,0.0113,False,False,0.0472,True,False,-0.0053,0.0799,0.0074,False
+Underweight,0.1075,0.1688,0.1483,0.1967,0.2024,0.0111,False,False,0.0253,False,False,-0.0205,0.0148,0.0074,False
+Chronic upper respiratory (rhinitis/sinusitis/tonsil),0.3447,0.4785,0.5742,0.6393,0.4762,0.0111,False,False,0.0505,False,False,0.0957,0.0675,0.0074,False
+Acute bronchitis & bronchiolitis,0.1248,0.2022,0.2199,0.1803,0.1905,-0.011,False,False,0.0241,False,False,0.0177,-0.0279,0.0074,False
+Aplastic & other anemias,0.1026,0.1774,0.1361,0.1803,0.1667,0.0106,False,False,0.0287,False,False,-0.0413,0.055,0.0074,False
+Acquired MSK deformities & other,0.033,0.0462,0.0506,0.0328,0.0595,-0.0102,False,False,0.0079,False,False,0.0044,-0.0311,0.0074,False
+Congenital eye/ear/face/neck anomalies,0.0346,0.0656,0.082,0.1148,0.0595,0.01,False,False,0.0392,False,False,0.0164,0.0388,0.0074,False
+Other & sequelae of infectious disease,0.1502,0.257,0.2723,0.3279,0.2381,0.0098,False,False,0.0415,False,False,0.0153,0.0745,0.0074,False
+"Anxiety, stress & somatoform disorders",0.1372,0.3086,0.5166,0.5738,0.4167,0.0091,False,False,0.0494,False,False,0.208,-0.0509,0.0074,False
+Other endocrine gland disorders (pituitary/adrenal/gonadal),0.0675,0.0914,0.0995,0.1311,0.1429,0.0089,False,False,0.0222,False,False,0.0081,-0.0198,0.0074,False
+"Metabolic disorders (lipid, fluid/electrolyte)",0.1702,0.2892,0.3089,0.3607,0.2976,0.0087,False,False,0.037,False,False,0.0197,0.0434,0.0074,False
+Acute upper respiratory infection,0.6591,0.8172,0.8185,0.7869,0.6548,-0.0085,False,False,0.0488,False,False,0.0013,0.1308,0.0074,False
+Conduction disorders & arrhythmias,0.0281,0.0516,0.0838,0.0656,0.0476,-0.0084,False,False,0.0271,False,False,0.0322,-0.0142,0.0074,False
+Congenital respiratory anomalies,0.0135,0.0409,0.0454,0.0656,0.0476,0.008,False,False,0.0271,False,False,0.0045,0.0134,0.0074,False
+"Bladder & urethral disorders (cystitis, UTI)",0.1097,0.1742,0.2077,0.1803,0.1548,-0.0079,False,False,0.0311,False,False,0.0335,-0.0079,0.0074,False
+"Functional & other intestinal (constipation, IBS)",0.2836,0.4247,0.3805,0.4262,0.4643,0.0071,False,False,0.0231,False,False,-0.0443,0.0062,0.0074,False
+Oral & dental disorders,0.2696,0.3989,0.4101,0.377,0.3929,-0.0071,False,False,0.0258,False,False,0.0112,-0.027,0.0074,False
+Congenital skin & integument anomalies,0.1491,0.1602,0.1501,0.1311,0.0833,-0.0066,False,False,0.0366,False,False,-0.0101,0.0579,0.0074,False
+Benign neoplasm,0.0643,0.0677,0.0785,0.0984,0.0357,0.0062,False,False,0.0426,False,False,0.0108,0.0519,0.0074,False
+Congenital nervous system anomalies,0.0178,0.0753,0.0646,0.082,0.1071,0.006,False,False,0.0157,False,False,-0.0107,-0.0145,0.0074,False
+Hearing loss & other ear disorders,0.2501,0.4151,0.4677,0.4426,0.4167,-0.0055,False,False,0.0316,False,False,0.0527,-0.0267,0.0074,False
+Visual disturbances & blindness,0.1572,0.2387,0.2932,0.2787,0.2262,-0.004,False,False,0.0358,False,False,0.0545,-0.002,0.0074,False
+Skin & subcutaneous infections,0.1902,0.2376,0.2932,0.2787,0.1905,-0.004,False,False,0.0421,False,False,0.0556,0.0327,0.0074,False
+Congenital genital anomalies,0.04,0.057,0.0698,0.082,0.0833,0.0039,False,False,0.022,False,False,0.0128,-0.0142,0.0074,False
+Intestinal infections (gastroenteritis),0.154,0.2387,0.274,0.2623,0.1667,-0.0035,False,False,0.0438,False,False,0.0353,0.0603,0.0074,False
+Other eye disorders,0.1518,0.2548,0.2426,0.2623,0.1667,0.0032,False,False,0.0438,False,False,-0.0123,0.1079,0.0074,False
+"Esophageal, gastric & duodenal disorders",0.1286,0.2215,0.2391,0.2295,0.1786,-0.0032,False,False,0.0359,False,False,0.0176,0.0333,0.0074,False
+Hemolytic anemia,0.061,0.0763,0.0733,0.082,0.0476,0.0026,False,False,0.0331,False,False,-0.003,0.0374,0.0074,False
+Dorsopathies & spine disorders (scoliosis),0.1378,0.2043,0.2356,0.2295,0.1071,-0.0024,False,False,0.0509,True,False,0.0313,0.0911,0.0074,False
+Retinal & choroidal disorders,0.0362,0.1011,0.1012,0.0984,0.119,-0.0018,False,False,0.0182,False,False,1e-04,-0.0208,0.0074,False
+"Lice, scabies & other infestations",0.0459,0.0634,0.0838,0.082,0.0,-0.0015,False,False,0.0529,True,False,0.0203,0.0616,0.0074,False
+Viral infections with exanthem/skin,0.228,0.3774,0.3647,0.377,0.3333,0.0012,False,False,0.0341,False,False,-0.0127,0.0564,0.0074,False
+Male genital disorders,0.0719,0.0989,0.1885,0.1967,0.1905,0.0011,False,False,0.0275,False,False,0.0896,-0.0833,0.0074,False
+Conjunctivitis & conjunctival disorders,0.2982,0.4097,0.4817,0.4918,0.3214,0.0007,False,False,0.0516,True,False,0.072,0.0984,0.0074,False
+Other skin disorders,0.2048,0.2903,0.3194,0.3279,0.2381,0.0006,False,False,0.0415,False,False,0.029,0.0607,0.0074,False
+Obesity & overnutrition,0.483,0.6204,0.6824,0.6885,0.6667,0.0002,False,False,0.0309,False,False,0.0619,-0.0401,0.0074,False

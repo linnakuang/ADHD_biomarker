@@ -5,7 +5,7 @@ This branch adds the **spectrum analyses (S1–S8)** alongside the existing `cod
 
 > ## ⚠️ Read this first: what cohort these analyses actually use
 >
-> **None of the work in these directories is ADHD-only.** Despite the repository name, every
+> **Except for `adhd_specific/` (see below), none of the work in these directories is ADHD-only.** Despite the repository name, every
 > analysis here operates on the **full neurodevelopmental spectrum**, using a single
 > mutually-exclusive 4-way label assigned by the priority rule **ASD > ADHD > other-NDD > NT**.
 > **ADHD (n = 573, meaning *ADHD-without-ASD*)** appears only as **one of four groups** or as a
@@ -46,9 +46,19 @@ power_axes_S1_S2/        S1 axis robustness, S2 ASD detectability in NMF latent 
 temporal_S3_S4_S8/       S3 feasibility, S4 tensor validity, S8 ascertainment-normalized timing
 specificity_S5_S6_S7/    S5 shrinkage, S6 gradient-vs-step, S7 cross-group contrast
 writeups/                SPECTRUM.md (full methods+results), RESEARCH_AGENDA.md, analysis_plan/memo
+adhd_specific/           D1–D7: ADHD-focused follow-up (ADHD as the focal group; RESULTS.md / RESULTS.html)
 ```
 Each analysis directory has its own `README.md` stating the exact groups it uses and its finding.
 The complete, self-contained write-up is **`writeups/SPECTRUM.md`**.
+
+## ADHD-focused follow-up (`adhd_specific/`)
+
+D1–D7 take **ADHD (n = 573, ADHD without ASD) as the focal group**. They compare it with other NDD (930), ASD (145, split into
+ASD+ADHD 61 / ASD-only 84) and NT (1,851) over 78 conditions selected for ADHD. Start with `adhd_specific/README.md`. The full
+write-up, with cohort construction, ICD processing, condition definitions, statistical formulation and figures, is
+`adhd_specific/RESULTS.md`; `RESULTS.html` is the same document as one file with the figures embedded.
+Headline: most ADHD-vs-NT comorbidity is shared NDD burden plus utilization. The robust ADHD-specific core is anxiety, mood,
+personality-disorder codes and asthma, plus substance use (provisional, see the code audit), with constipation lower.
 
 ## Results in one line each
 

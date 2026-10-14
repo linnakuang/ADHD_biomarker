@@ -1,0 +1,79 @@
+condition,category,p_NT,p_otherNDD,p_ADHD,p_ASD,ICD-10,ICD-9,in_paper51
+Conduction disorders & arrhythmias,Cardiovascular,0.0281,0.0516,0.0838,0.0552,I44-I49,426-427,False
+Hypertensive disorders,Cardiovascular,0.0281,0.0473,0.0593,0.0345,I10-I16,401-405,False
+Chromosomal & other congenital syndromes,Congenital,0.0162,0.0677,0.0698,0.1103,Q85-Q99,758-759,True
+Congenital cardiovascular anomalies,Congenital,0.0821,0.1548,0.1658,0.2,Q20-Q28,745-747,True
+Congenital digestive anomalies,Congenital,0.0481,0.0645,0.0716,0.1379,Q38-Q45,750-751,True
+Congenital eye/ear/face/neck anomalies,Congenital,0.0346,0.0656,0.082,0.0828,Q10-Q18,743-744,True
+Congenital genital anomalies,Congenital,0.04,0.057,0.0698,0.0828,Q50-Q56,752,True
+Congenital musculoskeletal & limb anomalies,Congenital,0.0854,0.1366,0.1571,0.2207,Q65-Q79,754-756,True
+Congenital nervous system anomalies,Congenital,0.0178,0.0753,0.0646,0.0966,Q00-Q07,740-742,True
+Congenital respiratory anomalies,Congenital,0.0135,0.0409,0.0454,0.0552,Q30-Q34,748,True
+Congenital skin & integument anomalies,Congenital,0.1491,0.1602,0.1501,0.1034,Q80-Q84,757,True
+"Esophageal, gastric & duodenal disorders",Digestive,0.1286,0.2215,0.2391,0.2,K20-K31,530-537,True
+"Functional & other intestinal (constipation, IBS)",Digestive,0.2836,0.4247,0.3805,0.4483,K55-K64,560-569,True
+Hernia,Digestive,0.0573,0.1032,0.0995,0.1103,K40-K46,550-553,True
+Inflammatory bowel disease & colitis,Digestive,0.2096,0.2968,0.3246,0.2621,K50-K52,555-558,True
+Oral & dental disorders,Digestive,0.2696,0.3989,0.4101,0.3862,K00-K14,520-529,True
+Other digestive disorders,Digestive,0.0303,0.043,0.0628,0.0621,K90-K95,578-579,True
+Diabetes & glucose regulation,Endocrine - Metabolic,0.0167,0.028,0.0349,0.069,E08-E16,249-251,True
+Malnutrition,Endocrine - Metabolic,0.0497,0.0892,0.0698,0.0483,E40-E46,260-263,True
+"Metabolic disorders (lipid, fluid/electrolyte)",Endocrine - Metabolic,0.1702,0.2892,0.3089,0.3241,E70-E88,270-277,True
+Obesity & overnutrition,Endocrine - Metabolic,0.483,0.6204,0.6824,0.6759,E65-E68 [replaced by BMI-z >= 1.036 for children with BMI measurements],278,True
+Other endocrine gland disorders (pituitary/adrenal/gonadal),Endocrine - Metabolic,0.0675,0.0914,0.0995,0.1379,E20-E35,252-259,True
+Underweight,Endocrine - Metabolic,0.1075,0.1688,0.1483,0.2,"(BMI-z < -1.645, age >= 2 y; no ICD)",,True
+Vitamin & nutritional deficiencies,Endocrine - Metabolic,0.0908,0.1409,0.1379,0.1586,E50-E64,264-269,True
+Aplastic & other anemias,Hematologic & Immune,0.1026,0.1774,0.1361,0.1724,D60-D64,284-285,False
+Hemolytic anemia,Hematologic & Immune,0.061,0.0763,0.0733,0.0621,D55-D59,282-283,False
+Nutritional anemia (iron-deficiency),Hematologic & Immune,0.0767,0.129,0.1152,0.1172,D50-D53,280-281,False
+Other blood & spleen disorders,Hematologic & Immune,0.2318,0.3032,0.3665,0.2414,D70-D77,288-289,False
+Intestinal infections (gastroenteritis),Infectious_Disease,0.154,0.2387,0.274,0.2069,A00-A09,001-009,False
+"Lice, scabies & other infestations",Infectious_Disease,0.0459,0.0634,0.0838,0.0345,B85-B89,132-134,False
+Mycoses (fungal infections),Infectious_Disease,0.3128,0.4527,0.4782,0.3655,B35-B49,110-118,False
+Other & sequelae of infectious disease,Infectious_Disease,0.1502,0.257,0.2723,0.2759,B90-B99,135-139,False
+Other bacterial infections (incl. sepsis),Infectious_Disease,0.1205,0.171,0.1902,0.0966,A20-A49,020-041,False
+Viral infections with exanthem/skin,Infectious_Disease,0.228,0.3774,0.3647,0.3517,"A90-B09, B25-B34","050-057, 078",False
+Dermatitis & eczema (atopic),Integumentary,0.4581,0.5903,0.6248,0.5793,L20-L30,690-693,False
+Disorders of skin appendages (acne/hair/nail),Integumentary,0.2118,0.2946,0.3298,0.331,L60-L75,703-706,False
+Other skin disorders,Integumentary,0.2048,0.2903,0.3194,0.2759,L80-L99,"700-702, 707-709",False
+Papulosquamous disorders (psoriasis),Integumentary,0.0357,0.0581,0.075,0.0345,L40-L45,696,False
+Skin & subcutaneous infections,Integumentary,0.1902,0.2376,0.2932,0.2276,L00-L08,680-686,False
+Urticaria & erythema,Integumentary,0.0913,0.1258,0.1693,0.131,L49-L54,"695, 708",False
+Acquired MSK deformities & other,Musculoskeletal,0.033,0.0462,0.0506,0.0483,M95-M99,734-739,False
+Arthropathies & joint disorders (arthritis),Musculoskeletal,0.2339,0.2785,0.3874,0.2483,M00-M25,710-719,False
+Dorsopathies & spine disorders (scoliosis),Musculoskeletal,0.1378,0.2043,0.2356,0.1586,M40-M54,"720-724, 737",False
+Osteopathies & chondropathies (osteomyelitis),Musculoskeletal,0.0438,0.0699,0.0646,0.0552,M80-M94,730-733,False
+Soft tissue & muscle disorders,Musculoskeletal,0.2491,0.3505,0.4171,0.269,M60-M79,725-729,False
+Benign neoplasm,Neoplastic_Process,0.0643,0.0677,0.0785,0.0621,D10-D36,210-229,False
+Epilepsy & seizures,Neurologic,0.0059,0.0355,0.0611,0.1241,G40-G41,345,True
+Headache & migraine,Neurologic,0.0821,0.1183,0.1745,0.0621,G43-G44,"346, 339",True
+Movement & other episodic disorders,Neurologic,0.0097,0.072,0.089,0.1517,"G20-G26, G45-G46",347-349,True
+Pain syndromes,Neurologic,0.061,0.086,0.0873,0.0414,G89,338,True
+Sleep disorders (organic),Neurologic,0.1124,0.2075,0.3089,0.3724,G47,327,True
+"Anxiety, stress & somatoform disorders",Psychiatric,0.1372,0.3086,0.5166,0.4828,F40-F48,"300, 306, 308-309",True
+"Behavioral syndromes (eating, sleep)",Psychiatric,0.0194,0.0452,0.0838,0.1448,F50-F59,"307.1, 307.4, 307.5",True
+"Mood disorders (depression, bipolar)",Psychiatric,0.0697,0.114,0.2373,0.1103,F30-F39,"296, 311",True
+Organic mental disorders,Psychiatric,0.0335,0.0409,0.0576,0.0138,F01-F09,290-294,False
+Personality disorders,Psychiatric,0.0065,0.0172,0.0838,0.0966,F60-F69,301-302,True
+Substance-related disorders,Psychiatric,0.0162,0.0237,0.0628,0.0069,F10-F19,303-305,False
+Female pelvic inflammatory disease,Reproductive,0.0335,0.0548,0.0454,0.0069,N70-N77,614-616,False
+Male genital disorders,Reproductive,0.0719,0.0989,0.1885,0.1931,N43-N53,600-608,False
+Menstrual & other female genital disorders,Reproductive,0.1264,0.1344,0.1257,0.0759,N80-N98,617-629,False
+Acute bronchitis & bronchiolitis,Respiratory,0.1248,0.2022,0.2199,0.1862,J20-J22,466,True
+Acute upper respiratory infection,Respiratory,0.6591,0.8172,0.8185,0.7103,J00-J06,460-465,True
+Asthma,Respiratory,0.2334,0.3183,0.4555,0.3586,J45-J46,493,True
+Chronic upper respiratory (rhinitis/sinusitis/tonsil),Respiratory,0.3447,0.4785,0.5742,0.5448,J30-J39,470-478,True
+Influenza & pneumonia,Respiratory,0.2021,0.3086,0.349,0.2897,J09-J18,480-488,True
+Other chronic lower respiratory (COPD/bronchiectasis),Respiratory,0.0076,0.0194,0.0332,0.0207,"J40-J44, J47","490-492, 494-496",False
+Respiratory failure & other,Respiratory,0.06,0.1452,0.1623,0.1172,J95-J99,514-519,True
+Conjunctivitis & conjunctival disorders,Sensory,0.2982,0.4097,0.4817,0.3931,H10-H13,372,True
+"Eyelid, lacrimal & orbit disorders",Sensory,0.1005,0.143,0.1361,0.1931,H00-H06,373-376,True
+Hearing loss & other ear disorders,Sensory,0.2501,0.4151,0.4677,0.4276,H90-H95,388-389,True
+Other eye disorders,Sensory,0.1518,0.2548,0.2426,0.2069,"H43-H48, H55-H59","360, 377, 379",True
+Otitis externa & external ear disorders,Sensory,0.1469,0.2398,0.2548,0.2414,H60-H62,380,True
+Otitis media & middle ear disorders,Sensory,0.4084,0.5269,0.5777,0.5793,H65-H75,381-385,True
+Refractive errors,Sensory,0.3225,0.471,0.4974,0.5517,H52,367,True
+Retinal & choroidal disorders,Sensory,0.0362,0.1011,0.1012,0.1103,H30-H36,361-363,True
+Strabismus & ocular motility disorders,Sensory,0.0616,0.1226,0.1187,0.1586,H49-H51,378,True
+Visual disturbances & blindness,Sensory,0.1572,0.2387,0.2932,0.2483,H53-H54,368-369,True
+"Bladder & urethral disorders (cystitis, UTI)",Urinary,0.1097,0.1742,0.2077,0.1655,N30-N39,595-599,False

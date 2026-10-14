@@ -1,0 +1,12 @@
+wrote fig_ladder.png
+wrote fig_forest.png
+wrote fig_decomposition.png
+wrote fig_core_prevalence.png
+wrote fig_profiles.png
+wrote fig_presentation.png
+wrote fig_prepost.png
+wrote fig_additivity.png
+wrote fig_utilization.png
+wrote fig_robustness.png
+core: ['Anxiety, stress & somatoform disorders', 'Mood disorders (depression, bipolar)', 'Asthma', 'Arthropathies & joint disorders (arthritis)', 'Sleep disorders (organic)', 'Male genital disorders', 'Chronic upper respiratory (rhinitis/sinusitis/tonsil)', 'Personality disorders']
+util survivors: ['Anxiety, stress & somatoform disorders', 'Asthma', 'Functional & other intestinal (constipation, IBS)', 'Mood disorders (depression, bipolar)', 'Personality disorders', 'Substance-related disorders']

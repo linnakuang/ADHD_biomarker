@@ -1,0 +1,33 @@
+                                      0                  1                2                   3
+tag                      adhd78_adhd573  adhd78_anyadhd634  paper51_adhd573  paper51_anyadhd634
+adhd_def                           ADHD           any-ADHD             ADHD            any-ADHD
+n_conditions                         78                 78               51                  51
+n_ADHD                              573                634              573                 634
+n_other                             930                930              930                 930
+n_rest                             1075               1014             1075                1014
+n_ASD                               145                 84              145                  84
+tau_other                        0.0269             0.0278           0.0305              0.0321
+mu_other                         0.0239             0.0249            0.022              0.0246
+tau_rest                         0.0253             0.0276           0.0283              0.0319
+tau_ASD                          0.0344             0.0407           0.0351              0.0473
+n_assoc_vs_NT_fdr05                  68                 70               46                  47
+n_specific_vs_other90                31                 33               16                  17
+n_specific_vs_other95                22                 24               13                  15
+n_deficit_vs_other90                  0                  0                1                   1
+n_beyond_global_up90                  8                  9                6                   7
+n_beyond_global_down90               10                 14                8                  11
+n_specific_vs_rest90                 32                 35               14                  17
+assoc_that_are_specific              31                 33               16                  17
+lab_ADHD-SPECIFIC                    10                 17                2                   3
+lab_ADHD+ASD                         21                 16               14                  14
+lab_ADHD-DEFICIT                      0                  0                1                   1
+lab_ASD-PEAK                          0                  0                1                   0
+lab_ABOVE-ASD                         7                 13                2                   3
+lab_SHARED-NDD                       31                 23               24                  22
+lab_FLAT                              9                  9                7                   8
+
+BEYOND-GLOBAL (d_other - mu, 90%): Anxiety, stress & somatoform disorders(+0.096), Mood disorders (depression, bipolar)(+0.063), Asthma(+0.059), Arthropathies & joint disorders (arthritis)(+0.045), Sleep disorders (organic)(+0.044), Male genital disorders(+0.044), Chronic upper respiratory (rhinitis/sinusitis/tonsil)(+0.037), Personality disorders(+0.035), Diabetes & glucose regulation(-0.015), Hemolytic anemia(-0.021), Osteopathies & chondropathies (osteomyelitis)(-0.023), Nutritional anemia (iron-deficiency)(-0.027), Congenital nervous system anomalies(-0.028), Female pelvic inflammatory disease(-0.028), Underweight(-0.029), Malnutrition(-0.034), Functional & other intestinal (constipation, IBS)(-0.035), Aplastic & other anemias(-0.043)
+ADHD-SPECIFIC: Mood disorders (depression, bipolar)(+0.087,STEP), Asthma(+0.083,STEP), Arthropathies & joint disorders (arthritis)(+0.069,STEP), Soft tissue & muscle disorders(+0.046,GRADIENT), Headache & migraine(+0.045,STEP), Other blood & spleen disorders(+0.045,GRADIENT), Substance-related disorders(+0.037,STEP), Dorsopathies & spine disorders (scoliosis)(+0.028,GRADIENT), Lice, scabies & other infestations(+0.021,STEP), Organic mental disorders(+0.018,STEP)
+ADHD+ASD: Anxiety, stress & somatoform disorders(+0.120,STEP), Sleep disorders (organic)(+0.068,STEP), Male genital disorders(+0.068,STEP), Chronic upper respiratory (rhinitis/sinusitis/tonsil)(+0.061,GRADIENT), Personality disorders(+0.059,STEP), Conjunctivitis & conjunctival disorders(+0.048,GRADIENT), Obesity & overnutrition(+0.044,GRADIENT), Skin & subcutaneous infections(+0.042,STEP), Visual disturbances & blindness(+0.041,GRADIENT), Hearing loss & other ear disorders(+0.039,GRADIENT), Otitis media & middle ear disorders(+0.038,GRADIENT), Urticaria & erythema(+0.037,STEP), Behavioral syndromes (eating, sleep)(+0.036,STEP), Influenza & pneumonia(+0.033,GRADIENT), Conduction disorders & arrhythmias(+0.030,STEP), Intestinal infections (gastroenteritis)(+0.030,GRADIENT), Disorders of skin appendages (acne/hair/nail)(+0.030,GRADIENT), Bladder & urethral disorders (cystitis, UTI)(+0.030,GRADIENT), Epilepsy & seizures(+0.025,GRADIENT), Other digestive disorders(+0.021,STEP), Other chronic lower respiratory (COPD/bronchiectasis)(+0.015,STEP)
+ADHD-DEFICIT: 
+ASD-PEAK: 

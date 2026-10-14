@@ -1,0 +1,11 @@
+    group    n  male_%  black_%  preterm_%  lbw_%  college_%  adhd_dx_age_med adhd_dx_age_iqr  adhd_dx_visits_med  asd_dx_age_med  burden_mean  burden_lo  burden_hi  event_months_med
+       NT 1851   41.22    56.24      24.20  23.50      38.36              NaN                                 NaN             NaN        10.40      10.08      10.71              12.0
+Other NDD  930   51.83    62.47      33.66  32.04      36.24              NaN                                 NaN             NaN        15.44      14.92      15.95              23.0
+     ADHD  573   68.59    60.21      31.41  31.76      32.29             7.13         5.4-9.4                 5.0             NaN        17.53      16.87      18.24              30.0
+ ASD+ADHD   61   77.05    54.10      40.98  27.87      47.54             6.48         4.6-8.5                 6.0            3.44        18.11      16.13      20.15              35.0
+ ASD-only   84   73.81    54.76      40.48  34.52      42.86              NaN                                 NaN            3.12        14.45      13.01      15.99              24.5
+
+ADHD dx age ADHD-only 7.13 vs ASD+ADHD 6.48, MWU p=0.0403; ASD dx precedes ADHD dx in 61%
+aut_on_adhd survivors (90%): Malnutrition(-0.051), Female pelvic inflammatory disease(-0.034), Other chronic lower respiratory (COPD/bronchiectasis)(-0.025)
+adhd_on_aut survivors (90%): Sleep disorders (organic)(+0.070), Behavioral syndromes (eating, sleep)(+0.051), Headache & migraine(+0.052), Dermatitis & eczema (atopic)(+0.059), Otitis externa & external ear disorders(+0.052), Inflammatory bowel disease & colitis(+0.064), Osteopathies & chondropathies (osteomyelitis)(+0.047), Dorsopathies & spine disorders (scoliosis)(+0.051), Lice, scabies & other infestations(+0.053), Conjunctivitis & conjunctival disorders(+0.052)
+interaction survivors (90%): 

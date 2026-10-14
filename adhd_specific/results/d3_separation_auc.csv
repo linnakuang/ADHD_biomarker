@@ -1,0 +1,4 @@
+contrast,n_pos,n_neg,latentW,raw78,burden,latentW+burden,perm_p_latent_ADHD_vs_other
+ADHD_vs_other,573,930,0.6452,0.6454,0.5756,0.6474,0.005
+ADHD_vs_ASD,573,145,0.5445,0.6221,0.5465,0.5393,0.005
+ASD_vs_other,145,930,0.6038,0.6475,0.5271,0.6027,0.005

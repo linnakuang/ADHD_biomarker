@@ -1,0 +1,4 @@
+profile,top,best_resid_cos,verdict
+P1,"Asthma(0.76), Other blood & spleen disorders(0.66), Refractive errors(0.54), Visual disturbances & blindness(0.38)",0.5654,PARTIAL
+P2,"Hearing loss & other ear disorders(0.59), Conjunctivitis & conjunctival disorders(0.55), Otitis media & middle ear disorders(0.52), Viral infections with exanthem/skin(0.51)",0.8105,SURVIVES
+P3,"Anxiety, stress & somatoform disorders(1.64), Mood disorders (depression, bipolar)(0.80), Sleep disorders (organic)(0.31), Personality disorders(0.30)",0.967,SURVIVES

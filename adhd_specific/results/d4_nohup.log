@@ -1,0 +1,53 @@
+=== presentation (ADHD 573) ===
+presentation
+Hyperactive/combined    432
+Unspecified              79
+Inattentive              60
+Not classifiable          2
+        presentation   n  male_%  adhd_dx_age_med  adhd_codes_med  burden_mean  event_months_med
+Hyperactive/combined 432   70.83             6.93            10.5        17.90              31.0
+         Inattentive  60   60.00             8.58             6.0        16.17              25.5
+    Not classifiable   2  100.00             6.83             0.0        14.00              59.5
+         Unspecified  79   62.03             7.73             2.0        16.66              26.0
+
+Inattentive n=60  Hyp/comb n=432  tau(I-H)=0.0136 mu=-0.0240
+>=3-code sensitivity: Inattentive n=41  Hyp/comb n=345
+
+=== Inattentive vs Hyp/comb, BEYOND the global offset mu=-0.0240 (I has uniformly fewer codes): 0 survive 90% ===
+
+vs other-NDD, excess beyond each arm's global offset (90%): inattentive 0 (mu=+0.0007), hyp/comb 9 (mu=+0.0283)
+
+=== where does each D1 ADHD-specific condition live? ===
+  Anxiety, stress & somatoform disorders         I=0.483 H=0.530 oth=0.309 -> hyp/comb
+  Mood disorders (depression, bipolar)           I=0.267 H=0.248 oth=0.114 -> hyp/comb
+  Asthma                                         I=0.383 H=0.468 oth=0.318 -> hyp/comb
+  Arthropathies & joint disorders (arthritis)    I=0.383 H=0.387 oth=0.278 -> hyp/comb
+  Sleep disorders (organic)                      I=0.250 H=0.333 oth=0.208 -> hyp/comb
+  Male genital disorders                         I=0.167 H=0.192 oth=0.099 -> hyp/comb
+  Chronic upper respiratory (rhinitis/sinusitis/tonsil) I=0.550 H=0.588 oth=0.478 -> hyp/comb
+  Personality disorders                          I=0.067 H=0.093 oth=0.017 -> hyp/comb
+  Conjunctivitis & conjunctival disorders        I=0.350 H=0.493 oth=0.410 -> neither alone
+  Soft tissue & muscle disorders                 I=0.283 H=0.438 oth=0.351 -> neither alone
+  Headache & migraine                            I=0.150 H=0.178 oth=0.118 -> neither alone
+  Other blood & spleen disorders                 I=0.350 H=0.398 oth=0.303 -> hyp/comb
+  Obesity & overnutrition                        I=0.633 H=0.690 oth=0.620 -> neither alone
+  Skin & subcutaneous infections                 I=0.233 H=0.308 oth=0.238 -> neither alone
+  Visual disturbances & blindness                I=0.367 H=0.282 oth=0.239 -> neither alone
+  Hearing loss & other ear disorders             I=0.517 H=0.468 oth=0.415 -> neither alone
+  Otitis media & middle ear disorders            I=0.533 H=0.586 oth=0.527 -> neither alone
+  Urticaria & erythema                           I=0.233 H=0.167 oth=0.126 -> neither alone
+  Substance-related disorders                    I=0.017 H=0.072 oth=0.024 -> neither alone
+  Behavioral syndromes (eating, sleep)           I=0.050 H=0.093 oth=0.045 -> neither alone
+  Influenza & pneumonia                          I=0.300 H=0.368 oth=0.309 -> neither alone
+  Conduction disorders & arrhythmias             I=0.083 H=0.090 oth=0.052 -> neither alone
+  Intestinal infections (gastroenteritis)        I=0.200 H=0.266 oth=0.239 -> neither alone
+  Disorders of skin appendages (acne/hair/nail)  I=0.283 H=0.345 oth=0.295 -> neither alone
+  Bladder & urethral disorders (cystitis, UTI)   I=0.250 H=0.199 oth=0.174 -> neither alone
+  Dorsopathies & spine disorders (scoliosis)     I=0.300 H=0.225 oth=0.204 -> neither alone
+  Epilepsy & seizures                            I=0.033 H=0.069 oth=0.035 -> neither alone
+  Lice, scabies & other infestations             I=0.050 H=0.090 oth=0.063 -> neither alone
+  Other digestive disorders                      I=0.067 H=0.060 oth=0.043 -> neither alone
+  Organic mental disorders                       I=0.033 H=0.062 oth=0.041 -> neither alone
+  Other chronic lower respiratory (COPD/bronchiectasis) I=0.033 H=0.037 oth=0.019 -> neither alone
+
+Done. Outputs in <PROJECT_ROOT>/adhd_analysis/results

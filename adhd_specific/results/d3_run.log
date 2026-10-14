@@ -1,0 +1,40 @@
+(a) ADHD-only K=3 NT-residual NMF on (570, 78) (of 573)
+    bootstrap cos=0.868 worst=0.763 concordance=0.677 -> NOT reportable (some floor missed)
+    P1 (n=190): Asthma(0.76), Other blood & spleen disorders(0.66), Refractive errors(0.54), Visual disturbances & blindness(0.38), Influenza & pneumonia(0.38), Respiratory failure & other(0.38)
+    P2 (n=301): Hearing loss & other ear disorders(0.59), Conjunctivitis & conjunctival disorders(0.55), Otitis media & middle ear disorders(0.52), Viral infections with exanthem/skin(0.51), Soft tissue & muscle disorders(0.50), Dermatitis & eczema (atopic)(0.44)
+    P3 (n=79): Anxiety, stress & somatoform disorders(1.64), Mood disorders (depression, bipolar)(0.80), Sleep disorders (organic)(0.31), Personality disorders(0.30), Arthropathies & joint disorders (arthritis)(0.30), Obesity & overnutrition(0.24)
+    K=2: cos=0.943 worst=0.909 conc=0.871
+    K=3: cos=0.865 worst=0.757 conc=0.672
+    K=4: cos=0.847 worst=0.776 conc=0.615
+    K=5: cos=0.817 worst=0.748 conc=0.581
+(b) ADHD_vs_other  latentW=0.645 raw78=0.645 burden=0.576 latentW+burden=0.647
+(b) ADHD_vs_ASD    latentW=0.545 raw78=0.622 burden=0.546 latentW+burden=0.539
+(b) ASD_vs_other   latentW=0.604 raw78=0.648 burden=0.527 latentW+burden=0.603
+    ADHD_vs_other latentW perm p=0.0050 (N=200)
+       Other NDD   ADHD    ASD  ADHD_minus_other
+axis0      0.154  0.247  0.234             0.093
+axis1      0.513  0.425  0.402            -0.088
+axis2      0.329  0.323  0.357            -0.005
+    axis0: Anxiety, stress & somatoform disorders(1.36), Mood disorders (depression, bipolar)(0.52), Arthropathies & joint disorders (arthritis)(0.37), Obesity & overnutrition(0.26), Sleep disorders (organic)(0.26)
+    axis1: Mycoses (fungal infections)(0.49), Conjunctivitis & conjunctival disorders(0.47), Oral & dental disorders(0.43), Dermatitis & eczema (atopic)(0.41), Viral infections with exanthem/skin(0.37)
+    axis2: Asthma(0.58), Metabolic disorders (lipid, fluid/electrolyte)(0.47), Influenza & pneumonia(0.43), Hearing loss & other ear disorders(0.41), Esophageal, gastric & duodenal disorders(0.41)
+    ADHD-only profiles vs spectrum axes (matched cosine): P1~axis2 0.80, P2~axis1 0.90, P3~axis0 0.96
+
+(c) B2 residual K=3 on 570 ADHD rows (K_NT=12); bootstrap cos=0.919 worst=0.861 conc=0.787
+    P1 -> best residual cos 0.565: PARTIAL   [Asthma(0.76), Other blood & spleen disorders(0.66), Refractive errors(0.54), Visual disturbances & blindness(0.38)]
+    P2 -> best residual cos 0.811: SURVIVES   [Hearing loss & other ear disorders(0.59), Conjunctivitis & conjunctival disorders(0.55), Otitis media & middle ear disorders(0.52), Viral infections with exanthem/skin(0.51)]
+    P3 -> best residual cos 0.967: SURVIVES   [Anxiety, stress & somatoform disorders(1.64), Mood disorders (depression, bipolar)(0.80), Sleep disorders (organic)(0.31), Personality disorders(0.30)]
+    R1: Anxiety, stress & somatoform disorders(1.57), Mood disorders (depression, bipolar)(0.82), Personality disorders(0.28), Asthma(0.21), Influenza & pneumonia(0.15), Conjunctivitis & conjunctival disorders(0.14)
+    R2: Bladder & urethral disorders (cystitis, UTI)(0.49), Intestinal infections (gastroenteritis)(0.42), Hearing loss & other ear disorders(0.42), Skin & subcutaneous infections(0.42), Conjunctivitis & conjunctival disorders(0.41), Otitis externa & external ear disorders(0.40)
+    R3: Sleep disorders (organic)(0.75), Male genital disorders(0.65), Congenital cardiovascular anomalies(0.56), Esophageal, gastric & duodenal disorders(0.46), Retinal & choroidal disorders(0.36), Strabismus & ocular motility disorders(0.35)
+
+    group    n  r_norm_med  r_norm_per_sqrt_burden_med  burden_mean
+       NT 1851       2.097                       0.679       10.405
+Other NDD  930       2.540                       0.662       15.441
+     ADHD  573       2.713                       0.661       17.531
+      ASD  145       2.663                       0.687       15.993
+    burden-adj r_norm ADHD vs Other NDD: MWU p=0.8758
+    burden-adj r_norm ADHD vs ASD: MWU p=0.005334
+    burden-adj r_norm Other NDD vs NT: MWU p=1.503e-05
+
+Done. Outputs in <PROJECT_ROOT>/adhd_analysis/results

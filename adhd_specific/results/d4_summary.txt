@@ -1,0 +1,7 @@
+        presentation   n  male_%  adhd_dx_age_med  adhd_codes_med  burden_mean  event_months_med
+Hyperactive/combined 432   70.83             6.93            10.5        17.90              31.0
+         Inattentive  60   60.00             8.58             6.0        16.17              25.5
+    Not classifiable   2  100.00             6.83             0.0        14.00              59.5
+         Unspecified  79   62.03             7.73             2.0        16.66              26.0
+
+tau(I-H)=0.0136; survivors 90%: 

@@ -1,0 +1,41 @@
+ADHD eligible: 521/573 (dx age >= 3.0, follow-up >= dx+3.0); anchor median 7.08y
+NT: eligible per pseudo-draw median 1795/1851
+Other NDD: eligible per pseudo-draw median 885/930
+
+Total burden change post-pre (sum of prevalences): ADHD=-0.370, NT=-0.509, Other NDD=-0.926
+Reshape-axis test: rho(shift_ADHD, shift_NT)=0.790  rho(shift_ADHD, shift_other)=0.789  (A3b ASD: 0.80 vs NT)
+
+=== DiD vs NT: 11 conditions with 90% CI excluding 0 ===
+  Anxiety, stress & somatoform disorders         DiD=+0.108 [+0.076,+0.144]  ADHD 0.142->0.265  NT 0.016->0.031  oth 0.063->0.089
+  Mood disorders (depression, bipolar)           DiD=+0.057 [+0.038,+0.078]  ADHD 0.038->0.100  NT 0.002->0.006  oth 0.009->0.020
+  Sleep disorders (organic)                      DiD=+0.037 [+0.011,+0.066]  ADHD 0.111->0.146  NT 0.035->0.032  oth 0.065->0.061
+  Bladder & urethral disorders (cystitis, UTI)   DiD=+0.022 [+0.000,+0.045]  ADHD 0.054->0.073  NT 0.025->0.022  oth 0.046->0.038
+  Other endocrine gland disorders (pituitary/adrenal/gonadal) DiD=+0.019 [+0.003,+0.034]  ADHD 0.033->0.060  NT 0.020->0.028  oth 0.026->0.039
+  Pain syndromes                                 DiD=+0.014 [+0.000,+0.028]  ADHD 0.006->0.025  NT 0.004->0.010  oth 0.004->0.011
+  Hypertensive disorders                         DiD=+0.012 [+0.002,+0.025]  ADHD 0.010->0.025  NT 0.003->0.006  oth 0.007->0.008
+  Congenital nervous system anomalies            DiD=-0.009 [-0.016,-0.002]  ADHD 0.010->0.000  NT 0.001->0.001  oth 0.007->0.003
+  Intestinal infections (gastroenteritis)        DiD=-0.034 [-0.063,-0.006]  ADHD 0.098->0.050  NT 0.041->0.026  oth 0.063->0.041
+  Conjunctivitis & conjunctival disorders        DiD=-0.042 [-0.077,-0.006]  ADHD 0.171->0.100  NT 0.090->0.061  oth 0.132->0.084
+  Other eye disorders                            DiD=-0.048 [-0.075,-0.018]  ADHD 0.104->0.046  NT 0.039->0.029  oth 0.072->0.060
+
+=== DiD vs other: 8 conditions with 90% CI excluding 0 ===
+  Anxiety, stress & somatoform disorders         DiD=+0.097 [+0.056,+0.142]  ADHD 0.142->0.265  NT 0.016->0.031  oth 0.063->0.089
+  Hearing loss & other ear disorders             DiD=+0.062 [+0.018,+0.109]  ADHD 0.165->0.171  NT 0.072->0.049  oth 0.152->0.095
+  Mood disorders (depression, bipolar)           DiD=+0.051 [+0.027,+0.075]  ADHD 0.038->0.100  NT 0.002->0.006  oth 0.009->0.020
+  Sleep disorders (organic)                      DiD=+0.038 [+0.006,+0.069]  ADHD 0.111->0.146  NT 0.035->0.032  oth 0.065->0.061
+  Functional & other intestinal (constipation, IBS) DiD=+0.034 [+0.000,+0.072]  ADHD 0.136->0.146  NT 0.080->0.068  oth 0.150->0.126
+  Underweight                                    DiD=+0.034 [+0.010,+0.059]  ADHD 0.052->0.044  NT 0.036->0.013  oth 0.071->0.030
+  Hypertensive disorders                         DiD=+0.014 [+0.001,+0.028]  ADHD 0.010->0.025  NT 0.003->0.006  oth 0.007->0.008
+  Other eye disorders                            DiD=-0.045 [-0.081,-0.012]  ADHD 0.104->0.046  NT 0.039->0.029  oth 0.072->0.060
+
+Survive BOTH guards (same sign): 5: Anxiety, stress & somatoform disorders(+0.097), Mood disorders (depression, bipolar)(+0.051), Other eye disorders(-0.045), Sleep disorders (organic)(+0.038), Hypertensive disorders(+0.014)
+
+=== PRE-dx (3y before ADHD dx) ADHD vs other-NDD beyond global offset mu=+0.0079, 90%: 6 ===
+  Anxiety, stress & somatoform disorders         d-mu=+0.013  ADHD pre 0.142 other pre 0.063  (post-dx surv: yes)
+  Substance-related disorders                    d-mu=-0.007  ADHD pre 0.002 other pre 0.003  (post-dx surv: yes)
+  Congenital digestive anomalies                 d-mu=-0.007  ADHD pre 0.004 other pre 0.005  (post-dx surv: yes)
+  Congenital skin & integument anomalies         d-mu=-0.008  ADHD pre 0.002 other pre 0.003  (post-dx surv: yes)
+  Congenital respiratory anomalies               d-mu=-0.009  ADHD pre 0.000 other pre 0.002  (post-dx surv: yes)
+  Hernia                                         d-mu=-0.011  ADHD pre 0.006 other pre 0.015  (post-dx surv: yes)
+
+Done. Outputs in <PROJECT_ROOT>/adhd_analysis/results

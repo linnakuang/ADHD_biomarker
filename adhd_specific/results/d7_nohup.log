@@ -1,0 +1,47 @@
+=== utilization ladder ===
+    group    n  event_months_med event_months_iqr  span_med
+       NT 1851              12.0             6-24     10.00
+Other NDD  930              23.0            13-39     12.58
+     ADHD  573              30.0            18-49     13.92
+      ASD  145              30.0            16-44     13.25
+
+[ADHD_vs_other] n=1503  util(event-months) median case=30 ref=23; span median case=13.9y ref=12.6y
+  significant (BH q<.05): unadjusted 18 -> utilization-adjusted 6; both 5; median attenuation of sig. log-OR 0.38
+
+[ADHD_vs_NT] n=2424  util(event-months) median case=30 ref=12; span median case=13.9y ref=10.0y
+  significant (BH q<.05): unadjusted 70 -> utilization-adjusted 18; both 18; median attenuation of sig. log-OR 0.84
+
+=== D1 ADHD-specific/deficit conditions under utilization adjustment (vs other-NDD) ===
+  Anxiety, stress & somatoform disorders         ADHD+ASD      OR 2.57 -> 2.12  q1=2.43e-08  atten=+0.20  SURVIVES
+  Mood disorders (depression, bipolar)           ADHD-SPECIFIC OR 2.82 -> 2.31  q1=2.82e-06  atten=+0.19  SURVIVES
+  Asthma                                         ADHD-SPECIFIC OR 1.77 -> 1.49  q1=0.0212  atten=+0.31  SURVIVES
+  Arthropathies & joint disorders (arthritis)    ADHD-SPECIFIC OR 1.66 -> 1.31  q1=0.172  atten=+0.47  lost
+  Sleep disorders (organic)                      ADHD+ASD      OR 1.80 -> 1.42  q1=0.0871  atten=+0.41  lost
+  Male genital disorders                         ADHD+ASD      OR 1.59 -> 1.21  q1=0.615  atten=+0.60  lost
+  Chronic upper respiratory (rhinitis/sinusitis/tonsil) ADHD+ASD      OR 1.48 -> 1.09  q1=0.732  atten=+0.77  lost
+  Personality disorders                          ADHD+ASD      OR 5.25 -> 4.56  q1=1.4e-05  atten=+0.08  SURVIVES
+  Conjunctivitis & conjunctival disorders        ADHD+ASD      OR 1.37 -> 1.08  q1=0.732  atten=+0.76  lost
+  Soft tissue & muscle disorders                 ADHD-SPECIFIC OR 1.33 -> 1.02  q1=0.898  atten=+0.93  lost
+  Headache & migraine                            ADHD-SPECIFIC OR 1.69 -> 1.27  q1=0.467  atten=+0.55  lost
+  Other blood & spleen disorders                 ADHD-SPECIFIC OR 1.35 -> 1.23  q1=0.318  atten=+0.29  lost
+  Obesity & overnutrition                        ADHD+ASD      OR 1.37 -> 1.07  q1=0.774  atten=+0.78  lost
+  Skin & subcutaneous infections                 ADHD+ASD      OR 1.33 -> 1.04  q1=0.888  atten=+0.86  lost
+  Visual disturbances & blindness                ADHD+ASD      OR 1.40 -> 1.11  q1=0.724  atten=+0.70  lost
+  Hearing loss & other ear disorders             ADHD+ASD      OR 1.31 -> 1.08  q1=0.732  atten=+0.70  lost
+  Otitis media & middle ear disorders            ADHD+ASD      OR 1.24 -> 1.00  q1=0.972  atten=+1.02  lost
+  Urticaria & erythema                           ADHD+ASD      OR 1.40 -> 1.17  q1=0.615  atten=+0.53  lost
+  Substance-related disorders                    ADHD-SPECIFIC OR 2.98 -> 2.36  q1=0.038  atten=+0.21  SURVIVES
+  Behavioral syndromes (eating, sleep)           ADHD+ASD      OR 2.08 -> 1.72  q1=0.141  atten=+0.26  lost
+  Influenza & pneumonia                          ADHD+ASD      OR 1.24 -> 0.92  q1=0.732  atten=+1.38  lost
+  Conduction disorders & arrhythmias             ADHD+ASD      OR 1.65 -> 1.33  q1=0.51  atten=+0.43  lost
+  Intestinal infections (gastroenteritis)        ADHD+ASD      OR 1.21 -> 0.96  q1=0.888  atten=+1.22  lost
+  Disorders of skin appendages (acne/hair/nail)  ADHD+ASD      OR 1.26 -> 0.92  q1=0.732  atten=+1.36  lost
+  Bladder & urethral disorders (cystitis, UTI)   ADHD+ASD      OR 1.54 -> 1.33  q1=0.233  atten=+0.34  lost
+  Dorsopathies & spine disorders (scoliosis)     ADHD-SPECIFIC OR 1.30 -> 0.98  q1=0.898  atten=+1.08  lost
+  Epilepsy & seizures                            ADHD+ASD      OR 1.75 -> 1.41  q1=0.509  atten=+0.39  lost
+  Lice, scabies & other infestations             ADHD-SPECIFIC OR 1.45 -> 1.26  q1=0.615  atten=+0.38  lost
+  Other digestive disorders                      ADHD+ASD      OR 1.56 -> 1.29  q1=0.615  atten=+0.43  lost
+  Organic mental disorders                       ADHD-SPECIFIC OR 1.40 -> 1.42  q1=0.473  atten=-0.05  lost
+  Other chronic lower respiratory (COPD/bronchiectasis) ADHD+ASD      OR 1.51 -> 1.17  q1=0.841  atten=+0.61  lost
+
+Done. Outputs in <PROJECT_ROOT>/adhd_analysis/results

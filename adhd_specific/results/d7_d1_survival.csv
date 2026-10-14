@@ -1,0 +1,32 @@
+condition,D1_label,OR0,OR1,q1,attenuation,survives_util
+"Anxiety, stress & somatoform disorders",ADHD+ASD,2.5694,2.121,0.0,0.2032,True
+"Mood disorders (depression, bipolar)",ADHD-SPECIFIC,2.8226,2.3061,0.0,0.1948,True
+Asthma,ADHD-SPECIFIC,1.7701,1.486,0.0212,0.3064,True
+Arthropathies & joint disorders (arthritis),ADHD-SPECIFIC,1.6626,1.3101,0.1718,0.4687,False
+Sleep disorders (organic),ADHD+ASD,1.8015,1.4151,0.0871,0.4101,False
+Male genital disorders,ADHD+ASD,1.592,1.2062,0.6147,0.5967,False
+Chronic upper respiratory (rhinitis/sinusitis/tonsil),ADHD+ASD,1.4823,1.0927,0.7325,0.7747,False
+Personality disorders,ADHD+ASD,5.2454,4.5643,0.0,0.0839,True
+Conjunctivitis & conjunctival disorders,ADHD+ASD,1.3651,1.0784,0.7325,0.7574,False
+Soft tissue & muscle disorders,ADHD-SPECIFIC,1.3306,1.0208,0.8978,0.9278,False
+Headache & migraine,ADHD-SPECIFIC,1.6863,1.2652,0.4673,0.5498,False
+Other blood & spleen disorders,ADHD-SPECIFIC,1.3451,1.234,0.3181,0.2909,False
+Obesity & overnutrition,ADHD+ASD,1.3693,1.0718,0.7742,0.7795,False
+Skin & subcutaneous infections,ADHD+ASD,1.3276,1.0393,0.8884,0.864,False
+Visual disturbances & blindness,ADHD+ASD,1.4016,1.1056,0.7243,0.7025,False
+Hearing loss & other ear disorders,ADHD+ASD,1.3097,1.0847,0.7325,0.6988,False
+Otitis media & middle ear disorders,ADHD+ASD,1.2357,0.9958,0.9718,1.0198,False
+Urticaria & erythema,ADHD+ASD,1.4047,1.1715,0.6147,0.5341,False
+Substance-related disorders,ADHD-SPECIFIC,2.9843,2.3608,0.038,0.2144,True
+"Behavioral syndromes (eating, sleep)",ADHD+ASD,2.0833,1.7159,0.1408,0.2644,False
+Influenza & pneumonia,ADHD+ASD,1.2377,0.9222,0.7325,1.3799,False
+Conduction disorders & arrhythmias,ADHD+ASD,1.6478,1.3307,0.5104,0.4279,False
+Intestinal infections (gastroenteritis),ADHD+ASD,1.2106,0.9587,0.8884,1.2207,False
+Disorders of skin appendages (acne/hair/nail),ADHD+ASD,1.2592,0.9197,0.7325,1.3631,False
+"Bladder & urethral disorders (cystitis, UTI)",ADHD+ASD,1.5371,1.3302,0.2332,0.3363,False
+Dorsopathies & spine disorders (scoliosis),ADHD-SPECIFIC,1.2989,0.9784,0.8978,1.0835,False
+Epilepsy & seizures,ADHD+ASD,1.7516,1.4074,0.509,0.3904,False
+"Lice, scabies & other infestations",ADHD-SPECIFIC,1.4508,1.2606,0.6147,0.3776,False
+Other digestive disorders,ADHD+ASD,1.5621,1.2874,0.6147,0.4336,False
+Organic mental disorders,ADHD-SPECIFIC,1.3973,1.4187,0.4734,-0.0454,False
+Other chronic lower respiratory (COPD/bronchiectasis),ADHD+ASD,1.5105,1.1735,0.8414,0.6121,False

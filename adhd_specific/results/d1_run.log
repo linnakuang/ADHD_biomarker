@@ -1,0 +1,112 @@
+
+######## adhd78_adhd573: 78 conditions, ADHD n=573 ########
+tau(vs other)=0.0269  mu=+0.0239  tau(vs rest)=0.0253  tau(vs ASD)=0.0344
+ADHD-associated vs NT (FDR<.05, e>0): 68; of those ADHD-specific vs other-NDD (90%): 31
+beyond global offset mu (90%): up=8 down=10
+labels: ADHD-SPECIFIC=10, ADHD+ASD=21, ADHD-DEFICIT=0, ASD-PEAK=0, ABOVE-ASD=7, SHARED-NDD=31, FLAT=9
+
+=== ADHD-SPECIFIC (10) ===
+  Mood disorders (depression, bipolar)           NT/oth/ADHD/ASD = 0.070 0.114 0.237 0.110  d_oth=+0.087 d_ASD=+0.077* sf=0.28 STEP
+  Asthma                                         NT/oth/ADHD/ASD = 0.233 0.318 0.455 0.359  d_oth=+0.083 d_ASD=+0.048* sf=0.37 STEP
+  Arthropathies & joint disorders (arthritis)    NT/oth/ADHD/ASD = 0.234 0.278 0.387 0.248  d_oth=+0.069 d_ASD=+0.068* sf=0.28 STEP
+  Soft tissue & muscle disorders                 NT/oth/ADHD/ASD = 0.249 0.351 0.417 0.269  d_oth=+0.046 d_ASD=+0.070* sf=0.60 GRADIENT
+  Headache & migraine                            NT/oth/ADHD/ASD = 0.082 0.118 0.175 0.062  d_oth=+0.045 d_ASD=+0.078* sf=0.40 STEP
+  Other blood & spleen disorders                 NT/oth/ADHD/ASD = 0.232 0.303 0.366 0.241  d_oth=+0.045 d_ASD=+0.063* sf=0.52 GRADIENT
+  Substance-related disorders                    NT/oth/ADHD/ASD = 0.016 0.024 0.063 0.007  d_oth=+0.037 d_ASD=+0.051* sf=0.17 STEP
+  Dorsopathies & spine disorders (scoliosis)     NT/oth/ADHD/ASD = 0.138 0.204 0.236 0.159  d_oth=+0.028 d_ASD=+0.047* sf=0.70 GRADIENT
+  Lice, scabies & other infestations             NT/oth/ADHD/ASD = 0.046 0.063 0.084 0.034  d_oth=+0.021 d_ASD=+0.041* sf=0.46 STEP
+  Organic mental disorders                       NT/oth/ADHD/ASD = 0.033 0.041 0.058 0.014  d_oth=+0.018 d_ASD=+0.040* sf=0.34 STEP
+
+=== ADHD+ASD (21) ===
+  Anxiety, stress & somatoform disorders         NT/oth/ADHD/ASD = 0.137 0.309 0.517 0.483  d_oth=+0.120 d_ASD=+0.024  sf=0.46 STEP
+  Sleep disorders (organic)                      NT/oth/ADHD/ASD = 0.112 0.208 0.309 0.372  d_oth=+0.068 d_ASD=-0.012  sf=0.48 STEP
+  Male genital disorders                         NT/oth/ADHD/ASD = 0.072 0.099 0.188 0.193  d_oth=+0.068 d_ASD=+0.008  sf=0.11 STEP
+  Chronic upper respiratory (rhinitis/sinusitis/tonsil) NT/oth/ADHD/ASD = 0.345 0.478 0.574 0.545  d_oth=+0.061 d_ASD=+0.022  sf=0.58 GRADIENT
+  Personality disorders                          NT/oth/ADHD/ASD = 0.006 0.017 0.084 0.097  d_oth=+0.059 d_ASD=-0.001  sf=0.14 STEP
+  Conjunctivitis & conjunctival disorders        NT/oth/ADHD/ASD = 0.298 0.410 0.482 0.393  d_oth=+0.048 d_ASD=+0.044  sf=0.61 GRADIENT
+  Obesity & overnutrition                        NT/oth/ADHD/ASD = 0.483 0.620 0.682 0.676  d_oth=+0.044 d_ASD=+0.014  sf=0.69 GRADIENT
+  Skin & subcutaneous infections                 NT/oth/ADHD/ASD = 0.190 0.238 0.293 0.228  d_oth=+0.042 d_ASD=+0.039  sf=0.47 STEP
+  Visual disturbances & blindness                NT/oth/ADHD/ASD = 0.157 0.239 0.293 0.248  d_oth=+0.041 d_ASD=+0.030  sf=0.61 GRADIENT
+  Hearing loss & other ear disorders             NT/oth/ADHD/ASD = 0.250 0.415 0.468 0.428  d_oth=+0.039 d_ASD=+0.026  sf=0.76 GRADIENT
+  Otitis media & middle ear disorders            NT/oth/ADHD/ASD = 0.408 0.527 0.578 0.579  d_oth=+0.038 d_ASD=+0.011  sf=0.69 GRADIENT
+  Urticaria & erythema                           NT/oth/ADHD/ASD = 0.091 0.126 0.169 0.131  d_oth=+0.037 d_ASD=+0.029  sf=0.45 STEP
+  Behavioral syndromes (eating, sleep)           NT/oth/ADHD/ASD = 0.019 0.045 0.084 0.145  d_oth=+0.036 d_ASD=-0.025  sf=0.42 STEP
+  Influenza & pneumonia                          NT/oth/ADHD/ASD = 0.202 0.309 0.349 0.290  d_oth=+0.033 d_ASD=+0.035  sf=0.73 GRADIENT
+  Conduction disorders & arrhythmias             NT/oth/ADHD/ASD = 0.028 0.052 0.084 0.055  d_oth=+0.030 d_ASD=+0.026  sf=0.43 STEP
+  Intestinal infections (gastroenteritis)        NT/oth/ADHD/ASD = 0.154 0.239 0.274 0.207  d_oth=+0.030 d_ASD=+0.040  sf=0.71 GRADIENT
+  Disorders of skin appendages (acne/hair/nail)  NT/oth/ADHD/ASD = 0.212 0.295 0.330 0.331  d_oth=+0.030 d_ASD=+0.011  sf=0.71 GRADIENT
+  Bladder & urethral disorders (cystitis, UTI)   NT/oth/ADHD/ASD = 0.110 0.174 0.208 0.166  d_oth=+0.030 d_ASD=+0.030  sf=0.68 GRADIENT
+  Epilepsy & seizures                            NT/oth/ADHD/ASD = 0.006 0.035 0.061 0.124  d_oth=+0.025 d_ASD=-0.028  sf=0.53 GRADIENT
+  Other digestive disorders                      NT/oth/ADHD/ASD = 0.030 0.043 0.063 0.062  d_oth=+0.021 d_ASD=+0.006  sf=0.40 STEP
+  Other chronic lower respiratory (COPD/bronchiectasis) NT/oth/ADHD/ASD = 0.008 0.019 0.033 0.021  d_oth=+0.015 d_ASD=+0.013  sf=0.46 STEP
+
+=== ADHD-DEFICIT (0) ===
+
+=== ASD-PEAK (0) ===
+
+=== ABOVE-ASD (7) ===
+  Mycoses (fungal infections)                    NT/oth/ADHD/ASD = 0.313 0.453 0.478 0.366  d_oth=+0.025 d_ASD=+0.053* sf=0.84 
+  Other bacterial infections (incl. sepsis)      NT/oth/ADHD/ASD = 0.120 0.171 0.190 0.097  d_oth=+0.021 d_ASD=+0.061* sf=0.73 
+  Papulosquamous disorders (psoriasis)           NT/oth/ADHD/ASD = 0.036 0.058 0.075 0.034  d_oth=+0.018 d_ASD=+0.035* sf=0.56 
+  Acute upper respiratory infection              NT/oth/ADHD/ASD = 0.659 0.817 0.818 0.710  d_oth=+0.010 d_ASD=+0.056* sf=0.99 
+  Pain syndromes                                 NT/oth/ADHD/ASD = 0.061 0.086 0.087 0.041  d_oth=+0.007 d_ASD=+0.038* sf=0.96 
+  Female pelvic inflammatory disease             NT/oth/ADHD/ASD = 0.033 0.055 0.045 0.007  d_oth=-0.004 d_ASD=+0.036* sf=1.57 
+  Menstrual & other female genital disorders     NT/oth/ADHD/ASD = 0.126 0.134 0.126 0.076  d_oth=+0.001 d_ASD=+0.038* sf=1.53 
+
+=== BEYOND the global ADHD-vs-other offset (d_other - mu survives 90%) ===
+  Anxiety, stress & somatoform disorders         d_oth=+0.120  d-mu=+0.096**  ADHD+ASD  sex/race-std d-mu=+0.104 (survives std)
+  Mood disorders (depression, bipolar)           d_oth=+0.087  d-mu=+0.063**  ADHD-SPECIFIC  sex/race-std d-mu=+0.072 (survives std)
+  Asthma                                         d_oth=+0.083  d-mu=+0.059**  ADHD-SPECIFIC  sex/race-std d-mu=+0.054 (survives std)
+  Arthropathies & joint disorders (arthritis)    d_oth=+0.069  d-mu=+0.045**  ADHD-SPECIFIC  sex/race-std d-mu=+0.045 (survives std)
+  Sleep disorders (organic)                      d_oth=+0.068  d-mu=+0.044**  ADHD+ASD  sex/race-std d-mu=+0.046 (survives std)
+  Male genital disorders                         d_oth=+0.068  d-mu=+0.044**  ADHD+ASD  sex/race-std d-mu=+0.014 (LOST under std)
+  Chronic upper respiratory (rhinitis/sinusitis/tonsil) d_oth=+0.061  d-mu=+0.037  ADHD+ASD  sex/race-std d-mu=+0.035 (survives std)
+  Personality disorders                          d_oth=+0.059  d-mu=+0.035**  ADHD+ASD  sex/race-std d-mu=+0.032 (survives std)
+  Diabetes & glucose regulation                  d_oth=+0.009  d-mu=-0.015  FLAT  sex/race-std d-mu=-0.018 (survives std)
+  Hemolytic anemia                               d_oth=+0.003  d-mu=-0.021  FLAT  sex/race-std d-mu=-0.025 (survives std)
+  Osteopathies & chondropathies (osteomyelitis)  d_oth=+0.000  d-mu=-0.023**  FLAT  sex/race-std d-mu=-0.027 (survives std)
+  Nutritional anemia (iron-deficiency)           d_oth=-0.003  d-mu=-0.027  SHARED-NDD  sex/race-std d-mu=-0.026 (survives std)
+  Congenital nervous system anomalies            d_oth=-0.004  d-mu=-0.028**  SHARED-NDD  sex/race-std d-mu=-0.029 (survives std)
+  Female pelvic inflammatory disease             d_oth=-0.004  d-mu=-0.028**  ABOVE-ASD  sex/race-std d-mu=-0.013 (LOST under std)
+  Underweight                                    d_oth=-0.005  d-mu=-0.029  SHARED-NDD  sex/race-std d-mu=-0.032 (survives std)
+  Malnutrition                                   d_oth=-0.010  d-mu=-0.034**  FLAT  sex/race-std d-mu=-0.035 (survives std)
+  Functional & other intestinal (constipation, IBS) d_oth=-0.011  d-mu=-0.035  SHARED-NDD  sex/race-std d-mu=-0.031 (survives std)
+  Aplastic & other anemias                       d_oth=-0.019  d-mu=-0.043**  SHARED-NDD  sex/race-std d-mu=-0.046 (survives std)
+  gained under sex/race standardization: Congenital genital anomalies(-0.024), Other chronic lower respiratory (COPD/bronchiectasis)(-0.016), Acquired MSK deformities & other(-0.019), Congenital respiratory anomalies(-0.020), Hernia(-0.027), Congenital skin & integument anomalies(-0.029)
+
+=== Largest ADHD-vs-NT elevations that are NOT ADHD-specific ===
+  Refractive errors                              e=+0.178  shared=+0.152 (85% of e)  peak=ASD
+  Dermatitis & eczema (atopic)                   e=+0.164  shared=+0.129 (79% of e)  peak=ADHD
+  Mycoses (fungal infections)                    e=+0.163  shared=+0.137 (84% of e)  peak=ADHD
+  Acute upper respiratory infection              e=+0.161  shared=+0.159 (99% of e)  peak=ADHD
+  Metabolic disorders (lipid, fluid/electrolyte) e=+0.142  shared=+0.122 (86% of e)  peak=ASD
+  Oral & dental disorders                        e=+0.142  shared=+0.130 (92% of e)  peak=ADHD
+  Viral infections with exanthem/skin            e=+0.138  shared=+0.151 (109% of e)  peak=Other NDD
+  Other & sequelae of infectious disease         e=+0.125  shared=+0.110 (88% of e)  peak=ASD
+  Esophageal, gastric & duodenal disorders       e=+0.116  shared=+0.099 (85% of e)  peak=ADHD
+  Inflammatory bowel disease & colitis           e=+0.115  shared=+0.088 (76% of e)  peak=ADHD
+
+######## adhd78_anyadhd634: 78 conditions, ADHD n=634 ########
+tau(vs other)=0.0278  mu=+0.0249  tau(vs rest)=0.0276  tau(vs ASD)=0.0407
+ADHD-associated vs NT (FDR<.05, e>0): 70; of those ADHD-specific vs other-NDD (90%): 33
+beyond global offset mu (90%): up=9 down=14
+labels: ADHD-SPECIFIC=17, ADHD+ASD=16, ADHD-DEFICIT=0, ASD-PEAK=0, ABOVE-ASD=13, SHARED-NDD=23, FLAT=9
+
+######## paper51_adhd573: 51 conditions, ADHD n=573 ########
+tau(vs other)=0.0305  mu=+0.0220  tau(vs rest)=0.0283  tau(vs ASD)=0.0351
+ADHD-associated vs NT (FDR<.05, e>0): 46; of those ADHD-specific vs other-NDD (90%): 16
+beyond global offset mu (90%): up=6 down=8
+labels: ADHD-SPECIFIC=2, ADHD+ASD=14, ADHD-DEFICIT=1, ASD-PEAK=1, ABOVE-ASD=2, SHARED-NDD=24, FLAT=7
+
+######## paper51_anyadhd634: 51 conditions, ADHD n=634 ########
+tau(vs other)=0.0321  mu=+0.0246  tau(vs rest)=0.0319  tau(vs ASD)=0.0473
+ADHD-associated vs NT (FDR<.05, e>0): 47; of those ADHD-specific vs other-NDD (90%): 17
+beyond global offset mu (90%): up=7 down=11
+labels: ADHD-SPECIFIC=3, ADHD+ASD=14, ADHD-DEFICIT=1, ASD-PEAK=0, ABOVE-ASD=3, SHARED-NDD=22, FLAT=8
+
+=== Robustness of primary beyond-global ADHD-specific set ===
+  adhd78_anyadhd634      reproduces 8/8 of primary (present in set); new: ['Behavioral syndromes (eating, sleep)']
+  paper51_adhd573        reproduces 6/6 of primary (present in set); new: []
+  paper51_anyadhd634     reproduces 6/6 of primary (present in set); new: ['Behavioral syndromes (eating, sleep)']
+
+Done. Outputs in <PROJECT_ROOT>/adhd_analysis/results

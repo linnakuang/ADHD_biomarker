@@ -1,0 +1,17 @@
+(a) ADHD-only K=3: boot cos=0.868 worst=0.763 conc=0.677
+    P1: Asthma(0.76), Other blood & spleen disorders(0.66), Refractive errors(0.54), Visual disturbances & blindness(0.38), Influenza & pneumonia(0.38), Respiratory failure & other(0.38)
+    P2: Hearing loss & other ear disorders(0.59), Conjunctivitis & conjunctival disorders(0.55), Otitis media & middle ear disorders(0.52), Viral infections with exanthem/skin(0.51), Soft tissue & muscle disorders(0.50), Dermatitis & eczema (atopic)(0.44)
+    P3: Anxiety, stress & somatoform disorders(1.64), Mood disorders (depression, bipolar)(0.80), Sleep disorders (organic)(0.31), Personality disorders(0.30), Arthropathies & joint disorders (arthritis)(0.30), Obesity & overnutrition(0.24)
+     contrast  n_pos  n_neg  latentW  raw78  burden  latentW+burden  perm_p_latent_ADHD_vs_other
+ADHD_vs_other    573    930    0.645  0.645   0.576           0.647                        0.005
+  ADHD_vs_ASD    573    145    0.545  0.622   0.546           0.539                        0.005
+ ASD_vs_other    145    930    0.604  0.648   0.527           0.603                        0.005
+profile                                                                                                                                                                           top  best_resid_cos  verdict
+     P1                                                            Asthma(0.76), Other blood & spleen disorders(0.66), Refractive errors(0.54), Visual disturbances & blindness(0.38)           0.565  PARTIAL
+     P2 Hearing loss & other ear disorders(0.59), Conjunctivitis & conjunctival disorders(0.55), Otitis media & middle ear disorders(0.52), Viral infections with exanthem/skin(0.51)           0.811 SURVIVES
+     P3                        Anxiety, stress & somatoform disorders(1.64), Mood disorders (depression, bipolar)(0.80), Sleep disorders (organic)(0.31), Personality disorders(0.30)           0.967 SURVIVES
+    group    n  r_norm_med  r_norm_per_sqrt_burden_med  burden_mean
+       NT 1851       2.097                       0.679       10.405
+Other NDD  930       2.540                       0.662       15.441
+     ADHD  573       2.713                       0.661       17.531
+      ASD  145       2.663                       0.687       15.993

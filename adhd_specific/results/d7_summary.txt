@@ -1,0 +1,39 @@
+    group    n  event_months_med event_months_iqr  span_med
+       NT 1851              12.0             6-24     10.00
+Other NDD  930              23.0            13-39     12.58
+     ADHD  573              30.0            18-49     13.92
+      ASD  145              30.0            16-44     13.25
+
+D1 ADHD-specific/deficit conditions surviving utilization adjustment: 5/31
+                                            condition      D1_label   OR0   OR1    q1  attenuation  survives_util
+               Anxiety, stress & somatoform disorders      ADHD+ASD 2.569 2.121 0.000        0.203           True
+                 Mood disorders (depression, bipolar) ADHD-SPECIFIC 2.823 2.306 0.000        0.195           True
+                                               Asthma ADHD-SPECIFIC 1.770 1.486 0.021        0.306           True
+          Arthropathies & joint disorders (arthritis) ADHD-SPECIFIC 1.663 1.310 0.172        0.469          False
+                            Sleep disorders (organic)      ADHD+ASD 1.801 1.415 0.087        0.410          False
+                               Male genital disorders      ADHD+ASD 1.592 1.206 0.615        0.597          False
+Chronic upper respiratory (rhinitis/sinusitis/tonsil)      ADHD+ASD 1.482 1.093 0.732        0.775          False
+                                Personality disorders      ADHD+ASD 5.245 4.564 0.000        0.084           True
+              Conjunctivitis & conjunctival disorders      ADHD+ASD 1.365 1.078 0.732        0.757          False
+                       Soft tissue & muscle disorders ADHD-SPECIFIC 1.331 1.021 0.898        0.928          False
+                                  Headache & migraine ADHD-SPECIFIC 1.686 1.265 0.467        0.550          False
+                       Other blood & spleen disorders ADHD-SPECIFIC 1.345 1.234 0.318        0.291          False
+                              Obesity & overnutrition      ADHD+ASD 1.369 1.072 0.774        0.779          False
+                       Skin & subcutaneous infections      ADHD+ASD 1.328 1.039 0.888        0.864          False
+                      Visual disturbances & blindness      ADHD+ASD 1.402 1.106 0.724        0.703          False
+                   Hearing loss & other ear disorders      ADHD+ASD 1.310 1.085 0.732        0.699          False
+                  Otitis media & middle ear disorders      ADHD+ASD 1.236 0.996 0.972        1.020          False
+                                 Urticaria & erythema      ADHD+ASD 1.405 1.172 0.615        0.534          False
+                          Substance-related disorders ADHD-SPECIFIC 2.984 2.361 0.038        0.214           True
+                 Behavioral syndromes (eating, sleep)      ADHD+ASD 2.083 1.716 0.141        0.264          False
+                                Influenza & pneumonia      ADHD+ASD 1.238 0.922 0.732        1.380          False
+                   Conduction disorders & arrhythmias      ADHD+ASD 1.648 1.331 0.510        0.428          False
+              Intestinal infections (gastroenteritis)      ADHD+ASD 1.211 0.959 0.888        1.221          False
+        Disorders of skin appendages (acne/hair/nail)      ADHD+ASD 1.259 0.920 0.732        1.363          False
+         Bladder & urethral disorders (cystitis, UTI)      ADHD+ASD 1.537 1.330 0.233        0.336          False
+           Dorsopathies & spine disorders (scoliosis) ADHD-SPECIFIC 1.299 0.978 0.898        1.083          False
+                                  Epilepsy & seizures      ADHD+ASD 1.752 1.407 0.509        0.390          False
+                   Lice, scabies & other infestations ADHD-SPECIFIC 1.451 1.261 0.615        0.378          False
+                            Other digestive disorders      ADHD+ASD 1.562 1.287 0.615        0.434          False
+                             Organic mental disorders ADHD-SPECIFIC 1.397 1.419 0.473       -0.045          False
+Other chronic lower respiratory (COPD/bronchiectasis)      ADHD+ASD 1.511 1.174 0.841        0.612          False

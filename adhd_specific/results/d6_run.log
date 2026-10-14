@@ -1,0 +1,38 @@
+=== D6 descriptives ===
+    group    n  male_%  black_%  preterm_%  lbw_%  college_%  adhd_dx_age_med adhd_dx_age_iqr  adhd_dx_visits_med  asd_dx_age_med  burden_mean  burden_lo  burden_hi  event_months_med
+       NT 1851   41.22    56.24      24.20  23.50      38.36              NaN                                 NaN             NaN        10.40      10.08      10.71              12.0
+Other NDD  930   51.83    62.47      33.66  32.04      36.24              NaN                                 NaN             NaN        15.44      14.92      15.95              23.0
+     ADHD  573   68.59    60.21      31.41  31.76      32.29             7.13         5.4-9.4                 5.0             NaN        17.53      16.87      18.24              30.0
+ ASD+ADHD   61   77.05    54.10      40.98  27.87      47.54             6.48         4.6-8.5                 6.0            3.44        18.11      16.13      20.15              35.0
+ ASD-only   84   73.81    54.76      40.48  34.52      42.86              NaN                                 NaN            3.12        14.45      13.01      15.99              24.5
+
+ADHD dx age: ADHD-only med 7.13 (n=573) vs ASD+ADHD med 6.48 (n=61); MWU p=0.0403
+ASD+ADHD: ADHD dx minus ASD dx: median +1.02y; ASD first in 61% (n=61)
+burden ASD+ADHD 18.11 vs ADHD 17.53  MWU p=0.3312
+burden ASD+ADHD 18.11 vs ASD-only 14.45  MWU p=0.0027
+burden ADHD 17.53 vs Other NDD 15.44  MWU p=0.0000
+interaction: tau=0.0000 mu=+0.0074 (se 0.0062), Q=72.7 df=77
+
+tau: autism-on-ADHD=0.0306  ADHD-on-autism=0.0324  interaction=0.0000
+global offsets mu: autism-on-ADHD=-0.0013  ADHD-on-autism=+0.0325
+
+=== What AUTISM adds on top of ADHD (ASD+ADHD vs ADHD-only): 3 survive 90% ===
+  Other chronic lower respiratory (COPD/bronchiectasis) aut_on_adhd=-0.025  oth/ADHD/ASD+ADHD/ASD-only = 0.019 0.033 0.000 0.036  beyond-mu:no
+  Female pelvic inflammatory disease             aut_on_adhd=-0.034  oth/ADHD/ASD+ADHD/ASD-only = 0.055 0.045 0.000 0.012  beyond-mu:yes
+  Malnutrition                                   aut_on_adhd=-0.051  oth/ADHD/ASD+ADHD/ASD-only = 0.089 0.070 0.000 0.083  beyond-mu:yes
+
+=== What ADHD adds on top of AUTISM (ASD+ADHD vs ASD-only): 10 survive 90% ===
+  Sleep disorders (organic)                      adhd_on_aut=+0.070  oth/ADHD/ASD+ADHD/ASD-only = 0.208 0.309 0.541 0.250  beyond-mu:no
+  Inflammatory bowel disease & colitis           adhd_on_aut=+0.064  oth/ADHD/ASD+ADHD/ASD-only = 0.297 0.325 0.393 0.167  beyond-mu:no
+  Dermatitis & eczema (atopic)                   adhd_on_aut=+0.059  oth/ADHD/ASD+ADHD/ASD-only = 0.590 0.625 0.705 0.488  beyond-mu:no
+  Lice, scabies & other infestations             adhd_on_aut=+0.053  oth/ADHD/ASD+ADHD/ASD-only = 0.063 0.084 0.082 0.000  beyond-mu:no
+  Otitis externa & external ear disorders        adhd_on_aut=+0.052  oth/ADHD/ASD+ADHD/ASD-only = 0.240 0.255 0.328 0.179  beyond-mu:no
+  Headache & migraine                            adhd_on_aut=+0.052  oth/ADHD/ASD+ADHD/ASD-only = 0.118 0.175 0.115 0.024  beyond-mu:no
+  Conjunctivitis & conjunctival disorders        adhd_on_aut=+0.052  oth/ADHD/ASD+ADHD/ASD-only = 0.410 0.482 0.492 0.321  beyond-mu:no
+  Dorsopathies & spine disorders (scoliosis)     adhd_on_aut=+0.051  oth/ADHD/ASD+ADHD/ASD-only = 0.204 0.236 0.230 0.107  beyond-mu:no
+  Behavioral syndromes (eating, sleep)           adhd_on_aut=+0.051  oth/ADHD/ASD+ADHD/ASD-only = 0.045 0.084 0.213 0.095  beyond-mu:no
+  Osteopathies & chondropathies (osteomyelitis)  adhd_on_aut=+0.047  oth/ADHD/ASD+ADHD/ASD-only = 0.070 0.065 0.098 0.024  beyond-mu:no
+
+=== Non-additive: ADHD's effect differs with vs without autism: 0 survive 90% ===
+
+Done. Outputs in <PROJECT_ROOT>/adhd_analysis/results

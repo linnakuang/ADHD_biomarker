@@ -1,94 +1,67 @@
-# Spectrum / full-cohort NDD comorbidity analyses (`gus` branch)
+# ADHD-specific comorbidity in the Boston Birth Cohort (`gus` branch)
 
-Postnatal-EHR comorbidity analyses on the Boston Birth Cohort, contributed by Gus Fridell.
-This branch adds the **spectrum analyses (S1–S8)** alongside the existing `code/` and `codebook/`.
+Postnatal-EHR comorbidity analyses contributed by Gus Fridell. They ask which comorbidities are specific to ADHD and which are
+shared with other neurodevelopmental disorders (NDD). An ADHD-vs-neurotypical comparison cannot answer that on its own: it shows
+which conditions are *ADHD-associated*, not which are *ADHD-specific*.
 
-> ## ⚠️ Read this first: what cohort these analyses actually use
->
-> **Except for `adhd_specific/` (see below), none of the work in these directories is ADHD-only.** Despite the repository name, every
-> analysis here operates on the **full neurodevelopmental spectrum**, using a single
-> mutually-exclusive 4-way label assigned by the priority rule **ASD > ADHD > other-NDD > NT**.
-> **ADHD (n = 573, meaning *ADHD-without-ASD*)** appears only as **one of four groups** or as a
-> **comparator** — never as the sole study population. An ADHD-centred reanalysis would be new work
-> built on top of this; these files are the honest full-spectrum baseline it would start from.
+**Start here: [`adhd_specific/`](adhd_specific/)**
+- [`README.md`](adhd_specific/README.md): layout, how to rerun, data policy.
+- [`RESULTS.md`](adhd_specific/RESULTS.md): the full write-up. It covers cohort construction and filtering, ICD processing and condition grouping, the ICD definition of every condition (Appendix A), statistical formulation, results, figures and caveats.
+- `RESULTS.html`: the same document as one file with the figures embedded. Download it and open it in a browser.
 
-## Cohort legend
+> **Moved:** the earlier full-spectrum work (S1–S8: NT / other-NDD / ADHD / ASD treated as a spectrum, ASD as the focus) has
+> been consolidated into [`full_spectrum/`](full_spectrum/), with its own [README](full_spectrum/README.md). Nothing in it
+> changed apart from the move.
 
-| Group (priority-labeled, mutually exclusive) | n | Role |
+## Cohort
+
+Children are given mutually exclusive groups by the priority rule ASD > ADHD > other-NDD > NT, using the BBC NDD label file
+(3,500 children; 3,499 analysed).
+
+| Group | n | Role |
 |---|---|---|
-| **NT** (neurotypical) | 1,851 | Baseline / expected-rate reference |
-| **Other NDD** (non-ADHD, non-ASD) | 930 | Spectrum rung 1 |
-| **ADHD** (ADHD *without* ASD) | 573 | Spectrum rung 2 — ASD-comorbid ADHD children are pulled up to ASD |
-| **ASD** | 145 | Spectrum rung 3 |
-| **Total labeled** | **3,499** | |
+| **ADHD** (ADHD without ASD) | **573** | Focal group |
+| Other NDD (no ASD, no ADHD) | 930 | Primary comparator: separates ADHD-specific from shared-NDD signal |
+| ASD | 145 | Comparator; split into ASD+ADHD 61 / ASD-only 84 for the dual-diagnosis analysis |
+| NT (no neurodevelopmental diagnosis) | 1,851 | Reference |
 
-Derived pools: **analytic cohort** = ASD + NT = 1,996 (the original paper's design) · **spectrum
-pool** = ASD + ADHD + other-NDD = 1,648 · **"the rest"** = ADHD + other-NDD = 1,503.
+The outcomes are 78 conditions selected for ADHD: at least 5 ADHD children and at least 3% ADHD prevalence, across all disease categories. Each is
+coded as ever present before age 18. Sensitivity runs also use any-ADHD (634 = 573 + 61), the definition used by the `main`-branch code.
 
-## Which individuals each analysis uses
+## Analyses (D1–D7)
 
-| Analysis | Individuals used |
+| | Question |
 |---|---|
-| **S1** axis robustness | ASD-only (145) **vs** full spectrum (1,648) |
-| **S2** ASD separation in NMF space | spectrum (1,648); NT (1,851) as residual baseline only |
-| **S3** temporal feasibility | ASD-only (145) vs spectrum (1,648) |
-| **S4** spectrum tensor | ASD-only vs spectrum pools |
-| **S5** hierarchical shrinkage | ASD (145) vs rest (1,503); NT (1,851) baseline |
-| **S6** gradient-vs-step | all four groups (NT 1,851 / other-NDD 930 / ADHD 573 / ASD 145) |
-| **S7** cross-group contrast | all four groups (ASD vs rest, **ASD vs ADHD**, ADHD vs other) |
-| **S8** temporal normalized | spectrum (1,648), ASD vs rest |
+| D1 | Which conditions are ADHD-specific vs shared with other NDD? Empirical-Bayes shrinkage, tested *beyond* ADHD's uniform offset |
+| D2 | Is each ADHD elevation a step (ADHD-only) or a gradient (other-NDD part-way there)? |
+| D3 | Do ADHD NMF comorbidity profiles survive stability floors and removal of NT co-occurrence structure? |
+| D4 | Inattentive vs hyperactive/combined presentation |
+| D5 | What changes around the ADHD diagnosis, beyond age and NDD-care trends (pre/post difference-in-differences)? |
+| D6 | ADHD with vs without autism: are the effects additive? |
+| D7 | Do the signals survive adjustment for healthcare utilization? |
 
-## Directory map
+## Main findings
+
+1. **Most ADHD-vs-NT comorbidity is not ADHD-specific.** 68 of 78 conditions are elevated vs NT, but ADHD sits a uniform ~2.4 percentage points above other NDD on nearly everything. Only 8 conditions deviate beyond that offset, and 6 survive utilization adjustment.
+2. **The robust ADHD-specific core:**
+   - anxiety, mood and personality-disorder codes, plus asthma, the one non-psychiatric condition that survives every check;
+   - substance use, which is provisional because part of it is neonatal or exposure coding;
+   - constipation, which is *lower* in ADHD after adjustment.
+3. **ADHD's footprint is the same with and without autism** (no interaction). ADHD is diagnosed *earlier* in autistic children.
+4. **Anxiety is elevated before the ADHD diagnosis.** Anxiety, mood and sleep codes rise further after it, beyond age and NDD-care trends. Co-coding at the ADHD workup is not yet ruled out.
+
+Details, numbers and limitations are in [`adhd_specific/RESULTS.md`](adhd_specific/RESULTS.md).
+
+## Repository layout
 
 ```
-shared_infra/            config + shared bootstrap/helpers used by every S-script
-power_axes_S1_S2/        S1 axis robustness, S2 ASD detectability in NMF latent space
-temporal_S3_S4_S8/       S3 feasibility, S4 tensor validity, S8 ascertainment-normalized timing
-specificity_S5_S6_S7/    S5 shrinkage, S6 gradient-vs-step, S7 cross-group contrast
-writeups/                SPECTRUM.md (full methods+results), RESEARCH_AGENDA.md, analysis_plan/memo
-adhd_specific/           D1–D7: ADHD-focused follow-up (ADHD as the focal group; RESULTS.md / RESULTS.html)
+adhd_specific/   D1–D7 ADHD-focused analyses: code, RESULTS.md / RESULTS.html, aggregate results/  ← current work
+full_spectrum/   S1–S8 full-spectrum (ASD-focused) analyses and write-ups, moved here and consolidated
+code/, codebook/, ADHD_multimorbidity_project_diary.pptx   from the main branch (Linna Kuang's ADHD-vs-NT pipeline)
 ```
-Each analysis directory has its own `README.md` stating the exact groups it uses and its finding.
-The complete, self-contained write-up is **`writeups/SPECTRUM.md`**.
 
-## ADHD-focused follow-up (`adhd_specific/`)
+## Data policy
 
-D1–D7 take **ADHD (n = 573, ADHD without ASD) as the focal group**. They compare it with other NDD (930), ASD (145, split into
-ASD+ADHD 61 / ASD-only 84) and NT (1,851) over 78 conditions selected for ADHD. Start with `adhd_specific/README.md`. The full
-write-up, with cohort construction, ICD processing, condition definitions, statistical formulation and figures, is
-`adhd_specific/RESULTS.md`; `RESULTS.html` is the same document as one file with the figures embedded.
-Headline: most ADHD-vs-NT comorbidity is shared NDD burden plus utilization. The robust ADHD-specific core is anxiety, mood,
-personality-disorder codes and asthma, plus substance use (provisional, see the code audit), with constipation lower.
-
-## Results in one line each
-
-- **S1 — power, not biology, was the binding constraint.** The ASD-only K=3 model sits below its own
-  stability floor (worst component 0.76); on the full spectrum it is 0.96.
-- **S2 — ASD is a modest graded tilt, not an island.** ASD-vs-other-NDD AUC 0.587 (p = 0.006), barely
-  above a burden-only baseline, and *less* distinct than ADHD-vs-other (0.638).
-- **S3 — inclusion makes a temporal factorization *estimable*.** Thin slices 53% → 12%; windows
-  passing 1/6 → 6/6.
-- **S4 — but not *valid*.** The temporal factor still tracks the per-window density envelope
-  (|r| ≈ 0.88), essentially unmoved by 10× data — estimable ≠ valid.
-- **S5 — the payoff: 7–11/51 conditions are genuinely ASD-specific**, while ASD's *largest* raw
-  elevations (anxiety, refractive, otitis, obesity) are 70–104% generic NDD.
-- **S6 — ASD-specificity is step-shaped.** Of the 11 ASD-specific conditions, 8 step up, 2 step down,
-  1 is a true gradient; the largest elevations are shared spectrum-wide.
-- **S7 — against ADHD alone, only 2 survive** (epilepsy, glaucoma); pooling had inflated the apparent
-  specificity of 9. Headache, mood, acute URI and pain actually peak in ADHD.
-- **S8 — a clean negative.** No ascertainment correction yields a temporal factor that is stable,
-  artifact-free *and* group-separating; once coding volume is divided out, timing adds no ASD signal.
-
-## Conventions, data policy, and reproducibility
-
-- **No individual-level data is included, by design.** Every file here is aggregate: result tables are
-  per-condition (51 rows) or per-configuration, and figures are condition/n-level (no per-child
-  points). Raw EHR, demographics, and any per-child outputs are excluded.
-- **Paths are obfuscated.** The real compute-node location has been replaced throughout by the
-  placeholder **`<PROJECT_ROOT>`**; only the directory structure below that level is shown.
-- **Archival, not runnable standalone.** The scripts were authored in one flat working directory and
-  cross-import by module name (e.g. `import s1_axis_robustness as s1`, `import gus_common as gc`).
-  Running them requires (a) placing all `.py` on one `PYTHONPATH`, (b) the upstream BBC preprocessing
-  / clustering pipeline that provides `clustering_utils` (`load_event_data`, `load_patients`,
-  `build_residual_matrix`, `select_nmf_conditions`), and (c) the restricted source data — none of
-  which are in this repository. The thematic directory grouping is for reading, not execution.
+- **No individual-level data is included.** Every file is aggregate: per-condition or per-group tables, and figures with no per-child points.
+- **Paths:** the real compute location is replaced by `<PROJECT_ROOT>`.
+- **Running the code** requires the restricted BBC source data and the upstream preprocessing pipeline; see `adhd_specific/README.md`.

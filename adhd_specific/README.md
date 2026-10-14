@@ -27,7 +27,7 @@
 ### Rerunning elsewhere
 
 - **Edit `config.py` paths** to point at your copies of `BBC_event_table_full.csv`, `BBC_patients_analytic_full.csv`, the NDD label CSV and (for D4) `kid_icdcode_data_Mar2026.RDS`.
-- **Shared code dependencies:** `adhd_common.py` imports `gus_common`, `s1_axis_robustness`, `s5_hierarchical_shrinkage` (and D3 imports `s2_asd_separation`) from `config.GUS_DIR`. `gus_common` in turn needs `BBC_Dataset/clustering/clustering_utils.py`. On the `gus` branch these live under `shared_infra/` and the S-folders, so point `GUS_DIR` / `sys.path` there.
+- **Shared code dependencies:** `adhd_common.py` imports `gus_common`, `s1_axis_robustness`, `s5_hierarchical_shrinkage` (and D3 imports `s2_asd_separation`) from `config.GUS_DIR`. `gus_common` in turn needs `BBC_Dataset/clustering/clustering_utils.py`. On the `gus` branch these live under `full_spectrum/shared_infra/` and the `full_spectrum/` S-folders, so point `GUS_DIR` / `sys.path` there.
 - **Python:** pandas, numpy, scipy, scikit-learn, matplotlib, pyreadr (D4), markdown (HTML). The first `load()` builds `_cache/base.pkl`; later runs are fast.
 
 ---
